@@ -7,7 +7,7 @@
 ![[Map of Hooks.png]]
 
 
-[[Introduction]]
+[[React/React JS/Hooks/Introduction]]
 [[State management hooks]]
 [[Effect Hooks]]
 [[Ref hooks]]

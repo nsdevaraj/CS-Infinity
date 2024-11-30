@@ -1,99 +1,55 @@
-
-
 [JS Concepts @Fireship](https://www.youtube.com/watch?v=lkIFF4maKMU)
 
-https://youtu.be/tbqVqP5ilzQ?si=oTHfOcnR_FplJRjN
-
-
-
-[[Intro to JS]]
+[[JavaScript/JS Lang/All concepts/Introduction|Introduction]]
 [[JavaScript Execution Environment]]
-[[Scripting Language Characteristics]]
+[[Scripting Characteristics]]
 
-[[Basic Syntax and Variables]]
-
-[[Datatypes in js]]
-[[Type coercion and conversion]]
+[[Syntax & Variables]]
+[[Datatypes]]
+[[Built-in Data Structures]]
+[[Garbage Collection]]
+[[Type coercion & conversion]]
 [[Control Structures]]
 
-
-[[Scope and Hoisting]]
+[[Scope & Hoisting]]
 [[Closure Scope]]
 
-
 [[Function]]
-
-
-
 [[Prototype]]
-
-
-
-To Do:
-
-
 [[JS Lang/All concepts/Objects|Objects]]
 
-[[Excution Context]]
-
-classes
+[[Execution Context]]
 [[JS Lang/Concepts/This|This]]
 
-
+[[JS Lang/All concepts/Event Loop|Event Loop]]
+[[CallBack, Promise & Async await]]
+[[Asynchronous Programming]]
 [[JS Lang/All concepts/Promise|Promise]]
-
-
-strict mode
-
-[[regex]]
 
 [[Errors]]
 
-
-[[JS Lang/All concepts/Promise|Promise]]
-
-
-prototye and inheritance
+[[regex]]
 
 
-[[Built-in Data Structures in JavaScript]]
-[[Asynchronous Programming in JavaScript]]
 
 
-- Explain the difference between callbacks, Promises, and `async`/`await`.
-- How do you handle errors in asynchronous functions?
+
+
 
 [[JS Lang/All concepts/API Handling]]
 
 
-[[Garbage Collection in JavaScript]]
-
-[[JS Lang/All concepts/Event Loop|Event Loop]]
-
-
-
-[[Call back hell and Promise and async await]]
 
 [[JS Lang/All concepts/Modules]]
-
 [[NPM]]
-
 [[DOM]]
-
 [[Imperative vs Declarative code]]
-
 [[Bundlers]]
-
 [[Full stack nodejs]]
-
 [[TS and ESLint]]
 
 
-
-
 [[Js knowledge]]
-
-
 [[Polyfill]]
 
 
@@ -189,7 +145,23 @@ lazy loading - component used in lazy loading
 
 
 
+referred {
+
+https://youtu.be/tbqVqP5ilzQ?si=oTHfOcnR_FplJRjN
+
+}
 
 
+to do :
 
+classes
+
+
+strict mode
+
+
+- Explain the difference between callbacks, Promises, and `async`/`await`.
+- How do you handle errors in asynchronous functions?
+
+prototye and inheritance
 

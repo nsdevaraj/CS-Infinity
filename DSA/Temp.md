@@ -1,6 +1,6 @@
 
 to continue
-[[DSA by resources/Top/75/0 Outline|0 Outline]]
+[[0 DSA 75|0 DSA 75]]
 
 
 to continue
@@ -9,7 +9,7 @@ to continue
 
 
 To check all problems in here once :
-[[DSA by resources/Inside Code/Coding Problems Playlist/0 Outline]]
+[[0 DSA Probs]]
 
 
 
