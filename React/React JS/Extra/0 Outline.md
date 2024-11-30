@@ -1,0 +1,7 @@
+
+
+[[inside func component]]
+
+
+
+

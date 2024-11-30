@@ -1,0 +1,7 @@
+
+object destructing
+array destrucing
+
+
+
+

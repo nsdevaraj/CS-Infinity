@@ -1,0 +1,11 @@
+# Ignore Obsidian's local configuration files
+**/.obsidian/
+
+# Ignore cache and workspace files
+*.log
+*.bak
+*.swp
+*.tmp
+
+# macOS stuff
+.DS_Store
