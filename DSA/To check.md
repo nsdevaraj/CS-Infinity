@@ -4,6 +4,11 @@
 DSA
 
 
+Hard leetcode
+
+https://www.youtube.com/watch?v=PVjKqhi4qpw
+
+
 150
 https://www.youtube.com/watch?v=3-mZwU87Ttw
 
@@ -82,4 +87,14 @@ https://www.linkedin.com/posts/nk-systemdesign-one_how-to-master-coding-intervie
 
 https://www.linkedin.com/posts/akashsinnghh_leetcode-questions-cheat-sheet-i-wish-i-existed-activity-7266783812640985088-CcD6?utm_source=share&utm_medium=member_desktop
 
+
+Important questions
+
+https://www.linkedin.com/posts/devkantbhagat_dsa-by-shradha-didi-aman-bhaiya-ugcPost-7268974897354141696-ZXB1?utm_source=share&utm_medium=member_desktop
+
+
+
+
+
+https://www.linkedin.com/posts/akashsinnghh_clear-all-dsa-rounds-by-mastering-these-activity-7269549260331757569-rEzu?utm_source=share&utm_medium=member_desktop
 

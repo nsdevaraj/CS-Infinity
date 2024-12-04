@@ -1,5 +1,8 @@
 
 
+groupBy , offset 1
+
+
 to check {
 
 ### **1. second highest salary from the Employee table.**
@@ -8,7 +11,6 @@ SELECT MAX(salary) AS SecondHighestSalary
 FROM Employee
 WHERE salary < (SELECT MAX(salary) FROM Employee);
 ```
-
 
 
 Absolutely! There are multiple ways to approach the **second-highest salary** query. While the first approach you mentioned using the `MAX()` function works fine, here are a few **alternative approaches** to achieve the same result:

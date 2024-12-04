@@ -7,7 +7,7 @@ Arrays
 [[Best time to buy and sell stocks]]
 [[Contains duplicate]]
 [[Product of Array Except Self]]
-[[Maximum Sub Array]]
+[[Largest or Maximum Sub Array]]
 [[Three Sum or 3Sum]]
 [[Container with most water problem]]
 
@@ -40,7 +40,6 @@ Binary search:
 [[First and Last Positions of Element in Sorted Array]]
 [[Find min in rotated sorted array]]
 [[Search in rotated sorted array]]
-
 
 
 
@@ -115,7 +114,7 @@ Backtracking
 Kadane's algo ( dynamic + optimal greedy)
 
 [[Gas station problem]]
-[[Maximum Sub Array]]
+[[Largest or Maximum Sub Array]]
 [[Best time to buy and sell stocks]]
 
 

@@ -46,3 +46,7 @@ https://www.linkedin.com/posts/zouari-omar-143239283_dbms-database-management-sy
 
 https://www.linkedin.com/posts/abhisek-sahu-84a404b1_sql-interview-questions-and-answers-ugcPost-7260419699283263488-Di5b?utm_source=share&utm_medium=member_desktop
 
+
+
+https://www.linkedin.com/posts/kirankanwar_sql-ugcPost-7269884762201219072-ktrN?utm_source=share&utm_medium=member_desktop
+

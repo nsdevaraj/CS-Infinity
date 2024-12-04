@@ -21,20 +21,16 @@ https://www.interviewbit.com/node-js-interview-questions/?sign_up_medium=ib_arti
 
 
 [[Nodejs intro]]
-[[Nodejs project components]]
 [[Modules and Modules Wrapper]]
 
+[[Nodejs architecture]]
+[[JS Backend/Node JS/Modules|Modules]]
 
 
 [[Nodejs Basics]]
 
 [[IO handling]]
 
-[[Nodejs architecture]]
-
-
-
-[[JS Backend/Node JS/Modules|Modules]]
 
 
 [[Core Modules]]
@@ -64,19 +60,6 @@ api - best code structure - folders and path maintainance
 worker threads
 web sockets
 schedule tasks in nodejs
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

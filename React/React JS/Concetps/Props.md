@@ -56,3 +56,17 @@ const ChildComponent = (props) => {
 export default ChildComponent;
 ```
 
+
+
+
+• prop - parent passing things ( with this help components made reusable ), should not valid to update prop  
+• state - current component managing things, valid to update by hook  
+  
+*any time prop or state change - react rerender  
+  
+  
+*prop - callbackFunc, variables or even child element itself i.e ReactNode  
+  \
+  
+
+

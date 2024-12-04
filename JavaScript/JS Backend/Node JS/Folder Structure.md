@@ -108,3 +108,132 @@ A typical Node.js project might look like this:
 - **Version Control**: Use `.gitignore` to exclude unnecessary files (e.g., `node_modules/`, `.env`).
 
 By organizing your project this way, it will be easier to scale as your application grows, and it will be more maintainable for other developers who join the project.
+
+
+Here are concise, real-world-style examples for each directory structure in your `/src` folder:
+
+### **1. /controllers**
+
+```javascript
+// /controllers/userController.js
+const User = require('../models/user');
+
+exports.getUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) return res.status(404).json({ error: "User not found" });
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(500).json({ error: "Server error" });
+    }
+};
+```
+
+---
+
+### **2. /models**
+
+```javascript
+// /models/user.js
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+}, { timestamps: true });
+
+module.exports = mongoose.model('User', userSchema);
+```
+
+---
+
+### **3. /routes**
+
+```javascript
+// /routes/userRoutes.js
+const express = require('express');
+const { getUser } = require('../controllers/userController');
+const router = express.Router();
+
+router.get('/user/:id', getUser);
+
+module.exports = router;
+```
+
+---
+
+### **4. /services**
+
+```javascript
+// /services/emailService.js
+const nodemailer = require('nodemailer');
+
+exports.sendEmail = async (to, subject, text) => {
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS }
+    });
+
+    await transporter.sendMail({ from: process.env.EMAIL_USER, to, subject, text });
+};
+```
+
+---
+
+### **5. /middleware**
+
+```javascript
+// /middleware/authMiddleware.js
+const jwt = require('jsonwebtoken');
+
+module.exports = (req, res, next) => {
+    const token = req.header('Authorization');
+    if (!token) return res.status(401).json({ error: "Unauthorized" });
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        req.user = decoded;
+        next();
+    } catch {
+        res.status(401).json({ error: "Invalid token" });
+    }
+};
+```
+
+---
+
+### **6. /utils**
+
+```javascript
+// /utils/logger.js
+const fs = require('fs');
+
+exports.logError = (message) => {
+    const logMessage = `${new Date().toISOString()} - ERROR: ${message}\n`;
+    fs.appendFileSync('error.log', logMessage);
+};
+```
+
+---
+
+### **7. /config**
+
+```javascript
+// /config/db.js
+const mongoose = require('mongoose');
+
+exports.connectDB = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log("Database connected");
+    } catch (error) {
+        console.error("Database connection error:", error);
+        process.exit(1);
+    }
+};
+```
+
+These snippets represent practical code pieces you can adapt and expand for your application.
+
+

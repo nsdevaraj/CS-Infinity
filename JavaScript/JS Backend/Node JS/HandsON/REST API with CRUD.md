@@ -96,7 +96,5 @@ Use tools like Postman or `curl` to test each endpoint:
     
 - Delete an item:  
     `DELETE /items/1`.
-    
 
-Let me know when you’re ready for the next question!
 

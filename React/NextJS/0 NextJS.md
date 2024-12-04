@@ -39,3 +39,15 @@ styling
 [[NextJS/Ref|Ref]]
 
 
+[[nest js - website logo]]
+
+
+
+to check  {
+
+https://www.youtube.com/watch?v=xVxec3PSnkU
+
+}
+
+
+

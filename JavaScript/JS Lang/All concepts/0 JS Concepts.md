@@ -1,6 +1,13 @@
 [JS Concepts @Fireship](https://www.youtube.com/watch?v=lkIFF4maKMU)
 
-[[JavaScript/JS Lang/All concepts/Introduction|Introduction]]
+
+@[fundamental](https://www.linkedin.com/posts/sahil-chopra-56a63b191_javascript-questions-activity-7163748698454212608-NQ5H)
+
+
+
+[[Introduction]]
+
+
 [[JavaScript Execution Environment]]
 [[Scripting Characteristics]]
 
@@ -41,7 +48,7 @@
 
 
 [[JS Lang/All concepts/Modules]]
-[[NPM]]
+
 [[DOM]]
 [[Imperative vs Declarative code]]
 [[Bundlers]]
@@ -50,7 +57,7 @@
 
 
 [[Js knowledge]]
-[[Polyfill]]
+[[Array Polyfill]]
 
 
 

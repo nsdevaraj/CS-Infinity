@@ -4,6 +4,10 @@
 @Ref: [Diff Doms YT ](https://www.youtube.com/watch?v=7Tok22qxPzQ)
 
 
+![[Pasted image 20241202131219.png]]
+
+
+
 ### DOM, Virtual DOM, and Shadow DOM Overview
 
 #### 1. **DOM (Document Object Model)**

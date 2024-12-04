@@ -1,6 +1,4 @@
 
-Here’s the LeetCode link for the **Linked List Cycle** problem:
-
 [LeetCode #141: Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
 
 
@@ -104,6 +102,19 @@ class Solution:
         return False
 ```
 
+
+```python
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        dup = set()
+        while head:
+            if head in dup: return True
+            dup.add(head)
+            head = head.next
+        return False
+```
+
+
 ### Time Complexity: 
 - \(O(n)\), where \(n\) is the number of nodes in the linked list. We visit each node at most once.
 
@@ -143,6 +154,52 @@ class Solution:
             
         return True
 ```
+
+```python
+class ListNode:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+def has_cycle(head):
+    slow = fast = head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    return False
+
+```
+
+
+
+?? to check
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        if not head:
+            return False
+
+        curr = head.next
+
+        while curr:
+            if curr is head:
+                return True
+            prev, curr = curr, curr.next
+            prev.next = head
+
+        return False
+
+```
+
 
 ### Time Complexity: 
 - \(O(n)\), where \(n\) is the number of nodes in the linked list. In the worst case, we may visit all nodes before detecting a cycle.

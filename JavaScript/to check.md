@@ -1,10 +1,26 @@
 
+unknown vs any
+
+css variables and scss on theming
+
+event.target vs even.currentTarget
+
+basic homepage desgin quicker
+
+as aliasis vs as type .. 
+
+
+
 https://youtu.be/zeJ_EZXOz50?si=CiFy2tjT9DWL-yIK
 
 https://www.youtube.com/watch?v=koky8mDdtAk
 
 
 https://www.linkedin.com/posts/shubham-gupta-a3236115b_javascript-advance-concepts-cheatsheet-ugcPost-7262752487080636417-sDCe?utm_source=share&utm_medium=member_desktop
+
+
+
+https://www.linkedin.com/posts/danishshabbir_javascript-interview-questions-with-answers-ugcPost-7267382958292979712-wi3t?utm_source=share&utm_medium=member_desktop
 
 
 
@@ -50,3 +66,43 @@ access token , bearer token
 
 ci cd pipelines
 aws
+
+
+
+https://www.linkedin.com/posts/parthib-mohanta_javascript-interview-questions-activity-7267405966055223296--PIt?utm_source=share&utm_medium=member_desktop
+
+
+
+27. What are generators and how are they used in JavaScript?  
+28. What is the purpose of the Proxy object in JavaScript?  
+29. Explain the concept of currying in JavaScript.  
+30. What is the difference between localStorage and sessionStorage?
+
+
+https://www.linkedin.com/posts/mahak-choubey-a38b90289_js-cheatsheet-activity-7267137675625656320-lsTM?utm_source=share&utm_medium=member_desktop
+
+
+
+This will prove out to be helpful. Save it and thank me later :)  
+  
+1. Implement custom javascript promises  
+2. Implement custom Promise all  
+3. Implement custom Promise any  
+4. Implement custom Promise race  
+5. Implement custom Promise allSettled  
+6. Implement custom Promise finally  
+7. Implement promisifying async callbacks  
+8. Implement custom Promise resolve / reject  
+9. Implement N async tasks in series  
+10. Implement N async tasks in parallel  
+11. Implement N async tasks in race  
+12. Implement custom setTimeout  
+13. Implement custom setInterval  
+14. Implement Custom clearAllTimers  
+15. Implement promisifying async callbacks  
+16. Implement auto-retry on failure  
+17. Implement throttling API calls by batching  
+18. Implement debouncing rate limiting  
+19. Implement throttling rate limiting  
+20. Implement memoize / caching identical APIs
+

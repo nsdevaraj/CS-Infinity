@@ -15,7 +15,6 @@
 
 
 
-
 Here’s a **concise and in-depth** comparison of **`require`** and **`import`** in JavaScript, with focus on their usage in **Node.js**:
 
 ---

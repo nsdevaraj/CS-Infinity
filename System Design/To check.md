@@ -17,3 +17,7 @@ https://www.linkedin.com/posts/akashsinnghh_i-screwed-up-2-interviews-because-i-
 
 
 
+
+
+https://www.linkedin.com/posts/nk-systemdesign-one_if-you-want-to-get-started-with-system-design-activity-7269704245703065602-81NZ?utm_source=share&utm_medium=member_desktop
+
