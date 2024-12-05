@@ -107,9 +107,6 @@ ACID properties are essential for ensuring reliable transaction processing in da
 3. **Isolation**: Ensures that transactions do not interfere with each other.
 4. **Durability**: Once a transaction is committed, changes are permanent even in case of failures.
 
-#### Related Interview Questions:
-- **Q11. Explain the ACID properties of a DBMS.**
-  - *Answer*: Atomicity (all-or-nothing transactions), Consistency (valid states), Isolation (independent transactions), Durability (permanent changes).
 
 - **Q12. Why are ACID properties important in a database system?**
   - *Answer*: They ensure reliable, consistent, and error-free transaction processing, which is crucial in systems where data integrity is critical.
@@ -149,5 +146,4 @@ Keys are fundamental in relational databases, enabling data retrieval, integrity
   - *Answer*: A foreign key links to a primary key in another table, ensuring that relationships remain consistent by restricting foreign key values to valid primary key entries.
 
 
-In relational database management systems (RDBMS), several types of keys are used to maintain data integrity, establish relationships, and ensure efficient data retrieval. Here’s a quick explanation of each key type, followed by an example using a **Mermaid diagram**.
 

@@ -291,3 +291,9 @@ Here are short notes summarizing each approach along with their complexities:
 | **Min-Heap (Priority Queue)**        | \(O(n log k)\)  | \(O(n) + O(k)\)  | Utilizes a min-heap to efficiently fetch the smallest elements across all lists, optimal for large `k`.    |
 
 These notes provide a concise overview of each method for merging sorted lists, highlighting their complexities and key characteristics.
+
+
+Similar:
+
+[[merge multiple sorted arrays or linked lists]]
+

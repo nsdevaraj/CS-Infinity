@@ -98,3 +98,7 @@ https://www.linkedin.com/posts/devkantbhagat_dsa-by-shradha-didi-aman-bhaiya-ugc
 
 https://www.linkedin.com/posts/akashsinnghh_clear-all-dsa-rounds-by-mastering-these-activity-7269549260331757569-rEzu?utm_source=share&utm_medium=member_desktop
 
+
+
+https://www.linkedin.com/posts/akashsinnghh_the-reason-youre-struggling-with-coding-activity-7270053950781865989--DVB?utm_source=share&utm_medium=member_desktop
+

@@ -106,3 +106,13 @@ This will prove out to be helpful. Save it and thank me later :)
 19. Implement throttling rate limiting  
 20. Implement memoize / caching identical APIs
 
+
+
+https://www.linkedin.com/posts/devkantbhagat_complete-javascript-cheat-sheet-ugcPost-7270053850097545216-0l1I?utm_source=share&utm_medium=member_desktop
+
+
+
+ JavaScript is **a single-threaded, non-blocking, asynchronous, concurrent programming language with lots of flexibility**.
+https://www.freecodecamp.org/news/synchronous-vs-asynchronous-in-javascript/
+
+

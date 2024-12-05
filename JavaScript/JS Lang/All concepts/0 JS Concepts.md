@@ -57,7 +57,7 @@
 
 
 [[Js knowledge]]
-[[Array Polyfill]]
+
 
 
 
@@ -68,7 +68,7 @@
 
 
 
-[[Generators]]
+[[JS Lang/All concepts/Generators]]
 [[Destructuring]]
 
 
@@ -79,10 +79,11 @@ prototype and classical inheritance
 
 [[design patterns]]
 
-asyn await
+async await detail
 
 [[Defer]]
 
+[[Proxy]]
 
 
 also referred {
@@ -106,13 +107,22 @@ debounce and throttle
 [[Prog]]
 [[Deboune throttle]]
 
+[[Freeze and Seal]]
+
+[[Weak DataStructures]]
+
+
 
 [[Event deligation and event bubbling]]
+
+[[Memory leaks]]
+
+[[null vs undefined]]
 
 
 
 oops 
-throttle, debounce
+
 
 mutation objserver
 find out element in view port or not ?

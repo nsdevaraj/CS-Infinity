@@ -151,6 +151,35 @@ function InputFocus() {
 **Concept Explanation**:
 `useRef` is ideal for persisting values between renders without causing re-renders. It’s commonly used for focusing inputs or holding values such as timers or previous states.
 
+- **`useState`**: Used to store and update a component’s state. Causes re-renders when updated.
+- **`useRef`**: Holds a mutable value that doesn’t trigger re-renders when changed.
+
+
+
+### **46. How do you type a React `useReducer` hook in TypeScript?**
+
+#### **Answer:**
+
+```typescript
+type State = { count: number };
+type Action = { type: 'increment' | 'decrement' };
+
+function reducer(state: State, action: Action): State {
+  switch (action.type) {
+    case 'increment': return { count: state.count + 1 };
+    case 'decrement': return { count: state.count - 1 };
+    default: return state;
+  }
+}
+// Usage:
+const [state, dispatch] = useReducer(reducer, { count: 0 });
+```
+
+
+
+
+
+
 
 
 

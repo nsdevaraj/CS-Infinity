@@ -1,5 +1,188 @@
 
 
+### 2.4 Joins in SQL
+Joins combine rows from two or more tables based on a related column between them. Common types of joins include:
+
+#### Types of Joins:
+- **INNER JOIN**: Returns rows with matching values in both tables.
+- **LEFT JOIN (LEFT OUTER JOIN)**: Returns all rows from the left table and matching rows from the right table.
+- **RIGHT JOIN (RIGHT OUTER JOIN)**: Returns all rows from the right table and matching rows from the left table.
+- **FULL JOIN (FULL OUTER/CROSS JOIN)**: Returns all rows when there’s a match in either table.
+
+
+#### Example:
+```sql
+SELECT Employees.emp_name, Departments.dept_name
+FROM Employees
+INNER JOIN Departments ON Employees.dept_id = Departments.dept_id;
+```
+
+#### Related Interview Questions:
+- **Q7. Explain the difference between INNER JOIN and LEFT JOIN.**
+  - *Answer*: INNER JOIN returns only matching rows, while LEFT JOIN returns all rows from the left table with matching rows from the right.
+
+- **Q8. Write a query to retrieve employee names along with their department names, even if some employees don’t belong to a department.**
+  - *Answer*:
+    ```sql
+    SELECT Employees.emp_name, Departments.dept_name
+    FROM Employees
+    LEFT JOIN Departments ON Employees.dept_id = Departments.dept_id;
+    ```
+
+
+
+
+### Different Types of Joins in SQL
+
+SQL joins are used to combine records from two or more tables based on a related column between them. Here’s a brief explanation of each type of join, followed by examples.
+
+---
+
+### 1. **INNER JOIN**
+The `INNER JOIN` returns records that have matching values in both tables. Non-matching rows are excluded.
+
+**Example:**
+
+```sql
+SELECT Students.StudentID, Students.Name, Enrollments.CourseID
+FROM Students
+INNER JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;
+```
+
+**Explanation**: Retrieves the `StudentID`, `Name`, and `CourseID` for students who have enrolled in a course.
+
+---
+
+### 2. **LEFT JOIN (or LEFT OUTER JOIN)**
+The `LEFT JOIN` returns all records from the left table and the matching records from the right table. If there’s no match, `NULL` is returned for the right table’s columns.
+
+**Example:**
+
+```sql
+SELECT Students.StudentID, Students.Name, Enrollments.CourseID
+FROM Students
+LEFT JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;
+```
+
+**Explanation**: Retrieves all students, even if they haven’t enrolled in any course (those will have `NULL` for `CourseID`).
+
+---
+
+### 3. **RIGHT JOIN (or RIGHT OUTER JOIN)**
+The `RIGHT JOIN` returns all records from the right table and the matching records from the left table. If there’s no match, `NULL` is returned for the left table’s columns.
+
+**Example:**
+
+```sql
+SELECT Students.StudentID, Students.Name, Enrollments.CourseID
+FROM Students
+RIGHT JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;
+```
+
+**Explanation**: Retrieves all enrollments, even if some enrollments do not match a student in the `Students` table (those will have `NULL` for student details).
+
+---
+
+### 4. **FULL JOIN (or FULL OUTER JOIN)**
+The `FULL JOIN` returns all records when there is a match in either left (Students) or right (Enrollments) table. Non-matching rows from both sides will have `NULL` in columns of the non-matching table.
+
+**Example:**
+
+```sql
+SELECT Students.StudentID, Students.Name, Enrollments.CourseID
+FROM Students
+FULL JOIN Enrollments ON Students.StudentID = Enrollments.StudentID;
+```
+
+**Explanation**: Retrieves all students and all enrollments, showing `NULL` for students who haven't enrolled in any course and for courses that have no enrolled students.
+
+---
+
+### 5. **CROSS JOIN**
+The `CROSS JOIN` returns the Cartesian product of both tables, i.e., it returns all possible combinations of rows between the two tables.
+
+**Example:**
+
+```sql
+SELECT Students.Name, Courses.CourseName
+FROM Students
+CROSS JOIN Courses;
+```
+
+**Explanation**: Combines every student with every course, which may result in a large number of records.
+
+---
+
+### 6. **SELF JOIN**
+A `SELF JOIN` is a join where a table is joined with itself. This is useful for hierarchical data.
+
+**Example:**
+
+```sql
+SELECT e.EmployeeID, e.Name, m.Name AS ManagerName
+FROM Employees e
+LEFT JOIN Employees m ON e.ManagerID = m.EmployeeID;
+```
+
+**Explanation**: Retrieves a list of employees with their manager's name by joining the `Employees` table with itself.
+
+---
+
+### Interview Perspective Questions and Answers
+
+---
+
+**Q1: What is the difference between `INNER JOIN` and `OUTER JOIN`?**
+
+**A1**: 
+- **INNER JOIN** returns only the rows with matching values in both tables.
+- **OUTER JOIN** returns all rows from one table and the matching rows from the other. If there's no match, `NULL` is returned for the non-matching table's columns. There are three types of outer joins: **LEFT OUTER JOIN**, **RIGHT OUTER JOIN**, and **FULL OUTER JOIN**.
+
+---
+
+**Q2: What happens when we perform a `CROSS JOIN`?**
+
+**A2**: A `CROSS JOIN` produces the Cartesian product of two tables. It returns every combination of rows between the two tables. This can result in a large number of rows, so it should be used cautiously.
+
+---
+
+**Q3: Can you have multiple `JOIN` clauses in a single query?**
+
+**A3**: Yes, you can perform multiple `JOIN` operations in a single query. Each join operation can join additional tables. It’s important to manage the order of joins and use appropriate conditions to avoid creating Cartesian products unintentionally.
+
+---
+
+**Q4: When would you use a `SELF JOIN`?**
+
+**A4**: A `SELF JOIN` is used when you need to join a table with itself. Common use cases include hierarchical data (e.g., employees and managers), or finding relationships between records in the same table.
+
+---
+
+**Q5: What is a "NULL" in SQL joins, and how does it affect queries?**
+
+**A5**: `NULL` represents the absence of a value. In joins, it appears when there is no matching record in one of the tables. In outer joins (`LEFT JOIN`, `RIGHT JOIN`, `FULL JOIN`), `NULL` is used to fill in missing values for non-matching rows.
+
+---
+
+**Q6: What is the difference between `LEFT JOIN` and `RIGHT JOIN`?**
+
+**A6**: 
+- **LEFT JOIN** returns all rows from the left table, and matching rows from the right table. Non-matching rows from the right table are filled with `NULL`.
+- **RIGHT JOIN** returns all rows from the right table, and matching rows from the left table. Non-matching rows from the left table are filled with `NULL`.
+
+---
+
+![[Pasted image 20241110180756.png]]
+
+
+
+![[Pasted image 20241110181013.png]]
+
+
+
+
+
+
 reffered {
 
 https://www.youtube.com/watch?v=Yh4CrPHVBdE
