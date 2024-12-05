@@ -170,3 +170,25 @@ In this example:
 - Asynchronous operations in generators can be managed by yielding promises and using a helper function to iterate over the generator and resolve each promise sequentially.
 
 
+
+
+
+
+
+### **11. What is a generator function, and how do you use it?**
+
+#### **Answer:**
+
+Generator functions allow you to yield multiple values.
+
+```javascript
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+const generator = generateSequence();
+console.log(generator.next()); // { value: 1, done: false }
+```
+
+

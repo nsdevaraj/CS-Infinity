@@ -7,7 +7,7 @@
 
 [[React code]]
 
-[[Overview]]
+[[React/React JS/Concetps/Overview]]
 
 
 [[Virtual DOM]]
@@ -27,6 +27,7 @@
 [[React State and Lifecycle]]
 [[Props and State Management]]
 [[React hooks]]
+
 [[React Lifecycle and Hooks Integration]]
 [[State Management and Context API]]
 
@@ -52,6 +53,10 @@
 [[Rerender]]
 
 [[debug]]
+
+
+
+[[custom middleware]]
 
 
 hoc

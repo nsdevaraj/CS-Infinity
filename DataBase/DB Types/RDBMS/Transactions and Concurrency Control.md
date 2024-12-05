@@ -64,13 +64,7 @@ Concurrency control ensures that multiple transactions accessing the database si
   - *Answer*: Pessimistic locking locks the resource for the entire transaction duration, preventing others from accessing it. Optimistic locking allows transactions to proceed assuming no conflict, checking for conflicts only before commit.
 
 
-{
 
-to check 
-
-deadlock detection algorithm
-
-}
 
 ---
 
@@ -146,3 +140,59 @@ Transactions are managed in SQL using the commands **BEGIN**, **COMMIT**, and **
   - *Answer*: No, once a transaction is committed, the changes are permanent, and it cannot be rolled back.
 
 ---
+
+
+### Deadlock detection algo
+
+Here’s a **crisp explanation** of the **Deadlock Detection Algorithm** in DBMS:
+
+---
+
+### **What is Deadlock?**
+
+A deadlock occurs when two or more transactions are waiting for each other to release locks, causing a cycle of dependency and halting further progress.
+
+---
+
+### **Deadlock Detection Algorithms**
+
+1. **Wait-for Graph (WFG) Algorithm**
+    
+    - **Purpose**: Detects deadlocks by creating a directed graph of transactions and their waiting dependencies.
+    - **Steps**:
+        1. Represent transactions as nodes.
+        2. Draw an edge from `T1` to `T2` if `T1` is waiting for a resource held by `T2`.
+        3. Check for **cycles** in the graph:
+            - If a cycle exists, a deadlock is present.
+        4. Break the deadlock by aborting one or more transactions.
+    
+    **Example**:
+    
+    - `T1` waits for `T2`, `T2` waits for `T3`, and `T3` waits for `T1` → Deadlock detected.
+
+---
+
+2. **Resource Allocation Graph (RAG)**
+    - Used when multiple types of resources are involved.
+    - Nodes represent **transactions** and **resources**.
+    - Edges indicate:
+        - **Request**: From transaction to resource.
+        - **Assignment**: From resource to transaction.
+    - **Detection**: Look for cycles in the graph.
+
+---
+
+### **Handling Deadlocks**
+
+- **Detection and Resolution**:
+    
+    - Use WFG or RAG periodically to identify deadlocks.
+    - Abort one or more transactions involved in the deadlock.
+- **Prevention/Avoidance**:
+    
+    - Apply strategies like **timeouts**, resource ordering, or wait-die/wound-wait schemes to avoid deadlocks entirely.
+
+---
+
+These algorithms ensure efficient deadlock detection and resolution in a DBMS.
+

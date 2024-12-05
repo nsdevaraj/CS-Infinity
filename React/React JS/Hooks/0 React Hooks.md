@@ -16,7 +16,7 @@
 [[Transition Hooks]]
 [[Random Hooks]]
 
-[[Custom hooks]]
+[[React/React JS/Hooks/Custom hooks]]
 
 
 

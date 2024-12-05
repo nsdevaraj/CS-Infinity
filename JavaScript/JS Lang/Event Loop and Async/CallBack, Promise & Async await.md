@@ -62,11 +62,26 @@ fetchData
     .catch(error => console.error(error));
 ```
 
+
+.then.then => callback ladder... 
+
+
 ---
 
 ### 5. Async/Await
 
 You can define an `async` function that automatically returns a promise. Inside, you can use the `await` keyword to pause execution until the promise resolves.
+
+
+
+### **35. Explain how `async` and `await` work in JavaScript.**
+
+#### **Answer:**
+
+- **`async`**: Declares a function that returns a `Promise`.
+- **`await`**: Pauses the execution of an `async` function until the `Promise` is resolved or rejected.
+
+
 
 #### Example of Async/Await
 

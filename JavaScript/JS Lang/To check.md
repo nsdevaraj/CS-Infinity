@@ -75,3 +75,14 @@ concepts questions
 
 https://www.linkedin.com/posts/akhilesh-bisht-a76981291_50-essential-javascript-questions-activity-7260146408379305986-ZaPn?utm_source=share&utm_medium=member_desktop
 
+
+
+https://www.linkedin.com/posts/activity-7269250967735259136-kmTH?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/feed/update/urn:li:activity:7270360256642183168?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/akansha-khandelwal31_complete-js-cheatsheet-activity-7269183517601742848-0qao?utm_source=share&utm_medium=member_desktop
+
+

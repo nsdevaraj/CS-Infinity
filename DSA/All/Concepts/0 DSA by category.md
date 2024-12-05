@@ -84,12 +84,15 @@ Sliding Window
 Heap
 
 [[Kth small or largest element]]
+[[Merge k sorted lists (k-way merge algorithms)]]
 
 
 Quick select
 
 [[Kth small or largest element]]
 
+Merge Sort
+[[Merge k sorted lists (k-way merge algorithms)]]
 
 
 Traverse Graph (Recursion, DFS, BFS)
