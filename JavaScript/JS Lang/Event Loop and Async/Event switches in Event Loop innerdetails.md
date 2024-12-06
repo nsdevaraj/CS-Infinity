@@ -1,9 +1,10 @@
 
 [@setTimeOut, requestAnimationFrame, TaskQueue](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
 
+{
 
-
-
+to do: lower content in it
+}
 
  **The Main Thread and the Event Loop:**
     - JavaScript runs in a **single-threaded environment**—no chaotic parallelism editing the DOM.
@@ -62,6 +63,8 @@ event loop => continuous loop, detour (split ) when new callback comes..
 
 
 Render steps => detour => style calc (css apply element) + Layout (render tree with item on page and positioned ) + pixel painting  ( not all 3 everytime, based on update, do certain things.. )
+
+slip => SLP
 
 
 ---
@@ -190,6 +193,8 @@ button.addEventListner('click',()=> {
 ```
 
 
+
+
 ---
 
 #### **Microtasks and Tasks**
@@ -231,6 +236,27 @@ for (let i=0;i < 1000;i++){
 This cause 2000 events running, which is not preferred.. 
 
 
+`requestAnimationFrame` (RAF) is a **macrotask** in the event loop.
+
+### Here's when RAF runs in the event loop:
+
+1. **Execution Flow**:
+    
+    - RAF callbacks are queued in the **macrotask** queue (even though it is related to animation and often seems to behave like microtasks in terms of timing).
+    - After the **render phase** (which occurs after the DOM updates), the event loop processes the macrotasks, including `requestAnimationFrame`.
+    - RAF runs **before** the next frame is rendered and is executed **right before the browser repaints**.
+2. **RAF Timing**:
+    
+    - RAF callbacks are typically fired just before the next repaint of the browser's rendering engine. This ensures smooth animations by aligning with the display refresh cycle (usually 60Hz, or about every 16.7ms).
+
+### Order in the Event Loop:
+
+- The **macrotasks** (like `setTimeout`, `setInterval`, etc.) are processed first.
+- **Microtasks** (like Promises) run immediately after the currently executing script and before the next macrotask, but **RAF callbacks** are treated like macrotasks, so they run after all **microtasks** have completed but before the browser repaints.
+
+### Summary:
+
+RAF is a **macrotask** and runs in the event loop after the **microtasks** and before the next **repaint** of the page.
 
 Promise - its microtask
 
@@ -259,7 +285,7 @@ loop()
 
 Task Queue - do one by one.. 
 Animation Callbacks - complete the current set of items ( not take added items created by exec current items.. )
-Microtasks - complete items untill it gets empty ( even complete currently adding item by exec current item )
+Microtasks - complete items until it gets empty ( even complete currently adding item by exec current item )
 
 
 ![[Pasted image 20241202201145.png]]
@@ -371,8 +397,6 @@ By understanding these concepts, you can better manage rendering performance, mi
 
 
 
-
----
 ----
 
 

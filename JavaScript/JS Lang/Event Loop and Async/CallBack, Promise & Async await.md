@@ -1,70 +1,6 @@
 
 
 
-## 2. Callback Functions
-
-### Key Points
-- Callback functions are executed later in the event loop.
-- Overuse of callbacks can lead to "callback hell".
-
-### Code Example
-Example of nested callbacks:
-
-```javascript
-getData((data) => {
-    processData(data, (processed) => {
-        saveData(processed, (result) => {
-            console.log("Data saved:", result);
-        });
-    });
-});
-```
-
-### Explanation
-- This code shows how deeply nested callbacks can lead to less readable code, known as "callback hell".
-
-
-### 3. Callbacks and Callback Hell
-
-While callback functions are common, excessive nesting can lead to **callback hell**, making code hard to read and maintain.
-
-```javascript
-// Callback Hell Example
-getData((data) => {
-    processData(data, (processedData) => {
-        saveData(processedData, (result) => {
-            console.log("Data saved:", result);
-        });
-    });
-});
-```
-
----
-
-### 4. Promises
-
-A **Promise** is a wrapper for a value that is unknown right now but will resolve in the future, such as a response from an API call. 
-
-#### Creating and Using Promises
-
-```javascript
-const fetchData = new Promise((resolve, reject) => {
-    const success = true; // Change to false to simulate an error
-    if (success) {
-        resolve("Data fetched successfully!");
-    } else {
-        reject("Error fetching data.");
-    }
-});
-
-fetchData
-    .then(result => console.log(result))
-    .catch(error => console.error(error));
-```
-
-
-.then.then => callback ladder... 
-
 
 ---
 
@@ -159,7 +95,7 @@ fetchDataAsync();
 
 {
 to check:
-callback then.. 
+
 promise .. reject , resolve.. then ladder with catch and finally
 async, await -> async give promise, await resolve unwrap it .. with try catch.. 
 }

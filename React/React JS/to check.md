@@ -1,5 +1,7 @@
 
 
+how rendering engine works => jsx templating decouples at which phase.. 
+
 prototype of login form
 
 user centric architecture

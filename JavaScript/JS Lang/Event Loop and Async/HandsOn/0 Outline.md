@@ -2,9 +2,9 @@
 [[Callback exec]]
 [[Promise and Microtasks]]
 [[Microtasks and Macrotasks]]
-[[Promises|Promises]]
+[[JS Lang/Event Loop and Async/HandsOn/Promises|Promises]]
 [[chained promises]]
-[[Async await]]
+[[JS Lang/Event Loop and Async/HandsOn/Async await]]
 [[promises and async await]]
 
 

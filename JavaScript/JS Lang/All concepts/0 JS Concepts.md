@@ -30,7 +30,7 @@
 
 [[JS Lang/All concepts/Event Loop|Event Loop]]
 [[CallBack, Promise & Async await]]
-[[Asynchronous Programming]]
+[[Asynchronous JS]]
 [[JS Lang/All concepts/Promise|Promise]]
 
 [[Errors]]

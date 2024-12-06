@@ -457,3 +457,182 @@ Macrotask 2
 ```
 
 
+
+
+
+Here are some **hands-on code questions** with their explanations related to **microtasks**, **macrotasks**, and the **event loop** in JavaScript:
+
+---
+
+### 1. **Question: What will be the output of this code?**
+
+```javascript
+console.log("Start");
+
+setTimeout(() => console.log("Macrotask 1"), 0);
+
+Promise.resolve().then(() => console.log("Microtask 1"));
+
+setTimeout(() => console.log("Macrotask 2"), 0);
+
+Promise.resolve().then(() => console.log("Microtask 2"));
+
+console.log("End");
+```
+
+#### **Answer**:
+
+**Output**:
+
+```
+Start
+End
+Microtask 1
+Microtask 2
+Macrotask 1
+Macrotask 2
+```
+
+- **Explanation**:
+    - **Synchronous code** runs first (`Start`, `End`).
+    - **Microtasks** (`Promise` callbacks) run next, before any **macrotasks**.
+    - **Macrotasks** (`setTimeout`) are executed after microtasks.
+
+---
+
+### 2. **Question: What will be the output of this code?**
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Macrotask 1");
+  Promise.resolve().then(() => console.log("Microtask 1"));
+}, 0);
+
+Promise.resolve().then(() => console.log("Microtask 2"));
+
+console.log("End");
+```
+
+#### **Answer**:
+
+**Output**:
+
+```
+Start
+End
+Microtask 2
+Macrotask 1
+Microtask 1
+```
+
+- **Explanation**:
+    - **Synchronous code** runs first (`Start`, `End`).
+    - The first **microtask** (`Promise`) is executed before the **macrotask**.
+    - The **macrotask** (`setTimeout`) is executed after the microtasks, and it queues another **microtask** inside it.
+
+---
+
+### 3. **Question: What will be the output of this code?**
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Macrotask 1");
+  setTimeout(() => console.log("Macrotask 2"), 0);
+}, 0);
+
+Promise.resolve().then(() => console.log("Microtask 1"));
+
+console.log("End");
+```
+
+#### **Answer**:
+
+**Output**:
+
+```
+Start
+End
+Microtask 1
+Macrotask 1
+Macrotask 2
+```
+
+- **Explanation**:
+    - **Synchronous code** (`Start`, `End`) runs first.
+    - The **microtask** runs before the **macrotask**.
+    - **Macrotask 1** is executed, and then **Macrotask 2** is queued, which is processed after `Macrotask 1`.
+
+---
+
+### 4. **Question: What will be the output of this code?**
+
+```javascript
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Macrotask 1");
+  Promise.resolve().then(() => console.log("Microtask 1"));
+}, 0);
+
+Promise.resolve().then(() => console.log("Microtask 2"))
+  .then(() => console.log("Microtask 3"));
+
+console.log("End");
+```
+
+#### **Answer**:
+
+**Output**:
+
+```
+Start
+End
+Microtask 2
+Microtask 3
+Macrotask 1
+Microtask 1
+```
+
+- **Explanation**:
+    - **Synchronous code** (`Start`, `End`) runs first.
+    - **Microtasks 2 and 3** are processed before **Macrotask 1**.
+    - **Macrotask 1** runs, and then the **microtask 1** inside it is executed last.
+
+---
+
+### 5. **Question: How does the event loop process this code?**
+
+```javascript
+setTimeout(() => console.log("Timeout 1"), 0);
+
+setImmediate(() => console.log("Immediate 1"));
+
+Promise.resolve().then(() => console.log("Promise 1"));
+```
+
+#### **Answer** (Node.js-specific):
+
+**Output**:
+
+```
+Promise 1
+Immediate 1
+Timeout 1
+```
+
+- **Explanation**:
+    - **Promises** are **microtasks** and execute first.
+    - **setImmediate** is a **macrotask** that runs after **microtasks** in Node.js.
+    - **setTimeout** (even with 0 ms delay) is processed after `setImmediate`.
+
+---
+
+### Key Points to Remember:
+
+- **Microtasks** (Promises, `queueMicrotask`, `MutationObserver`) have **higher priority** and execute before **macrotasks** (like `setTimeout`, `setInterval`).
+- The **event loop** processes **all microtasks** before moving to the next macrotask.
+

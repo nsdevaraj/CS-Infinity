@@ -86,3 +86,9 @@ https://www.linkedin.com/feed/update/urn:li:activity:7270360256642183168?utm_sou
 https://www.linkedin.com/posts/akansha-khandelwal31_complete-js-cheatsheet-activity-7269183517601742848-0qao?utm_source=share&utm_medium=member_desktop
 
 
+to check:
+
+JavaScript engine => heap and things.. 
+
+freeze single key's value - don't mutate..
+
