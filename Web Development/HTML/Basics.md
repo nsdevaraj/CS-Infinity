@@ -107,3 +107,11 @@
 
 - **Answer:** Global attributes are applicable to all HTML elements, including `class`, `id`, `style`, `title`, `lang`, and `data-*`.
 
+
+### 34. **How do you set the language of an HTML document?**
+   - **Answer:**
+     ```html
+     <html lang="en">
+     ```
+   - **Explanation:** The `lang` attribute in the `<html>` tag specifies the language of the document.
+- 

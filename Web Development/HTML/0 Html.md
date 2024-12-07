@@ -3,17 +3,25 @@
 
 
 
-[[HTML intro]]
+[[Intro]]
 
-[[HTML Basics]]
+[[Basics]]
 [[Semantic HTML]]
 [[Meta tags]]
 
 
 
-[[Forms and Input Handling]]
+[[Form Elements]]
+[[Forms flow]]
+[[Form validations]]
+
+[[Links and Navigations]]
+
+%% to be continued from here: %%
+
 [[Tables]]
 [[Media Elements]]
+
 
 [[HTML5 features]]
 [[HTML5 Apis]]

@@ -162,14 +162,6 @@ For an HTML-focused interview, it's best to cover both foundational knowledge an
 
 ---
 
-### 34. **How do you set the language of an HTML document?**
-   - **Answer:**
-     ```html
-     <html lang="en">
-     ```
-   - **Explanation:** The `lang` attribute in the `<html>` tag specifies the language of the document.
-
----
 
 ### 35. **What is the purpose of the `alt` attribute in an image tag?**
    - **Answer:** The `alt` attribute provides alternative text for users who can’t view the image (e.g., due to screen readers or slow loading). It’s essential for accessibility.
@@ -203,19 +195,9 @@ For an HTML-focused interview, it's best to cover both foundational knowledge an
 ---
 
 
+%% to be continued from here: %%
 
-### 2. **Forms and Input Elements**
 
-- **Form Tag**: Usage of the `<form>` tag, form action, and method attributes.
-- **Input Types**: Knowledge of different input types (`text`, `password`, `email`, `number`, `date`, `radio`, `checkbox`, `file`, etc.) and their use cases.
-- **Form Validation**: Understanding HTML5 built-in form validation attributes like `required`, `pattern`, `min`, `max`, `maxlength`, etc.
-- **Labels and Accessibility**: Proper use of `<label>` for better accessibility.
-- **Fieldsets and Legends**: How to group and label form elements semantically using `<fieldset>` and `<legend>`.
-
-### 3. **Links and Navigation**
-
-- **Anchor Tag `<a>`**: Creating links with the `href` attribute, relative vs absolute links, using `target="_blank"`, and handling link states (`:visited`, `:hover`, `:active`).
-- **Anchor Tag Accessibility**: Using `aria` attributes and proper structure for accessibility (e.g., `role="link"`).
 
 ### 4. **HTML Tables**
 
