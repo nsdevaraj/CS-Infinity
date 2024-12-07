@@ -35,7 +35,7 @@
 
 [[Errors]]
 
-[[regex]]
+[[JS Lang/All concepts/regex]]
 
 
 

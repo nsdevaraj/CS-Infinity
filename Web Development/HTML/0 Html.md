@@ -4,12 +4,17 @@
 
 
 [[HTML intro]]
+
 [[HTML Basics]]
-[[Forms and Input Handling]]
 [[Semantic HTML]]
+[[Meta tags]]
+
+
+
+[[Forms and Input Handling]]
 [[Tables]]
 [[Media Elements]]
-[[Meta tags]]
+
 [[HTML5 features]]
 [[HTML5 Apis]]
 [[Canvas and SVG]]
@@ -19,12 +24,15 @@
 
 
 
+
 [[ARIA]]
+[[id vs class]]
+[[hypertext open security]]
+[[modes]]
+[[Rendering Engines]]
 
 
-
-
-[[Web Development/HTML/Temp]]
+[[Temp]]
 
 
 

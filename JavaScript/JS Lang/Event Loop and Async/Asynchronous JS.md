@@ -1,5 +1,8 @@
 
 
+JavaScript is a **single-threaded, synchronous language** by default, but it has **asynchronous capabilities** built on top of its synchronous execution model, thanks to its **event loop**.
+
+
 
 1. **Understanding Asynchronous Programming**
    - Asynchronous programming allows code to execute without blocking the main thread, enabling non-blocking I/O operations, which is essential for handling tasks like API requests, file reading, etc.

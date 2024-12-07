@@ -5,6 +5,10 @@ when function is not made as async, but have await keyword inside, what would it
 play with async.. returning promise.. without await, with await but not sync func likewise.. 
 
 
+play things with string and regex handsOn ...
+
+
+
 
 Event Loop:
 

@@ -90,4 +90,89 @@ main();
 **Promise.all** breaks on the first rejection.
 
 
+```js
+
+const fun1 = async () => {}
+
+console.log(fun1())
+//=> Promise { undefined }
+
+```
+
+\
+```jsx
+
+const fun1 = async () => {
+  return 1
+}
+
+console.log(fun1())
+//=> Promise { 1 }
+```
+
+
+
+```js
+const fun1 = async () => {
+  return await 1
+}
+
+console.log(fun1())
+//=> Promise { <pending> }
+
+
+```
+
+
+```js
+
+
+const fun1 = () => {
+  return await 1
+}
+
+console.log(fun1())
+
+// SyntaxError: await is only valid in async functions and the top level bodies of modules
+
+
+```
+
+
+```js
+const timeFunc = () => {
+  
+  for(let i=0;i<10000;i++){}
+  return 1
+}
+
+const fun1 = async () => {
+  return await timeFunc()
+}
+
+console.log(fun1())
+
+// Promise { <pending> }
+
+```
+
+
+```js
+const timeFunc = () => {
+  for (let i = 0; i < 10000; i++) {}
+  return 1;
+};
+
+const fun1 = async () => {
+  return await timeFunc();
+};
+
+fun1().then((result) => console.log(result)); //=> 1
+```
+
+
+
+
+
+
 
