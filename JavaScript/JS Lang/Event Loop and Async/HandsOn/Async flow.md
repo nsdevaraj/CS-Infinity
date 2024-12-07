@@ -1,6 +1,33 @@
 
 
 
+```js
+
+function func1(){  
+  setTimeout(()=>{  
+    console.log(x);  
+    console.log(y);  
+  },300);  
+  var x = 2;  
+  let y = 12;  
+}  
+func1();  
+// oo: 2,12
+
+```
+
+
+```js
+
+(function(){  
+  setTimeout(()=> console.log(1),200);  
+  console.log(2);  
+  setTimeout(()=> console.log(3),0);  
+  console.log(4);  
+})();  
+// oo: 2,4,3,1
+
+```
 
 
 ```js

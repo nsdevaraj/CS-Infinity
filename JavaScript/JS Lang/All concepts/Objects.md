@@ -389,11 +389,147 @@ to create js
 6) object construtor
 
 
+![[Pasted image 20241208030442.png]]
+
+Here are different ways to create objects in JavaScript with crisp examples:
+
+---
+
+|**Method**|**Code Example**|**Description**|
+|---|---|---|
+|**Object Literal**|`javascript<br>const obj = { key: "value" };<br>`|Simplest and most common way to create objects.|
+|**Constructor Function**|`javascript<br>function Person(name) { this.name = name; }<br>const person = new Person("Alice");<br>`|Uses functions to create objects via `new`.|
+|**`Object.create()`**|`javascript<br>const proto = { greet() { console.log("Hello"); } };<br>const obj = Object.create(proto);<br>`|Creates an object with a specified prototype.|
+|**Class Syntax**|`javascript<br>class Person { constructor(name) { this.name = name; } }<br>const person = new Person("Alice");<br>`|Modern syntax for defining objects with methods and properties.|
+|**Factory Function**|`javascript<br>function createPerson(name) { return { name }; }<br>const person = createPerson("Alice");<br>`|Returns objects directly from a function.|
+|**Object Constructor**|`javascript<br>const obj = new Object();<br>obj.key = "value";<br>`|Creates an object using JavaScript's built-in `Object` constructor.|
+|**JSON Parsing**|`javascript<br>const obj = JSON.parse('{"key": "value"}');<br>`|Creates an object by parsing a JSON string.|
+
+---
+
+### Examples in Action
+
+#### **Object Literal**
+
+```javascript
+const obj = { name: "Alice", age: 25 };
+console.log(obj.name); // Alice
+```
+
+#### **Constructor Function**
+
+```javascript
+function Car(make, model) {
+  this.make = make;
+  this.model = model;
+}
+const car = new Car("Toyota", "Camry");
+console.log(car.make); // Toyota
+```
+
+#### **Object.create()**
+
+```javascript
+const proto = { greet: () => console.log("Hello") };
+const obj = Object.create(proto);
+obj.greet(); // Hello
+```
+
+#### **Class Syntax**
+
+```javascript
+class Animal {
+  constructor(type) {
+    this.type = type;
+  }
+}
+const animal = new Animal("Dog");
+console.log(animal.type); // Dog
+```
+
+#### **Factory Function**
+
+```javascript
+function createPerson(name, age) {
+  return { name, age };
+}
+const person = createPerson("Alice", 25);
+console.log(person.age); // 25
+```
+
+
+### check if a property exists in an object 
+
+---
+
+|**Method**|**Syntax**|**Description**|
+|---|---|---|
+|**`in` operator**|`"key" in obj`|Returns `true` if the property exists (even if `undefined`); checks prototype.|
+|**`hasOwnProperty()`**|`obj.hasOwnProperty("key")`|Returns `true` if the property exists directly on the object (not prototype).|
+|**`Object.hasOwn()`**|`Object.hasOwn(obj, "key")`|ES2022 method; checks only direct properties, like `hasOwnProperty`.|
+|**`undefined` check**|`obj.key !== undefined`|Checks if the property is defined, but doesn't differentiate between absent and `undefined`.|
+|**`typeof` check**|`typeof obj.key !== "undefined"`|Similar to the `undefined` check but safer for undeclared variables.|
+
+---
+
+### Examples
+
+#### **Using `in` Operator**
+
+```javascript
+const obj = { name: "Alice" };
+console.log("name" in obj); // true
+console.log("age" in obj);  // false
+```
+
+#### **Using `hasOwnProperty()`**
+
+```javascript
+const obj = { name: "Alice" };
+console.log(obj.hasOwnProperty("name")); // true
+console.log(obj.hasOwnProperty("toString")); // false (inherited from prototype)
+```
+
+#### **Using `Object.hasOwn()`**
+
+```javascript
+const obj = { name: "Alice" };
+console.log(Object.hasOwn(obj, "name")); // true
+console.log(Object.hasOwn(obj, "toString")); // false
+```
+
+#### **Using `undefined` Check**
+
+```javascript
+const obj = { name: "Alice", age: undefined };
+console.log(obj.name !== undefined); // true
+console.log(obj.gender !== undefined); // false
+```
+
+#### **Using `typeof` Check**
+
+```javascript
+const obj = { name: "Alice" };
+console.log(typeof obj.name !== "undefined"); // true
+console.log(typeof obj.gender !== "undefined"); // false
+```
+
+---
+
+### **When to Use**
+
+- Use `in` for both own and inherited properties.
+- Use `hasOwnProperty` or `Object.hasOwn` to check only own properties.
+- Use `undefined` or `typeof` for basic checks but be cautious with properties explicitly set to `undefined`.
+- 
 
 
 object:
 
-keys, entries, values
+keys, entries, values methods
+
+optional chaining
+
 
 
 

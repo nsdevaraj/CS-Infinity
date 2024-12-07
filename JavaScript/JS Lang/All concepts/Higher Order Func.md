@@ -1,8 +1,5 @@
 
 
-## Higher Order Func
-
-
 ### Higher-Order Functions
 
 A **higher-order function** is a function that either takes one or more functions as arguments, returns a function, or both. Higher-order functions are powerful tools in functional programming and are commonly used for tasks like callbacks, function composition, and event handling.

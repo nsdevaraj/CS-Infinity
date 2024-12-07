@@ -33,16 +33,25 @@
 [[Global vs Local]]
 [[Scope]]
 [[Hoist]]
-[[Closure Scope]]
+[[Closure]]
+
 
 
 
 [[Function]]
+[[Higher Order Func]]
+[[Anonymous func]]
+
+[[Methods to control this]]
+[[pure vs impure func]]
+
+
 [[Prototype]]
 [[JS Lang/All concepts/Objects|Objects]]
 
 [[Execution Context]]
-[[JS Lang/Concepts/This|This]]
+[[This|This]]
+
 
 
 [[CallBack, Promise & Async await]]
@@ -109,6 +118,8 @@ https://www.interviewbit.com/javascript-interview-questions/#output-of-following
 https://youtu.be/tbqVqP5ilzQ?si=DC9wK7_VTR6149UI
 
 
+https://www.youtube.com/watch?v=Mv3m7YaZ4lA
+
 
 }
 
@@ -145,14 +156,8 @@ find out element in view port or not ?
 most asked js interview
 
 
-Func 
-closure 
 currying
-hoisting
-scope
-callback
 arrow func
-lexical scoping
 output based quesiton
 partial application
 polyfills
@@ -196,3 +201,14 @@ strict mode
 
 prototye and inheritance
 
+
+
+heap and stack memory in depth
+
+js engine deep - what are components ..  
+
+
+[[to check]]
+[[JS Lang/To check|To check]]
+
+[[0 To continue]]

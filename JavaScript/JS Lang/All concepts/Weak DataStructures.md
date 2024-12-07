@@ -182,3 +182,7 @@ In this example, the objects in the **WeakQueue** can be garbage collected when 
 ---
 
 
+{
+
+deepcompare or shallow compare for objkeys present or not
+}

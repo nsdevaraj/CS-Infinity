@@ -3,6 +3,7 @@
 
 * refers to the object that is prototye of
 
+* current execution context
 
 
 ## This  in ES6
@@ -104,4 +105,12 @@ ES6 significantly improves the way `this` is handled in JavaScript, making code 
 
 
 // this => global in arrow func.. 
+
+{
+
+this behaviour depth in arrow and non arrow func
+
+}
+
+
 

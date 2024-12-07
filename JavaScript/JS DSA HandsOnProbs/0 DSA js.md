@@ -19,7 +19,7 @@
 
 [[Recursion]]
 
-[[JS HandsOnProbs/generators|generators]]
+[[JS DSA HandsOnProbs/generators|generators]]
 
 
 [[memoization]]

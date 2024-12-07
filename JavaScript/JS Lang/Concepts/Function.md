@@ -54,6 +54,9 @@ const evens = numbers.filter(num => num % 2 === 0); // [2, 4]
 - Explain and demonstrate the use of `.map()`, `.filter()`, and `.reduce()`.
 - Write a higher-order function that takes a function and a number, applies the function to the number, and returns the result.
 
+![[Pasted image 20241208024959.png]]
+
+
 ### 4. **Closures and Scoping**
 
 Closures are formed when a function retains access to its lexical scope, even after the outer function finishes execution. This is often used to maintain state, create private variables, or remember variable values over time.
@@ -338,70 +341,6 @@ Understanding the distinctions between defining, calling, and constructing funct
 
 
 
-## call , apply and bind
-
-
-
-Certainly! Here’s a concise explanation of `call`, `apply`, `bind`, and their roles in JavaScript, including their purposes and differences.
-
-### 1. `Function.call`
-- **Purpose**: Invokes a function with a specified `this` context and allows you to pass individual arguments.
-- **Syntax**: `func.call(thisArg, arg1, arg2, ...)`
-- **Example**:
-  ```javascript
-  function greet(greeting) {
-      console.log(`${greeting}, ${this.name}`);
-  }
-  
-  const user = { name: 'Alice' };
-  greet.call(user, 'Hello'); // Outputs: Hello, Alice
-  ```
-
-### 2. `Function.apply`
-- **Purpose**: Similar to `call`, but it accepts an array (or array-like object) of arguments.
-- **Syntax**: `func.apply(thisArg, [argsArray])`
-- **Example**:
-  ```javascript
-  function greet(greeting) {
-      console.log(`${greeting}, ${this.name}`);
-  }
-  
-  const user = { name: 'Alice' };
-  greet.apply(user, ['Hi']); // Outputs: Hi, Alice
-  ```
-
-### 3. `Function.bind`
-- **Purpose**: Returns a new function with a specified `this` context and allows you to pre-set some arguments. It does not invoke the function immediately.
-- **Syntax**: `const newFunc = func.bind(thisArg, arg1, arg2, ...)`
-- **Example**:
-  ```javascript
-  function greet(greeting) {
-      console.log(`${greeting}, ${this.name}`);
-  }
-  
-  const user = { name: 'Alice' };
-  const greetUser = greet.bind(user);
-  greetUser('Hey'); // Outputs: Hey, Alice
-  ```
-
-### Key Differences
-
-| Feature                  | `call`                             | `apply`                            | `bind`                              |
-|--------------------------|------------------------------------|-----------------------------------|-------------------------------------|
-| **Invocation**           | Invokes the function immediately    | Invokes the function immediately   | Returns a new function; does not invoke immediately |
-| **Argument Passing**     | Individual arguments                | Single array of arguments          | Pre-binds arguments for later use   |
-| **Return Value**         | Returns the result of the invoked function | Returns the result of the invoked function | Returns a new function               |
-
-### Use Cases
-- **`call`**: Use when you want to invoke a function immediately with a specific `this` context and known arguments.
-- **`apply`**: Use when you want to invoke a function immediately but have the arguments in an array format.
-- **`bind`**: Use when you want to create a new function that can be called later with a specific `this` context and pre-defined arguments.
-
-### Summary
-- `call`, `apply`, and `bind` are powerful methods for controlling the `this` context in JavaScript functions.
-- They help manage function invocation and argument passing in a flexible way, facilitating functional programming patterns and event handling.
-
-
 
 
 
@@ -537,7 +476,7 @@ An **IIFE** is a function that is defined and immediately executed. It’s usefu
 **Syntax**:
 
 ```javascript
-(function() {
+(()=> {
   console.log("IIFE executed immediately!");
 })(); // Output: IIFE executed immediately!
 
@@ -559,320 +498,32 @@ An **IIFE** is a function that is defined and immediately executed. It’s usefu
 
 ---
 
+Defining Func:
 
+Here’s a concise table comparing different ways to define functions in JavaScript:
 
-### Funciton scopes:
-
-Here’s **Section 2**, covering:
-
-- Scopes
-- Closures
-- Lexical Scope
-- Block Scope using `let` and `const`
-
-Each concept includes explanations and examples.
-
----
-
-### 1. Scopes
-
-**Definition**:
-In JavaScript, **Scope** determines the accessibility of variables. There are mainly three types of scopes:
-
-- **Global Scope**: Variables declared outside any function have global scope and are accessible anywhere.
-- **Function Scope**: Variables declared within a function are scoped to that function.
-- **Block Scope**: Variables declared within a block (`{}`) using `let` or `const` are block-scoped and cannot be accessed outside the block.
-
-**Example**:
-
-```javascript
-// Global scope
-let globalVar = "I am global";
-
-function checkScope() {
-  // Function scope
-  let funcVar = "I am in function scope";
-  console.log(globalVar);  // Accessible: Output -> I am global
-  console.log(funcVar);    // Accessible: Output -> I am in function scope
-}
-checkScope();
-console.log(globalVar);     // Accessible: Output -> I am global
-// console.log(funcVar);    // Error: funcVar is not defined
-```
+|**Function Type**|**Syntax**|**Key Characteristics**|**Example**|
+|---|---|---|---|
+|**Function Declaration**|`function funcName() {}`|- Hoisted (usable before declaration).- `this` depends on how it’s called.|`javascript<br>function greet() { console.log("Hello"); }<br>`|
+|**Function Expression**|`const funcName = function() {}`|- Not hoisted (usable only after definition).- Allows anonymous or named functions.|`javascript<br>const greet = function() { console.log("Hello"); };<br>`|
+|**Arrow Function**|`const funcName = () => {}`|- Lexical `this` (inherits from enclosing scope).- Cannot be used as constructors.- Compact syntax.|`javascript<br>const greet = () => console.log("Hello");<br>`|
+|**Method Definition**|`obj = { funcName() {} }`|- Short syntax for defining object methods.- `this` refers to the object it’s called on.|`javascript<br>const obj = { greet() { console.log("Hello"); } };<br>`|
+|**Constructor Function**|`function ClassName() {}`|- Used to create objects via `new`.- `this` refers to the newly created object.|`javascript<br>function Person(name) { this.name = name; }<br>`|
+|**Class Method**|`class ClassName { method() {} }`|- Inside a class, uses `this` for the instance.- Supports inheritance via `extends`.|`javascript<br>class Person { greet() { console.log("Hello"); } }<br>`|
 
 ---
 
-### 2. Closures
+### Key Notes:
 
-**Definition**:
-A **Closure** is a function that remembers its outer scope even after the outer function has finished executing. Closures are powerful for creating private variables and encapsulating state.
+- **Function Declarations** are hoisted, but **Function Expressions** and **Arrow Functions** are not.
+- **Arrow Functions** do not have their own `this`, arguments, or prototype.
+- **Methods** and **Class Methods** are concise and work within objects or classes.
+- **Constructor Functions** and **Classes** are used for creating objects with shared prototypes.
 
-**Example**:
-
-```javascript
-function outerFunction() {
-  let count = 0;
-  // innerFunction is a closure that has access to `count`
-  function innerFunction() {
-    count++;
-    console.log("Count:", count);
-  }
-  return innerFunction;
-}
-
-const counter = outerFunction();
-counter(); // Output: Count: 1
-counter(); // Output: Count: 2
-```
-
-In this example, `innerFunction` has access to `count`, even though `outerFunction` has completed execution.
 
 ---
 
-### 3. Lexical Scope
-
-**Definition**:
-**Lexical Scope** (also known as Static Scope) means that the scope of a variable is determined by its position in the source code. Functions in JavaScript have access to variables defined in their outer lexical environment.
-
-**Example**:
-
-```javascript
-function outer() {
-  let outerVar = "I'm from outer";
-
-  function inner() {
-    console.log(outerVar); // Accesses outerVar due to lexical scoping
-  }
-
-  inner(); // Output: I'm from outer
-}
-outer();
-```
-
-Here, `inner` has access to `outerVar` because of lexical scoping: the `inner` function can "see" the variables defined in the `outer` function.
-
----
-
-### 4. Block Scope using `let` and `const`
-
-**Definition**:
-JavaScript introduced block-scoping with the `let` and `const` keywords, where variables declared within a block `{}` are only accessible inside that block.
-
-**Example**:
-
-```javascript
-if (true) {
-  let blockVar = "I'm block scoped!";
-  console.log(blockVar); // Output: I'm block scoped!
-}
-// console.log(blockVar); // Error: blockVar is not defined
-
-// Using `const` for constants with block scope
-for (let i = 0; i < 3; i++) {
-  const constantVal = i * 2;
-  console.log(constantVal); // Outputs: 0, 2, 4
-}
-// console.log(i);          // Error: i is not defined
-```
-
-The variables `blockVar` and `i` are accessible only within their respective blocks due to block scoping.
-
----
-
-This concludes Section 2. Let me know when you’re ready for **Section 3**, which will cover **Asynchronous JavaScript** concepts.
-
-Here’s **Section 2**, covering:
-
-- Scopes
-- Closures
-- Lexical Scope
-- Block Scope using `let` and `const`
-
-Each concept includes explanations and examples.
-
----
-
-### 1. Scopes
-
-**Definition**:
-In JavaScript, **Scope** determines the accessibility of variables. There are mainly three types of scopes:
-
-- **Global Scope**: Variables declared outside any function have global scope and are accessible anywhere.
-- **Function Scope**: Variables declared within a function are scoped to that function.
-- **Block Scope**: Variables declared within a block (`{}`) using `let` or `const` are block-scoped and cannot be accessed outside the block.
-
-**Example**:
-
-```javascript
-// Global scope
-let globalVar = "I am global";
-
-function checkScope() {
-  // Function scope
-  let funcVar = "I am in function scope";
-  console.log(globalVar);  // Accessible: Output -> I am global
-  console.log(funcVar);    // Accessible: Output -> I am in function scope
-}
-checkScope();
-console.log(globalVar);     // Accessible: Output -> I am global
-// console.log(funcVar);    // Error: funcVar is not defined
-```
-
-
-
-```js
-
-var num1 = 20, num2 = 3, name = 'Roadside Coder'
-
-function multiple(){
-    // takes from globals
-    return num1*num2
-}
-
-console.log(multiple()) //=> 60
-
-function getScore(){
-    var num1 = 10, num2 = 5
-
-    function add(params) {
-        // name takes from global
-        // num1 and num2 takes from local
-        return `${name} scored ${num1+num2}`
-    }
-    return add()
-}
-
-console.log(getScore())//=> Roadside Coder scored 15
-
-
-```
-
----
-
-### 2. Closures
-
-**Definition**:
-A **Closure** is a function that remembers its outer scope even after the outer function has finished executing. Closures are powerful for creating private variables and encapsulating state.
-
-**Example**:
-
-```javascript
-function outerFunction() {
-  let count = 0;
-  // innerFunction is a closure that has access to `count`
-  function innerFunction() {
-    count++;
-    console.log("Count:", count);
-  }
-  return innerFunction;
-}
-
-const counter = outerFunction();
-counter(); // Output: Count: 1
-counter(); // Output: Count: 2
-```
-
-In this example, `innerFunction` has access to `count`, even though `outerFunction` has completed execution.
-
----
-
-### 3. Lexical Scope
-
-**Definition**:
-**Lexical Scope** (also known as Static Scope) means that the scope of a variable is determined by its position in the source code. Functions in JavaScript have access to variables defined in their outer lexical environment.
-
-**Example**:
-
-```javascript
-function outer() {
-  let outerVar = "I'm from outer";
-
-  function inner() {
-    console.log(outerVar); // Accesses outerVar due to lexical scoping
-  }
-
-  inner(); // Output: I'm from outer
-}
-outer();
-```
-
-Here, `inner` has access to `outerVar` because of lexical scoping: the `inner` function can "see" the variables defined in the `outer` function.
-
----
-
-### 4. Block Scope using `let` and `const`
-
-**Definition**:
-JavaScript introduced block-scoping with the `let` and `const` keywords, where variables declared within a block `{}` are only accessible inside that block.
-
-**Example**:
-
-```javascript
-if (true) {
-  let blockVar = "I'm block scoped!";
-  console.log(blockVar); // Output: I'm block scoped!
-}
-// console.log(blockVar); // Error: blockVar is not defined
-
-// Using `const` for constants with block scope
-for (let i = 0; i < 3; i++) {
-  const constantVal = i * 2;
-  console.log(constantVal); // Outputs: 0, 2, 4
-}
-// console.log(i);          // Error: i is not defined
-```
-
-The variables `blockVar` and `i` are accessible only within their respective blocks due to block scoping.
-
----
-
-This concludes Section 2. Let me know when you’re ready for **Section 3**, which will cover **Asynchronous JavaScript** concepts.
-
-
-```js
-
-
-
-
-// both runs on callStack itself, so no difference
-for (var i=0;i<3;i++){
-    console.log('var', i)
-}
-for (let i=0;i<3;i++){
-    console.log('let',i)
-}
-
-// var is func scope, so value increase will reflect and have shadow
-for (var i=0;i<3;i++){
-    setTimeout(()=>{
-        console.log('setVar',i)
-    }, 100)
-}
-
-// let is block scope, so value don't have shadow
-for (let i=0;i<3;i++){
-    setTimeout(()=>{
-        console.log('setLet',i)
-    }, 100)
-}
-
-/*
-var 0
-var 1
-var 2
-let 0
-let 1
-let 2
-setVar 3
-setVar 3
-setVar 3
-setLet 0
-setLet 1
-setLet 2
-*/
-
-
-```
+![[Pasted image 20241208024240.png]]
 
 
 
