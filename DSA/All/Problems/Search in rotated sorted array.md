@@ -38,6 +38,8 @@ target = 3
 
 ### Approach 1: Modified Binary Search
 
+`determine which side is sorted by mid with left / right `
+
 The most efficient way to solve this problem is to use a modified binary search. Here’s how it works:
 
 1. **Initialization**: Start with two pointers, `left` at the beginning (0) and `right` at the end (length of array - 1).
@@ -90,6 +92,47 @@ def search(nums: List[int], target: int) -> int:
     return -1  # Target not found
 ```
 
+
+handled duplicate cases:
+
+```python
+
+def searchInRotatedSortedAry(items:List[int], search_item: int):
+    (start, end) = (0, len(items)-1)
+    while(start <=end):
+        mid = start + ((end - start) // 2)
+        mid_element = items[mid]
+
+        ## print(f"Start: {start}, End: {end}, Mid: {mid}, Mid Element: {mid_element}")
+
+
+        if(mid_element == search_item):
+            return mid
+        # [1, 0, 1, 1, 1], 0
+        # # Handle duplicates by narrowing search window
+        elif items[start] == items[mid] == items[end]:
+            start += 1
+            end -= 1
+        elif(items[start] <= mid_element):
+            # left sorted
+            if(items[start] <= search_item <= mid_element):
+                # element in left sorted
+                end = mid - 1
+            else:
+                # element in right unsorted
+                start = mid + 1
+        else:
+            # items[end] >= mid_element # right sorted
+
+            if(mid_element <= search_item <= items[end]):
+                # element in right sorted
+                start = mid + 1
+            else:
+                end = mid - 1
+        ## print(f"Updated Start: {start}, Updated End: {end}")
+
+    return -1
+```
 
 to check {
 
@@ -206,4 +249,75 @@ def test_search_function(search_func: Callable[[List[int], int], int]):
 
 
 Similar: [[Find min in rotated sorted array]]
+
+### large testcase handling
+
+Here's the equivalent Python code with the provided test case:
+
+```python
+class Solution:
+    def search(self, nums, target):
+        left, right = 0, len(nums) - 1
+
+        # Find the pivot point
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] > nums[right]:
+                left = mid + 1
+            else:
+                right = mid
+
+        pivot = left
+        left, right = 0, len(nums) - 1
+
+        # Binary search depending on the pivot and target
+        if target >= nums[pivot] and target <= nums[right]:
+            left = pivot
+        else:
+            right = pivot - 1
+
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+
+        return -1
+
+
+# Create the test case
+nums = [500000 + i for i in range(500000)]  # nums = [500000, ..., 999999]
+nums += [i for i in range(0, 500000)]  # nums = [0, 1, ..., 499999]
+target = 750000
+
+# Solve using the solution class
+solution = Solution()
+index = solution.search(nums, target)
+
+print("Target found at index:", index)
+```
+
+### Explanation of the Python Code:
+
+1. **Pivot Identification**:
+    
+    - The first while loop identifies the rotation's pivot (where the array changes from descending to ascending).
+2. **Search Logic**:
+    
+    - Based on the target's range relative to the pivot, we select the binary search interval.
+3. **Test Case**:
+    
+    - `nums` is set up as `[500000, 500001, ..., 999999] + [0, 1, 2, ..., 499999]`.
+    - `target = 750000`.
+4. **Execution**:
+    
+    - The `solution.search(nums, target)` runs the search logic and outputs the index of `750000` in the rotated array.
+
+referred : https://github.com/LeetCode-Feedback/LeetCode-Feedback/issues/25668
+
+
+
 
