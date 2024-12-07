@@ -64,7 +64,6 @@ Here’s a crisp comparison of `null` and `undefined` in JavaScript from an **in
 
 is undefined a value ?
 
-
 Yes, **`undefined` is a value** in JavaScript, but it has specific implications depending on the context. Let’s break it down:
 
 ---

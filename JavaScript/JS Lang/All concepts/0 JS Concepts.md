@@ -1,6 +1,8 @@
 [JS Concepts @Fireship](https://www.youtube.com/watch?v=lkIFF4maKMU)
 
 
+@[concepts](https://www.linkedin.com/posts/harshit-chopra7_javascript-frontenddevelopment-webdevelopment-activity-7165560122633535488-bO8t)
+
 @[fundamental](https://www.linkedin.com/posts/sahil-chopra-56a63b191_javascript-questions-activity-7163748698454212608-NQ5H)
 
 
@@ -12,14 +14,28 @@
 [[Scripting Characteristics]]
 
 [[Syntax & Variables]]
+
+
 [[Datatypes]]
+[[Type Conversion]]
+[[Type Coercion]]
+[[Type coercion, conversion, equality]]
+[[null vs undefined]]
+
+
+
+
 [[Built-in Data Structures]]
 [[Garbage Collection]]
-[[Type coercion & conversion]]
 [[Control Structures]]
 
-[[Scope & Hoisting]]
+
+[[Global vs Local]]
+[[Scope]]
+[[Hoist]]
 [[Closure Scope]]
+
+
 
 [[Function]]
 [[Prototype]]
@@ -28,7 +44,7 @@
 [[Execution Context]]
 [[JS Lang/Concepts/This|This]]
 
-[[JS Lang/All concepts/Event Loop|Event Loop]]
+
 [[CallBack, Promise & Async await]]
 [[Asynchronous JS]]
 [[JS Lang/All concepts/Promise|Promise]]
@@ -116,8 +132,6 @@ debounce and throttle
 [[Event deligation and event bubbling]]
 
 [[Memory leaks]]
-
-[[null vs undefined]]
 
 
 
