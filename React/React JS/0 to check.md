@@ -45,3 +45,9 @@ https://www.linkedin.com/posts/mohammed-wajid-69639a254_front-end-developer-inte
 
 https://www.linkedin.com/posts/adhamengineer_reactjs-interview-questions-activity-7266786462338011138-N6my?utm_source=share&utm_medium=member_desktop
 
+
+
+
+react vs next
+
+https://www.linkedin.com/posts/expert-fullstack-webdeveloper_react-js-and-next-js-activity-7269659271577948160-UIv4?utm_source=share&utm_medium=member_desktop

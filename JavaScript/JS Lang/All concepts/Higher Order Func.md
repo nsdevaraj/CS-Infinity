@@ -86,4 +86,3 @@ In this example:
 
 Higher-order functions are a foundational concept in JavaScript, enabling functional programming techniques and promoting code reusability. Destructuring simplifies extracting values from objects and arrays, leading to cleaner and more readable code. Combining these concepts can lead to powerful and expressive JavaScript patterns.
 
-

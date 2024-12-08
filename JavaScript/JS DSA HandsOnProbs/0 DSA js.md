@@ -1,3 +1,4 @@
+[[basics things]]
 
 
 [[Simple DSA]]

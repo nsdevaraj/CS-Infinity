@@ -2,7 +2,6 @@
 
 
 @[concepts](https://www.linkedin.com/posts/harshit-chopra7_javascript-frontenddevelopment-webdevelopment-activity-7165560122633535488-bO8t)
-
 @[fundamental](https://www.linkedin.com/posts/sahil-chopra-56a63b191_javascript-questions-activity-7163748698454212608-NQ5H)
 
 
@@ -36,21 +35,26 @@
 [[Closure]]
 
 
-
+[[Execution Context]]
+[[This|This]]
 
 [[Function]]
 [[Higher Order Func]]
 [[Anonymous func]]
-
-[[Methods to control this]]
 [[pure vs impure func]]
+
+[[Array looping]]
+[[Array HOC and  Functions]]
+
 
 
 [[Prototype]]
 [[JS Lang/All concepts/Objects|Objects]]
 
-[[Execution Context]]
-[[This|This]]
+[[Methods to control this]]
+
+
+
 
 
 
@@ -61,9 +65,6 @@
 [[Errors]]
 
 [[JS Lang/All concepts/regex]]
-
-
-
 
 
 
@@ -144,7 +145,9 @@ debounce and throttle
 
 [[Memory leaks]]
 
+[[dom manipulation codes]]
 
+[[concept codes]]
 
 oops 
 
@@ -172,6 +175,8 @@ transfer data to iframe
 to read : vannila js
 
 
+popular es6 things introduced...
+
 
 why ts not js 
 
@@ -193,7 +198,7 @@ to do :
 classes
 
 
-strict mode
+strict vs non-strict mode
 
 
 - Explain the difference between callbacks, Promises, and `async`/`await`.
@@ -212,3 +217,9 @@ js engine deep - what are components ..
 [[JS Lang/To check|To check]]
 
 [[0 To continue]]
+
+
+
+
+
+
