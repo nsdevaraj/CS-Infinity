@@ -15,6 +15,10 @@
 
 [[Tapping Rain Water]]
 
+[[Valid Parentheses]]
+
+[[Validate IP Address]]
+
 
 ---
 
@@ -169,42 +173,7 @@ def has_cycle(head):
 
 ---
 
-### 5. **Find Missing Number**
-
-**Problem:** Given an array of integers from 1 to n with one number missing, find the missing number.
-
-```python
-def find_missing_number(nums):
-    n = len(nums) + 1
-    total_sum = n * (n + 1) // 2
-    array_sum = sum(nums)
-    return total_sum - array_sum
-```
-
 ---
-
-### 6. **Valid Parentheses**
-
-**Problem:** Given a string of parentheses, check if it’s valid.
-
-```python
-def is_valid_parentheses(s):
-    stack = []
-    for char in s:
-        if char in '({[':
-            stack.append(char)
-        else:
-            if not stack:
-                return False
-            top = stack.pop()
-            if top == '(' and char != ')':
-                return False
-            if top == '{' and char != '}':
-                return False
-            if top == '[' and char != ']':
-                return False
-    return not stack
-```
 
 ---
 
@@ -364,27 +333,6 @@ def longest_palindromic_substring(s):
         if len(even_palindrome) > len(longest):
             longest = even_palindrome
     return longest
-```
-
----
-
-### 5. **Find All Valid IP Addresses**
-
-**Problem:** Given a string containing only digits, restore it by returning all possible valid IP address combinations.
-
-```python
-def restore_ip_addresses(s):
-    def is_valid(segment):
-        return 0 <= int(segment) <= 255 and (segment[0] != '0' or len(segment) == 1)
-
-    result = []
-    for i in range(1, len(s)):
-        for j in range(i + 1, len(s)):
-            for k in range(j + 1, len(s)):
-                part1, part2, part3, part4 = s[:i], s[i:j], s[j:k], s[k:]
-                if is_valid(part1) and is_valid(part2) and is_valid(part3) and is_valid(part4):
-                    result.append(f"{part1}.{part2}.{part3}.{part4}")
-    return result
 ```
 
 ---

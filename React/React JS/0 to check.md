@@ -51,3 +51,13 @@ https://www.linkedin.com/posts/adhamengineer_reactjs-interview-questions-activit
 react vs next
 
 https://www.linkedin.com/posts/expert-fullstack-webdeveloper_react-js-and-next-js-activity-7269659271577948160-UIv4?utm_source=share&utm_medium=member_desktop
+
+
+react design patterns
+
+https://www.linkedin.com/posts/uzmabegumshaik_react-with-design-patterns-activity-7269654248458493952-7MgL?utm_source=share&utm_medium=member_desktop
+
+
+react fundamentals
+https://www.linkedin.com/posts/polinaidu-podilapu9391_react-activity-7270489578065530880--4mT?utm_source=share&utm_medium=member_desktop
+
