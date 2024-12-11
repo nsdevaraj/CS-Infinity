@@ -140,3 +140,8 @@ useCallback - memoize entire func ( not only return value)
   
 Creating a func in parent and passing to children as callback, when parent are-renderer, child passing func recreated and which makes rerenders os child, which prevented by this...  
   
+
+
+[[React JS/Hooks/to check|to check]]
+
+
