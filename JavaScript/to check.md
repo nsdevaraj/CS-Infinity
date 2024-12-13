@@ -116,3 +116,9 @@ https://www.linkedin.com/posts/devkantbhagat_complete-javascript-cheat-sheet-ugc
 https://www.freecodecamp.org/news/synchronous-vs-asynchronous-in-javascript/
 
 
+https://www.linkedin.com/posts/mohammed-wajid-69639a254_beginners-javascript-cheat-sheet-ugcPost-7272979901413007360-PIXJ?utm_source=share&utm_medium=member_desktop
+
+
+
+https://www.linkedin.com/posts/danishshabbir_javascript-projects-ideas-activity-7272520562093043712-Vg5_?utm_source=share&utm_medium=member_desktop
+

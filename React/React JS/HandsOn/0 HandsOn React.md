@@ -15,6 +15,7 @@
 
 [[Stop Watch]]
 
+[[Sidebar , Accodian , Embed maps]]
 
 
 
