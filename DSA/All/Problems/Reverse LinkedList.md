@@ -211,6 +211,29 @@ function reverseLinkedListArray(head) {
 Choose the method that best fits your needs based on constraints like memory usage and code clarity!
 
 
+
+**Problem:** Reverse a singly linked list.
+
+```python
+class ListNode:
+    def __init__(self, value=0, next=None):
+        self.value = value
+        self.next = next
+
+def reverse_linked_list(head):
+    prev = None
+    while head:
+        next_node = head.next
+        head.next = prev
+        prev = head
+        head = next_node
+    return prev
+```
+
+
+---
+
+
 #### Tests
 
 ```ts

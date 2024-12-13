@@ -19,6 +19,11 @@
 
 [[Validate IP Address]]
 
+[[Two Sum or 2sum]]
+
+[[Reverse LinkedList]]
+
+[[Median - 2 sorted arrays]]
 
 ---
 
@@ -96,84 +101,6 @@ Here are some popular Data Structures and Algorithms (DSA) interview questions o
 
 ---
 
-### 1. **Two Sum**
-
-**Problem:** Given an array of integers and a target sum, find two numbers such that they add up to the target sum. Return their indices.
-
-```python
-def two_sum(nums, target):
-    hashmap = {}
-    for i, num in enumerate(nums):
-        complement = target - num
-        if complement in hashmap:
-            return [hashmap[complement], i]
-        hashmap[num] = i
-    return []
-```
-
----
-
-### 2. **Reverse a Linked List**
-
-**Problem:** Reverse a singly linked list.
-
-```python
-class ListNode:
-    def __init__(self, value=0, next=None):
-        self.value = value
-        self.next = next
-
-def reverse_linked_list(head):
-    prev = None
-    while head:
-        next_node = head.next
-        head.next = prev
-        prev = head
-        head = next_node
-    return prev
-```
-
----
-
-### 3. **Merge Two Sorted Arrays**
-
-**Problem:** Merge two sorted arrays into one sorted array.
-
-```python
-def merge_sorted_arrays(nums1, nums2):
-    i, j, result = 0, 0, []
-    while i < len(nums1) and j < len(nums2):
-        if nums1[i] < nums2[j]:
-            result.append(nums1[i])
-            i += 1
-        else:
-            result.append(nums2[j])
-            j += 1
-    result.extend(nums1[i:])
-    result.extend(nums2[j:])
-    return result
-```
-
----
-
-### 4. **Detect Cycle in a Linked List**
-
-**Problem:** Determine if a linked list has a cycle.
-
-```python
-def has_cycle(head):
-    slow, fast = head, head
-    while fast and fast.next:
-        slow = slow.next
-        fast = fast.next.next
-        if slow == fast:
-            return True
-    return False
-```
-
----
-
----
 
 ---
 
@@ -337,22 +264,6 @@ def longest_palindromic_substring(s):
 
 ---
 
-### 6. **Median of Two Sorted Arrays**
-
-**Problem:** Given two sorted arrays, find the median of the two sorted arrays.
-
-```python
-def find_median_sorted_arrays(nums1, nums2):
-    merged = sorted(nums1 + nums2)
-    n = len(merged)
-    if n % 2 == 1:
-        return merged[n // 2]
-    else:
-        return (merged[n // 2 - 1] + merged[n // 2]) / 2
-```
-
----
-
 ### 7. **Permutations**
 
 **Problem:** Given a collection of distinct integers, return all possible permutations.
@@ -454,32 +365,6 @@ These are medium-level problems that are commonly asked in Walmart interviews. T
 Here are some **hard** Data Structures and Algorithms (DSA) interview questions often asked at companies like Walmart, along with their concise Python solutions:
 
 ---
-
-### 1. **Trapping Rain Water**
-
-**Problem:** Given an array representing the height of walls, compute how much water can be trapped after raining.
-
-```python
-def trap(height):
-    if not height:
-        return 0
-    
-    n = len(height)
-    left_max, right_max = [0] * n, [0] * n
-    left_max[0], right_max[n - 1] = height[0], height[n - 1]
-    
-    for i in range(1, n):
-        left_max[i] = max(left_max[i - 1], height[i])
-    
-    for i in range(n - 2, -1, -1):
-        right_max[i] = max(right_max[i + 1], height[i])
-    
-    water = 0
-    for i in range(n):
-        water += max(0, min(left_max[i], right_max[i]) - height[i])
-    
-    return water
-```
 
 ---
 

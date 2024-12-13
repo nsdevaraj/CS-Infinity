@@ -74,6 +74,22 @@ function mergeTwoSortedLists(l1, l2) {
 
 
 ```python
+def merge_sorted_arrays(nums1, nums2):
+    i, j, result = 0, 0, []
+    while i < len(nums1) and j < len(nums2):
+        if nums1[i] < nums2[j]:
+            result.append(nums1[i])
+            i += 1
+        else:
+            result.append(nums2[j])
+            j += 1
+    result.extend(nums1[i:])
+    result.extend(nums2[j:])
+    return result
+```
+
+
+```python
 
 # Approach: Two-pointer merge
 # 1. Use two pointers, one for each list.

@@ -31,6 +31,12 @@ String / Regex
 [[Validate IP Address]]
 
 
+Logic:
+
+[[Merge two sorted list or array]]
+[[Median - 2 sorted arrays]]
+
+
 
 Solving:
 
@@ -80,6 +86,10 @@ Two pointers
 [[Three Sum or 3Sum]]
 [[Container with most water problem]]
 [[Tapping Rain Water]]
+
+
+[[LinkedList Cycle]]
+
 
 
 
@@ -168,3 +178,11 @@ DP:
 Kadane:
 
 [[Maximum Product subArray]]
+
+
+LinkedList
+
+[[Reverse LinkedList]]
+[[LinkedList Cycle]]
+
+

@@ -388,3 +388,31 @@ class Solution:
         return water
 ```
 
+
+1. **Trapping Rain Water**
+
+**Problem:** Given an array representing the height of walls, compute how much water can be trapped after raining.
+
+```python
+def trap(height):
+    if not height:
+        return 0
+    
+    n = len(height)
+    left_max, right_max = [0] * n, [0] * n
+    left_max[0], right_max[n - 1] = height[0], height[n - 1]
+    
+    for i in range(1, n):
+        left_max[i] = max(left_max[i - 1], height[i])
+    
+    for i in range(n - 2, -1, -1):
+        right_max[i] = max(right_max[i + 1], height[i])
+    
+    water = 0
+    for i in range(n):
+        water += max(0, min(left_max[i], right_max[i]) - height[i])
+    
+    return water
+```
+
+

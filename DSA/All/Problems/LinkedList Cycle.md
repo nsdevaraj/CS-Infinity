@@ -115,6 +115,7 @@ class Solution:
 ```
 
 
+
 ### Time Complexity: 
 - \(O(n)\), where \(n\) is the number of nodes in the linked list. We visit each node at most once.
 
@@ -170,6 +171,21 @@ def has_cycle(head):
             return True
     return False
 
+```
+
+
+
+**Problem:** Determine if a linked list has a cycle.
+
+```python
+def has_cycle(head):
+    slow, fast = head, head
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    return False
 ```
 
 
@@ -242,11 +258,11 @@ class Solution:
 
 ## Summary of Approaches:
 
-| **Approach**                | **Time Complexity** | **Space Complexity** | **Remarks**                                                   |
-|-----------------------------|---------------------|----------------------|---------------------------------------------------------------|
-| **Hash Set**                 | \(O(n)\)            | \(O(n)\)             | Easy to understand but uses extra space for the hash set.      |
-| **Two Pointers (Floyd's)**   | \(O(n)\)            | \(O(1)\)             | Optimal in both time and space; commonly used in interviews.    |
-| **Modify Node Structure**    | \(O(n)\)            | \(O(1)\)             | Modifies the input, which is not ideal in most scenarios.       |
+| **Approach**               | **Time Complexity** | **Space Complexity** | **Remarks**                                                  |
+| -------------------------- | ------------------- | -------------------- | ------------------------------------------------------------ |
+| **Hash Set**               | \(O(n)\)            | \(O(n)\)             | Easy to understand but uses extra space for the hash set.    |
+| **Two Pointers (Floyd's)** | \(O(n)\)            | \(O(1)\)             | Optimal in both time and space; commonly used in interviews. |
+| **Modify Node Structure**  | \(O(n)\)            | \(O(1)\)             | Modifies the input, which is not ideal in most scenarios.    |
 
 ---
 
@@ -306,3 +322,6 @@ def test_hasCycle(func):
 
 This article provides a complete explanation of different approaches to solving the "Linked List Cycle" problem. The most efficient method is the two-pointer approach, but the hash set method is also widely understood.
 
+
+
+---
