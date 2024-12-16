@@ -30,6 +30,9 @@ String / Regex
 
 [[Validate IP Address]]
 
+[[First Non Rep Char or First Unique Character]]
+
+
 
 Logic:
 
@@ -78,6 +81,7 @@ HaspMap
 [[Two Sum or 2sum]]
 [[Three Sum or 3Sum]]
 [[Minimum Window Substring]]
+[[First Non Rep Char or First Unique Character]]
 
 
 Two pointers

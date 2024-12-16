@@ -25,6 +25,10 @@
 
 [[Median - 2 sorted arrays]]
 
+[[First Non Rep Char or First Unique Character]]
+
+
+
 ---
 
 ### **3. Kth Largest Element in an Array**
@@ -104,20 +108,6 @@ Here are some popular Data Structures and Algorithms (DSA) interview questions o
 
 ---
 
-### 7. **Find First Non-Repeating Character**
-
-**Problem:** Find the first non-repeating character in a string.
-
-```python
-from collections import Counter
-
-def first_non_repeating_char(s):
-    count = Counter(s)
-    for char in s:
-        if count[char] == 1:
-            return char
-    return None
-```
 
 ---
 
