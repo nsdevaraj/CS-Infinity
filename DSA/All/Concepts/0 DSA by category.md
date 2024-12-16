@@ -125,6 +125,9 @@ Traverse Graph (Recursion, DFS, BFS)
 DFS
 
 [[Course schedule]]
+[[Word Search]]
+
+
 
 Topological Sort
 
@@ -134,6 +137,7 @@ Backtracking
 
 [[Generate parentheses]]
 [[kth permutation]]
+
 
 
 Kadane's algo ( dynamic + optimal greedy)

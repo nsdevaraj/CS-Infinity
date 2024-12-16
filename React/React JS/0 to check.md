@@ -57,6 +57,8 @@ react design patterns
 
 https://www.linkedin.com/posts/uzmabegumshaik_react-with-design-patterns-activity-7269654248458493952-7MgL?utm_source=share&utm_medium=member_desktop
 
+https://www.linkedin.com/posts/amit-sharma-67b03a138_design-patterns-activity-7273184901850390528-rkKf?utm_source=share&utm_medium=member_desktop
+
 
 react fundamentals
 https://www.linkedin.com/posts/polinaidu-podilapu9391_react-activity-7270489578065530880--4mT?utm_source=share&utm_medium=member_desktop
@@ -64,4 +66,8 @@ https://www.linkedin.com/posts/polinaidu-podilapu9391_react-activity-72704895780
 
 
 https://www.linkedin.com/posts/danishshabbir_github-repository-to-become-a-react-master-activity-7273577464981831680-waB-?utm_source=share&utm_medium=member_desktop
+
+
+
+https://www.linkedin.com/posts/intesarh7_reactjs-interview-questions-activity-7272154179853250562-VjQj?utm_source=share&utm_medium=member_desktop
 
