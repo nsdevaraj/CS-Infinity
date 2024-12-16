@@ -61,3 +61,7 @@ https://www.linkedin.com/posts/uzmabegumshaik_react-with-design-patterns-activit
 react fundamentals
 https://www.linkedin.com/posts/polinaidu-podilapu9391_react-activity-7270489578065530880--4mT?utm_source=share&utm_medium=member_desktop
 
+
+
+https://www.linkedin.com/posts/danishshabbir_github-repository-to-become-a-react-master-activity-7273577464981831680-waB-?utm_source=share&utm_medium=member_desktop
+

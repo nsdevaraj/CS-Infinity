@@ -1,8 +1,0 @@
-
-
-[[inside func component]]
-
-[[versions]]
-
-
-

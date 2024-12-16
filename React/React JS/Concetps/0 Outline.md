@@ -3,21 +3,16 @@
 
 [[React roadmap]]
 
-[[History]]
 
-[[React code]]
+[[Overview]]
 
-[[React/React JS/Concetps/Overview]]
-
-
-[[Virtual DOM]]
-[[Templating]]
 [[Components]]
+[[JSX]]
+[[Virtual DOM]]
 
 
 
-[[Props]]
-
+[[Props and States]]
 
 
 
@@ -31,7 +26,7 @@
 [[React Lifecycle and Hooks Integration]]
 [[State Management and Context API]]
 
-[[controlled vs uncontrolled]]
+
 
 [[Error Boundary]]
 
@@ -42,10 +37,6 @@
 [[React Router and Navigation]]
 
 
-[[Order of Exec]]
-
-
-[[phases of react]]
 
 
 
@@ -128,5 +119,9 @@ js => JIT or interpreter
 
 
 
+set delay - debounce implementation
+
+
+performance optimisation in react - lazy loading, code splitting , memoization
 
 

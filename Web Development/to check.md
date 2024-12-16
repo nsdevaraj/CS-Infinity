@@ -64,6 +64,14 @@ web access - differently abled persons
 
 
 
+canvas and svg rendering 
+
+svg d3
+
+animation threejs
+
+canva
+design
 
 
 

@@ -1,4 +1,6 @@
 
+Hooks: Manage state and lifecycle in functional components using hooks like useState and useEffect, simplifying code structure.
+
 ### **Section 4: React Hooks**
 
 React hooks are a powerful addition introduced in React 16.8. 
