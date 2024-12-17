@@ -126,3 +126,6 @@ https://www.linkedin.com/posts/danishshabbir_javascript-projects-ideas-activity-
 
 https://www.linkedin.com/posts/danishshabbir_axios-vs-fetch-activity-7274171091722371074-naXa?utm_source=share&utm_medium=member_desktop
 
+
+https://www.linkedin.com/posts/sahil-chopra-56a63b191_javascript-questions-activity-7163748698454212608-NQ5H/
+

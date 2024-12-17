@@ -7,7 +7,8 @@
 ![[Map of Hooks.png]]
 
 
-[[React/React JS/Hooks/Introduction]]
+
+[[Introduction]]
 [[State management hooks]]
 [[Effect Hooks]]
 [[Ref hooks]]
@@ -16,9 +17,7 @@
 [[Transition Hooks]]
 [[Random Hooks]]
 
-[[React/React JS/Hooks/Custom hooks]]
-
-
+[[Custom Hooks]]
 
 
 ### **React Hooks**

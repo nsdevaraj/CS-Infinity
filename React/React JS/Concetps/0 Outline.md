@@ -1,4 +1,7 @@
 
+https://www.youtube.com/watch?v=wIyHSOugGGw
+
+
 
 
 [[React roadmap]]
@@ -52,35 +55,6 @@
 
 hoc
 
-josh - custom hooks
-
-```js
-export function useDebounce<T>(value: T, delay?: number): T {  
-  const [debouncedValue, setDebouncedValue] = useState<T>(value);  
-  useEffect(() => {  
-    const timer = setTimeout(() => setDebouncedValue(value), delay || 500);  
-    return () => {  
-      clearTimeout(timer);  
-    };  
-  }, [value, delay]);  
-  return debouncedValue;  
-}
-
-
-const debouncedValue = useDebounce<string>(inputValue, delayTimer);
-
-
-useEffect(() => {  
-    if (!isMounted.current) {  
-      isMounted.current = true;  
-      return;  
-    }  
-    onChange(debouncedValue);  
-  }, [debouncedValue]);
-  
-```
-
-
 
 to check {
 
@@ -123,5 +97,9 @@ set delay - debounce implementation
 
 
 performance optimisation in react - lazy loading, code splitting , memoization
+
+
+portals, notification sockets etc..
+
 
 

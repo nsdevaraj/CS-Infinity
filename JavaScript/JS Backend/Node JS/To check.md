@@ -55,3 +55,6 @@ https://www.linkedin.com/posts/naveen-sreerag-k-v_js-activity-726196733716612300
 https://www.linkedin.com/posts/devkantbhagat_js-interview-questions-and-answers-activity-7262456684835463171-necr?utm_source=share&utm_medium=member_desktop
 
 
+
+scale nodejs app, api request slowness, performance node js app.. 
+

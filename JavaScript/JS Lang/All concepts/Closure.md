@@ -349,4 +349,15 @@ to check {
 
 how closure garbage collected, at which state ?!
 
+
+func are in stack, closure values are in heap.. need to see in depth
+
+obj is also stored in heap.. so only its doing pass by reference, not values..
+
+
+
+
+new map => all properties will be always referenced, to make clean use weekmap.. 
+
+
 }

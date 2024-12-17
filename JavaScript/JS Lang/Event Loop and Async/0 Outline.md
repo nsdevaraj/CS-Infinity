@@ -1,4 +1,11 @@
 
+
+https://www.youtube.com/watch?v=vn3tm0quoqE
+https://www.youtube.com/watch?v=RvYYCGs45L4
+
+
+
+
 [[Sync vs Async]]
 
 [[Event Loop]]

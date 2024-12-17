@@ -1,4 +1,9 @@
 
+https://usehooks-ts.com/
+
+https://usehooks.com/
+
+
 
 ### **5. Context Hooks**
 
@@ -99,4 +104,36 @@ export default App;
 ---
 
 Let me know when you're ready for the next section on **Transition Hooks**!
+
+
+
+josh - custom hooks
+
+```js
+export function useDebounce<T>(value: T, delay?: number): T {  
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);  
+  useEffect(() => {  
+    const timer = setTimeout(() => setDebouncedValue(value), delay || 500);  
+    return () => {  
+      clearTimeout(timer);  
+    };  
+  }, [value, delay]);  
+  return debouncedValue;  
+}
+
+
+const debouncedValue = useDebounce<string>(inputValue, delayTimer);
+
+
+useEffect(() => {  
+    if (!isMounted.current) {  
+      isMounted.current = true;  
+      return;  
+    }  
+    onChange(debouncedValue);  
+  }, [debouncedValue]);
+  
+```
+
+
 
