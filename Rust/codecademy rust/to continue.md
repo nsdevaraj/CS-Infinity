@@ -1,5 +1,7 @@
 
 
-https://www.codecademy.com/courses/rust-for-programmers/articles/scope-and-ownership
+https://www.codecademy.com/courses/rust-for-programmers/articles/variables-rust
+
+
 
 

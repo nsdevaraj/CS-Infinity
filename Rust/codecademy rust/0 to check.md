@@ -6,9 +6,6 @@ https://www.codecademy.com/courses/rust-for-programmers/articles/lifetimes-rust
 https://www.codecademy.com/courses/rust-for-programmers/articles/tooling-rust
 
 
-https://www.codecademy.com/courses/rust-for-programmers/articles/scope-and-ownership
-
-
 
 #### Rust Editions
 
@@ -46,6 +43,27 @@ fn main() {
 }
 
 ```
+
+
+
+https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html
+
+
+https://www.codecademy.com/courses/rust-for-programmers/articles/modules-rust
+
+
+https://www.codecademy.com/courses/rust-for-programmers/articles/mutability-rust
+
+
+https://doc.rust-lang.org/std/marker/trait.Copy.html
+
+
+https://www.codecademy.com/courses/rust-for-programmers/articles/references-rust
+
+https://www.codecademy.com/courses/rust-for-programmers/articles/arrays-and-vec
+
+
+https://doc.rust-lang.org/std/convert/trait.AsRef.html#tymethod.as_ref
 
 
 
