@@ -6,7 +6,7 @@
 [[Merge two sorted list or array]]
 
 
-[[Longest Increasing SubSequence]]
+[[Longest Increasing  SubSequence]]
 
 
 [[Word Break]]
@@ -26,6 +26,12 @@
 [[Median - 2 sorted arrays]]
 
 [[First Non Rep Char or First Unique Character]]
+
+
+[[Word Search]]
+
+[[Longest Consecutive Sequence]]
+
 
 
 
@@ -357,28 +363,6 @@ Here are some **hard** Data Structures and Algorithms (DSA) interview questions 
 ---
 
 ---
-
-### 2. **Longest Consecutive Sequence**
-
-**Problem:** Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
-
-```python
-def longest_consecutive(nums):
-    if not nums:
-        return 0
-    
-    num_set = set(nums)
-    longest = 0
-    
-    for num in num_set:
-        if num - 1 not in num_set:  # Start of a potential sequence
-            length = 1
-            while num + length in num_set:
-                length += 1
-            longest = max(longest, length)
-    
-    return longest
-```
 
 ---
 
