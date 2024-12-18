@@ -1,6 +1,7 @@
 
 
-[[Web Development/APIs/Overview/To check|To check]]
+[[APIs/Overview/To check|To check]]
+
 
 
 

@@ -45,7 +45,7 @@
    - **PUT**: Updates an existing resource or creates a new one if it doesn't exist.
    - **DELETE**: Removes a resource.
    - **PATCH**: Partially updates a resource.
-
+* HEAD - similar to get, but without body.. only just headers
 
 
 #### 3. **What are HTTP Methods (Verbs) in RESTful APIs?**
@@ -70,7 +70,6 @@
      - Example: `PATCH /users/1` - Updates only the fields like email, not the entire resource.
 
    **Difference**: PUT is complete replacement, PATCH is partial.
-
 
 
 

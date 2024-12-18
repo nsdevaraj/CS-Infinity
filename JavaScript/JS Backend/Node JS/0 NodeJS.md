@@ -3,6 +3,13 @@ reffered {
 
 https://www.youtube.com/watch?v=aAAa-kG5a7I
 
+
+}
+
+to jot {
+
+https://www.youtube.com/watch?v=rmQQqmAIiLE
+
 }
 
 to continue {

@@ -80,3 +80,8 @@ https://www.w3schools.com/react/default.asp
 https://react.dev/learn/tutorial-tic-tac-toe
 
 
+https://www.linkedin.com/posts/parthib-mohanta_react-performance-optimization-activity-7274282934231080960-IoaM?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/subhandev_react-developer-interview-questions-answers-activity-7273563852020072448-SaOa?utm_source=share&utm_medium=member_desktop
+

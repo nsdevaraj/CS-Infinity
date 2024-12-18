@@ -11,7 +11,6 @@ https://www.youtube.com/watch?v=g4YShNrOoDg
 **very important for interview**
 
 
-$[[Cricket Table]]
 $[[Cricket and Cricket Players Table]]
 
 

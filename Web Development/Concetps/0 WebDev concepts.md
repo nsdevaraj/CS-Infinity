@@ -3,7 +3,8 @@
 [Web Dev 100 @Fireship](https://www.youtube.com/watch?v=erEgovG9WBs)
 
 
-[[Web Development/Concetps/Overview]]
+[[Overview]]
+
 
 
 [[Internet]]
