@@ -21,6 +21,26 @@
 Semantic tags in HTML provide meaning to the content they contain, making the structure of the page more understandable both to developers and to browsers (especially for SEO and accessibility and readable ). Here’s a quick list of easy-to-use semantic tags:
 
 
+|**Element**|**Description**|**Common Usage**|
+|---|---|---|
+|`<header>`|Represents introductory content or a set of navigational links.|Page header, site logo, or heading.|
+|`<nav>`|Defines a section of navigation links.|Main site navigation menu.|
+|`<main>`|Represents the main content of a document.|Primary content of a page.|
+|`<article>`|Defines self-contained content.|Blog posts, news articles, or user comments.|
+|`<section>`|Represents a thematic grouping of content.|Grouped sections in a document.|
+|`<aside>`|Represents content tangentially related to the main content.|Sidebar content, related links, or advertisements.|
+|`<footer>`|Defines footer for a section or document.|Author info, copyright, or links.|
+|`<h1> - <h6>`|Headings from 1 (most important) to 6 (least important).|Section headings and subheadings.|
+|`<figure>`|Encapsulates media like images, illustrations, or figures with captions.|Images with captions.|
+|`<figcaption>`|Provides a caption or legend for a `<figure>`.|Describing the image or media content.|
+|`<address>`|Defines contact information for the author or organization.|Contact details or address blocks.|
+|`<time>`|Represents time or dates.|Dates, times, or durations.|
+|`<table>`|Represents tabular data.|Data tables with `<thead>`, `<tbody>`, `<tfoot>`.|
+|`<details>`|Allows toggleable content (expand/collapse).|FAQ accordions, dropdowns, or interactive sections.|
+|`<summary>`|Defines the visible heading of `<details>`.|The clickable summary/heading text.|
+|`<mark>`|Highlights text or information.|Search results, references, or annotations.|
+|`<dialog>`|Defines a dialog box or interactive popup.|Modal windows, confirmation dialogs.|
+
 ### 1. **`<header>`**
 
 - Represents the header section of a document or a section (usually contains navigation, logos, etc.).

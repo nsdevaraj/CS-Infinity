@@ -1,12 +1,5 @@
 
 
-
-
-
-
-
-
-
 [[Display]]
 [[position]]
 [[Pseudo-Classes]]
@@ -34,4 +27,6 @@
 [[Top interview questions]]
 
 [[Concepts/to check|to check]]
+
+
 
