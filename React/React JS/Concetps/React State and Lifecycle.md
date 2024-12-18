@@ -115,6 +115,53 @@ function DataFetchingComponent() {
 **Concept Explanation**:
 Placing the fetch call inside `useEffect` ensures the data is fetched after the component mounts. The empty dependency array ensures that it only runs once, similar to `componentDidMount`.
 
+---
+
+
+#### 51. **What are React lifecycle methods, and how do they differ between class and functional components?**
+**Answer**:
+React **lifecycle methods** are special methods that get invoked at different stages of a component’s lifecycle: mounting, updating, and unmounting.
+
+- **Class components** have lifecycle methods like `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+- **Functional components** use hooks like `useEffect` to replicate lifecycle behavior.
+
+**Example**:
+In a **class component**:
+```javascript
+class MyComponent extends React.Component {
+  componentDidMount() {
+    console.log('Component mounted');
+  }
+
+  componentWillUnmount() {
+    console.log('Component will unmount');
+  }
+
+  render() {
+    return <div>My Component</div>;
+  }
+}
+```
+
+In a **functional component** with hooks:
+```javascript
+import { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    console.log('Component mounted');
+    return () => {
+      console.log('Component will unmount');
+    };
+  }, []);
+  
+  return <div>My Component</div>;
+}
+```
+
+**Concept Explanation**:
+Class components have explicit lifecycle methods to handle component logic at different stages, while functional components use hooks like `useEffect` to replicate lifecycle behaviors like mounting and unmounting. `useEffect` also allows running logic on updates, making it a powerful replacement.
+
 
 
 

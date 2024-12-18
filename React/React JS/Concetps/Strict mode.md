@@ -292,3 +292,55 @@ Strict Mode raises awareness of best practices by:
 Strict Mode acts as a **development watchdog**. It prepares your app for future features, catches subtle bugs, and encourages better coding practices. While some warnings may seem annoying, resolving them early ensures a stable and forward-compatible codebase.
 
 
+---
+
+### **React Strict Mode: A Development Tool for Better Practices**
+
+**What is React Strict Mode?** React's `StrictMode` is a development-only tool that helps identify potential problems in your application. It activates additional checks and warnings to ensure your code adheres to React's best practices.
+
+---
+
+### **Key Features of Strict Mode**
+
+1. **Highlighting Unsafe Lifecycles**: Warns about deprecated lifecycle methods in class components (e.g., `componentWillMount`).
+2. **Detecting Side-Effects in Render**: Identifies unexpected side effects caused during rendering.
+3. **Strict Effects in `useEffect`**: Invokes effects and cleanup functions twice in development to ensure they are pure.
+4. **Legacy String Refs Warning**: Flags the use of old `ref` APIs (string refs) and encourages the modern `useRef` or callback `ref`.
+5. **Legacy Context API Warning**: Encourages migrating to the modern context API if the legacy API is used.
+
+---
+
+### **How to Enable Strict Mode**
+
+Wrap your application's root or specific sections of the component tree in `<React.StrictMode>`.
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
+---
+
+### **Key Considerations**
+
+- **Development Only**: Strict Mode does not impact the production build.
+- **Extra Render Calls**: Some effects (e.g., `useEffect`) are intentionally triggered twice to identify bugs.
+- **No Impact on Behavior**: It does not alter how your application works; it only highlights issues.
+
+---
+
+**Why Use Strict Mode?** Strict Mode helps developers:
+
+- Write future-proof React code.
+- Catch common mistakes early.
+- Adopt React's best practices for long-term maintainability.
+
+By using `StrictMode`, you ensure your codebase stays aligned with modern React standards.
+

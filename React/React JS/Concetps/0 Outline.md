@@ -26,9 +26,6 @@ https://www.youtube.com/watch?v=wIyHSOugGGw
 [[Props and State Management]]
 [[React hooks]]
 
-[[React Lifecycle and Hooks Integration]]
-[[State Management and Context API]]
-
 
 
 [[Error Boundary]]
@@ -37,13 +34,14 @@ https://www.youtube.com/watch?v=wIyHSOugGGw
 [[React Performance Optimization]]
 
 
+[[Portals]]
+[[Strict mode]]
+
+
 [[React Router and Navigation]]
 
 
 
-
-
-[[Strict mode]]
 [[Rerender]]
 
 [[debug]]
@@ -101,5 +99,7 @@ performance optimisation in react - lazy loading, code splitting , memoization
 
 portals, notification sockets etc..
 
+
+different stages of a component’s lifecycle: mounting, updating, and unmounting.
 
 

@@ -1,7 +1,5 @@
 
 
-### **4. Performance Hooks**
-
 Performance Hooks in React are designed to optimize the performance of your applications, particularly for expensive computations and to prevent unnecessary re-renders. The primary hooks in this category are **`useMemo`** and **`useCallback`**.
 
 ---
@@ -90,5 +88,3 @@ function App() {
 - **`useCallback`**: Memoizes callback functions to maintain stable references and prevent unnecessary re-renders of child components.
 
 ---
-
-Let me know when you're ready for the next section on **Context Hooks**!

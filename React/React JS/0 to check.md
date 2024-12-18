@@ -71,3 +71,12 @@ https://www.linkedin.com/posts/danishshabbir_github-repository-to-become-a-react
 
 https://www.linkedin.com/posts/intesarh7_reactjs-interview-questions-activity-7272154179853250562-VjQj?utm_source=share&utm_medium=member_desktop
 
+
+
+https://www.w3schools.com/react/default.asp
+
+
+
+https://react.dev/learn/tutorial-tic-tac-toe
+
+

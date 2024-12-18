@@ -92,6 +92,3 @@ export default UserStatus;
 - **`useDebugValue`**: Provides debugging information for custom hooks in React DevTools, improving the development experience.
 
 ---
-
-Let me know when you're ready for the next section on **New Hooks in React 19**!
-
