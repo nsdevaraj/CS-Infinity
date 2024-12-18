@@ -165,6 +165,7 @@ Math
 Stack 
 
 [[Largest rectangle in histogram]]
+[[Kth Smallest Element in a BST]]
 
 
 Logic
@@ -198,5 +199,10 @@ LinkedList
 
 [[Reverse LinkedList]]
 [[LinkedList Cycle]]
+
+
+BST
+
+[[Kth Smallest Element in a BST]]
 
 

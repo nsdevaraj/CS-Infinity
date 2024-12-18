@@ -33,7 +33,7 @@
 [[Longest Consecutive Sequence]]
 
 
-
+[[Kth Smallest Element in a BST]]
 
 ---
 
@@ -280,58 +280,8 @@ def permute(nums):
     return result
 ```
 
----
-
-### 8. **Word Search**
-
-**Problem:** Given a 2D board and a word, find if the word exists in the grid.
-
-```python
-def exist(board, word):
-    def dfs(i, j, k):
-        if k == len(word):
-            return True
-        if i < 0 or i >= len(board) or j < 0 or j >= len(board[0]) or board[i][j] != word[k]:
-            return False
-        temp = board[i][j]
-        board[i][j] = '#'
-        found = (dfs(i + 1, j, k + 1) or dfs(i - 1, j, k + 1) or 
-                 dfs(i, j + 1, k + 1) or dfs(i, j - 1, k + 1))
-        board[i][j] = temp
-        return found
-    
-    for i in range(len(board)):
-        for j in range(len(board[0])):
-            if dfs(i, j, 0):
-                return True
-    return False
-```
 
 ---
-
-### 9. **Kth Smallest Element in a BST**
-
-**Problem:** Given a binary search tree (BST), find the kth smallest element.
-
-```python
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-def kth_smallest(root, k):
-    stack = []
-    while True:
-        while root:
-            stack.append(root)
-            root = root.left
-        root = stack.pop()
-        k -= 1
-        if k == 0:
-            return root.val
-        root = root.right
-```
 
 ---
 
@@ -359,47 +309,6 @@ These are medium-level problems that are commonly asked in Walmart interviews. T
 
 
 Here are some **hard** Data Structures and Algorithms (DSA) interview questions often asked at companies like Walmart, along with their concise Python solutions:
-
----
-
----
-
----
-
-### 3. **Median of Two Sorted Arrays (Optimal Approach)**
-
-**Problem:** Given two sorted arrays, find the median of the two arrays. The overall time complexity should be O(log(min(n, m))).
-
-```python
-def find_median_sorted_arrays(nums1, nums2):
-    if len(nums1) > len(nums2):
-        nums1, nums2 = nums2, nums1
-    
-    m, n = len(nums1), len(nums2)
-    left, right = 0, m
-    
-    while left <= right:
-        partition1 = (left + right) // 2
-        partition2 = (m + n + 1) // 2 - partition1
-        
-        max_left1 = float('-inf') if partition1 == 0 else nums1[partition1 - 1]
-        min_right1 = float('inf') if partition1 == m else nums1[partition1]
-        
-        max_left2 = float('-inf') if partition2 == 0 else nums2[partition2 - 1]
-        min_right2 = float('inf') if partition2 == n else nums2[partition2]
-        
-        if max_left1 <= min_right2 and max_left2 <= min_right1:
-            if (m + n) % 2 == 0:
-                return (max(max_left1, max_left2) + min(min_right1, min_right2)) / 2
-            else:
-                return max(max_left1, max_left2)
-        elif max_left1 > min_right2:
-            right = partition1 - 1
-        else:
-            left = partition1 + 1
-    
-    raise ValueError("Input arrays are not sorted")
-```
 
 ---
 
