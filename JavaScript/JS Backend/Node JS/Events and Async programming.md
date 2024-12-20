@@ -1,4 +1,93 @@
 
+{
+to split events and async
+}
+\
+
+
+In Node.js, I/O operations are handled asynchronously using non-blocking code. This approach leverages the **event loop** and **callbacks** to manage tasks that require waiting for external resources, such as reading files or making network requests, without blocking the main thread. This enables Node.js to handle multiple I/O operations concurrently, even though it is single-threaded.
+
+### How Async I/O Works in Node.js
+
+1. **Event Loop**: Node.js uses an event loop to manage asynchronous operations. When an I/O task is triggered, Node.js offloads it to the system or a separate thread (using `libuv` in C++ for complex tasks).
+  
+2. **Callback Mechanism**: Once the I/O operation completes, a callback is added to the event queue, and the event loop processes it when the call stack is free.
+
+3. **Promise and async/await**: Modern Node.js also supports promises and `async/await` for more readable asynchronous code.
+
+### Example 1: Asynchronous File Read with Callback
+
+Here's how Node.js reads a file asynchronously using the `fs` module:
+
+```javascript
+const fs = require('fs');
+
+console.log('Start reading file...');
+
+fs.readFile('example.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading file:', err);
+        return;
+    }
+    console.log('File content:', data);
+});
+
+console.log('End of program');
+```
+
+**Explanation**:
+- `fs.readFile` is an asynchronous function. It immediately returns control to the program, allowing `console.log('End of program')` to execute.
+- Once the file reading is completed, the callback function is executed with the file content, printing it to the console.
+
+**Output**:
+```
+Start reading file...
+End of program
+File content: [contents of example.txt]
+```
+
+### Example 2: Async I/O Using Promises and `async/await`
+
+Using promises or `async/await` syntax for asynchronous I/O makes the code cleaner and more readable:
+
+```javascript
+const fs = require('fs').promises;
+
+async function readFileAsync() {
+    console.log('Start reading file...');
+    
+    try {
+        const data = await fs.readFile('example.txt', 'utf8');
+        console.log('File content:', data);
+    } catch (error) {
+        console.error('Error reading file:', error);
+    }
+    
+    console.log('End of function');
+}
+
+readFileAsync();
+
+console.log('End of program');
+```
+
+**Explanation**:
+- The `await` keyword pauses execution within `readFileAsync` until `fs.readFile` completes, but it does not block the main thread.
+- `End of program` will be printed immediately, demonstrating that `readFileAsync` does not block further execution in the main scope.
+
+**Output**:
+```
+Start reading file...
+End of program
+File content: [contents of example.txt]
+End of function
+```
+
+In both examples, I/O operations run asynchronously, allowing Node.js to handle other tasks without waiting for the I/O to finish. This makes Node.js highly efficient for applications with heavy I/O operations.
+
+
+---
+
 
 
 
@@ -101,6 +190,165 @@ The Node.js Event Loop is a core concept in Node.js, responsible for handling an
     - **setTimeout** and **setInterval** callbacks depend on timers.
 
 ---
+
+
+The **Node.js event loop phases** follow a specific order of execution, each managing distinct operations. Below is an explanation of the priority/order of these phases and examples to understand their flow:
+
+---
+
+### **Event Loop Phases in Priority Order**
+
+1. **Timers**: Executes callbacks for `setTimeout` and `setInterval`.
+2. **Pending Callbacks**: Handles system-level operations like errors from I/O.
+3. **Idle/Prepare**: For internal Node.js use (not user-accessible).
+4. **Poll**: Retrieves new I/O events and executes I/O-related callbacks.
+5. **Check**: Executes `setImmediate` callbacks.
+6. **Close Callbacks**: Handles close events like `socket.on('close', ...)`.
+
+---
+
+### **Detailed Explanation and Example**
+
+#### 1. **Timers Phase**
+
+**Priority**: High if `setTimeout`/`setInterval` are due.
+
+**Description**: Executes callbacks scheduled by `setTimeout` and `setInterval`. These timers are not guaranteed to execute exactly after the delay but are queued once the timer expires.
+
+**Example**:
+
+```javascript
+setTimeout(() => console.log('Timers: setTimeout callback'), 0);
+```
+
+---
+
+#### 2. **Pending Callbacks Phase**
+
+**Priority**: Executes after Timers if there are pending system-level callbacks.
+
+**Description**: Executes callbacks for operations deferred by the OS, such as errors in I/O operations.
+
+**Example**:
+
+```javascript
+const fs = require('fs');
+fs.readFile('file.txt', (err, data) => {
+    if (err) console.log('Pending Callbacks: File read error');
+});
+```
+
+---
+
+#### 3. **Idle/Prepare Phase**
+
+**Priority**: Internal, not relevant for user space.
+
+**Description**: Used internally by Node.js to prepare for the Poll phase. Not accessible for user logic.
+
+---
+
+#### 4. **Poll Phase**
+
+**Priority**: Executes new I/O operations, unless the queue is empty.
+
+**Description**: Retrieves and executes I/O callbacks. If no I/O callbacks are pending, this phase waits for new events or proceeds to Check phase if `setImmediate` is scheduled.
+
+**Example**:
+
+```javascript
+const fs = require('fs');
+fs.readFile('file.txt', (err, data) => {
+    if (!err) console.log('Poll: I/O callback');
+});
+```
+
+---
+
+#### 5. **Check Phase**
+
+**Priority**: Executes immediately after Poll if `setImmediate` is queued.
+
+**Description**: Executes callbacks set by `setImmediate`.
+
+**Example**:
+
+```javascript
+setImmediate(() => console.log('Check: setImmediate callback'));
+```
+
+---
+
+#### 6. **Close Callbacks Phase**
+
+**Priority**: Handles cleanup for closing events like sockets.
+
+**Description**: Executes `close` callbacks, such as `socket.on('close', ...)`.
+
+**Example**:
+
+```javascript
+const net = require('net');
+const server = net.createServer((socket) => {
+    socket.on('close', () => console.log('Close Callbacks: Socket closed'));
+    socket.end();
+});
+server.listen(8080);
+```
+
+---
+
+### **Event Loop Flow Example**
+
+Here's an example combining all phases to observe the priority:
+
+```javascript
+const fs = require('fs');
+
+setTimeout(() => console.log('Timers: setTimeout callback'), 0);
+setImmediate(() => console.log('Check: setImmediate callback'));
+
+fs.readFile(__filename, () => {
+    console.log('Poll: I/O callback');
+    setImmediate(() => console.log('Check: setImmediate inside Poll'));
+    setTimeout(() => console.log('Timers: setTimeout inside Poll'), 0);
+});
+
+console.log('Start of script');
+```
+
+**Output Explanation**:
+
+1. **`Start of script`** is logged first (synchronous code).
+2. **Timers Phase**:
+    - `setTimeout` is delayed until after I/O.
+3. **Poll Phase**:
+    - I/O callback (`fs.readFile`) executes.
+    - Inside I/O callback, `setImmediate` is queued for Check phase, and `setTimeout` for Timers phase.
+4. **Check Phase**:
+    - `setImmediate` runs after I/O.
+    - Nested `setImmediate` inside Poll executes here.
+5. **Timers Phase** (again):
+    - The nested `setTimeout` runs here.
+
+---
+
+### Final Order:
+
+```
+Start of script
+Check: setImmediate callback
+Poll: I/O callback
+Check: setImmediate inside Poll
+Timers: setTimeout inside Poll
+Timers: setTimeout callback
+```
+
+This demonstrates how each phase operates and the order they follow. Let me know if you'd like further clarification!
+
+
+---
+
 
 ### Sample Code Demonstrating Event Loop
 

@@ -178,21 +178,6 @@ Here's a concise guide on **Node.js Data Handling and APIs**, including key expl
 
 ---
 
-### **3. Working with Streams**
-   - **Types**:
-     - **Readable**: For reading data.
-     - **Writable**: For writing data.
-     - **Duplex**: For reading and writing.
-   - **Benefits**: Handles large data in chunks without loading it all at once.
-   - **Example**:
-     ```javascript
-     const fs = require('fs');
-     const readableStream = fs.createReadStream('file.txt', 'utf8');
-     readableStream.on('data', (chunk) => console.log(chunk));
-     ```
-
-   **Question**: *What are streams, and why use them?*
-   - **Answer**: Streams are data-handling objects that allow reading or writing of data in chunks, ideal for large data to avoid memory overload.
 
 ---
 

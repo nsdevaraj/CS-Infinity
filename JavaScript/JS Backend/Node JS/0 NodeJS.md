@@ -36,12 +36,11 @@ https://www.interviewbit.com/node-js-interview-questions/?sign_up_medium=ib_arti
 
 [[Nodejs Basics]]
 
-[[IO handling]]
-
-
 
 [[Core Modules]]
 [[Events and Async programming]]
+
+
 [[Data Hanlding and APIs]]
 [[Error handling and Debugging]]
 
@@ -50,6 +49,7 @@ https://www.interviewbit.com/node-js-interview-questions/?sign_up_medium=ib_arti
 
 
 
+middle ware, error handling and dp things - put separate secitons
 
 
 
@@ -77,7 +77,7 @@ schedule tasks in nodejs
 
 
 
-[[Important topoics in nodeJs]]
+[[Important topics in nodeJs]]
 
 
 [[JS Backend/Node JS/To check|To check]]

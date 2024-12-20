@@ -15,8 +15,10 @@ https://www.youtube.com/watch?v=RvYYCGs45L4
 
 
 [[Callbacks]]
-[[JS Lang/Event Loop and Async/Promises|Promises]]
-[[JS Lang/Event Loop and Async/async await|async await]]
+
+[[Event Loop and Async/Promises|Promises]]
+[[Event Loop and Async/async await|async await]]
+
 
 
 [[CallBack, Promise & Async await]]

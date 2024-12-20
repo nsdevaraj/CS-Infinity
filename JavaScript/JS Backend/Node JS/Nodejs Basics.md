@@ -59,19 +59,6 @@
     
     - Middleware functions process requests and responses in the application lifecycle, e.g., for logging, authentication, or error handling.
 
-**Improving Node.js Performance**
-
-1. **Clustering**  
-    Utilize all CPU cores by running multiple Node.js instances in parallel, distributing workload across them.
-    
-2. **Load Balancing**  
-    Distribute incoming requests efficiently among server instances using tools like NGINX or built-in clustering.
-    
-3. **Caching (Redis)**  
-    Store frequently accessed data in memory (e.g., with Redis) to reduce database queries and enhance response time.
-    
-4. **Asynchronous Programming**  
-    Use async/await, Promises, or callbacks to handle non-blocking operations, ensuring faster execution and responsiveness.
 
 **Asynchronous Programming: Real-World Examples**
 
@@ -112,6 +99,7 @@
 
 
 
+nodejs not for high cpu intensive tasks.. 
 
 
 

@@ -102,3 +102,9 @@ https://www.linkedin.com/posts/akashsinnghh_clear-all-dsa-rounds-by-mastering-th
 
 https://www.linkedin.com/posts/akashsinnghh_the-reason-youre-struggling-with-coding-activity-7270053950781865989--DVB?utm_source=share&utm_medium=member_desktop
 
+
+https://www.linkedin.com/posts/arslanahmad_blind-75-activity-7274704770647400448-LhZS?utm_source=share&utm_medium=member_desktop
+
+
+https://www.linkedin.com/posts/noumann1_activity-7273894548903206912-hPKt?utm_source=share&utm_medium=member_desktop
+

@@ -79,9 +79,6 @@
    ```
 
 
-
-
-
 #### **9. How does pagination work in REST APIs?**
    - **Answer**: Pagination is used to split large datasets into smaller, more manageable chunks:
      - Common methods: Using query parameters like `limit`, `offset`, and `page`.

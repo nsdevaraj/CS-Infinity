@@ -109,8 +109,6 @@
 - Callbacks improve user experience by allowing other tasks to continue while waiting for long-running operations to complete.
 
 
-
-
 ### **Callback in Asynchronous JavaScript**
 
 A **callback** in asynchronous JavaScript is a function passed as an argument to another function, which is then executed once the asynchronous task completes.

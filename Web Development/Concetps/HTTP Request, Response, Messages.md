@@ -20,6 +20,7 @@ Here’s a concise overview of **HTTP Requests**, including essential concepts a
    - **DELETE**: Removes a specified resource from the server.
    - **PATCH**: Partially updates a resource, sending only the changes rather than the entire resource.
    - **HEAD**: Similar to GET, but it retrieves only the headers of a resource, not the body.
+   - options
 
 3. **Components of an HTTP Request**:
    - **Request Line**: Contains the HTTP method, URL, and HTTP version (e.g., `GET /index.html HTTP/1.1`).

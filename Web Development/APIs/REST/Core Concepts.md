@@ -39,15 +39,6 @@
 
 
 
-2. **HTTP Methods**:
-   - **GET**: Retrieves data from the server.
-   - **POST**: Sends data to the server (typically to create a new resource).
-   - **PUT**: Updates an existing resource or creates a new one if it doesn't exist.
-   - **DELETE**: Removes a resource.
-   - **PATCH**: Partially updates a resource.
-* HEAD - similar to get, but without body.. only just headers
-
-
 #### 3. **What are HTTP Methods (Verbs) in RESTful APIs?**
    - **HTTP Methods** represent actions for a resource in a REST API.
 
@@ -84,11 +75,6 @@
 5. **Request and Response Formats**:
    - **JSON**: Most common format for data exchange in REST APIs.
    - **XML**: An alternative format for data exchange, though less common than JSON.
-
-6. **Status Codes**:
-   - **2xx**: Success (e.g., 200 OK, 201 Created).
-   - **4xx**: Client errors (e.g., 400 Bad Request, 401 Unauthorized, 404 Not Found).
-   - **5xx**: Server errors (e.g., 500 Internal Server Error).
 
 
 #### 6. **What is the Role of HTTP Status Codes in RESTful APIs?**
