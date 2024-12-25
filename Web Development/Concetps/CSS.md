@@ -163,6 +163,15 @@ Here are the points for the next five topics:
 - SASS files typically use the `.scss` or `.sass` file extension and must be compiled to standard CSS before deployment.
 - Widely used in large projects to improve workflow and manage complex stylesheets.
 
+{
+
+to check:
+
+https://www.linkedin.com/posts/md-sajid-mohammad_learn-saas-activity-7275366767915364352-QUta?utm_source=share&utm_medium=member_desktop
+
+
+}
+
 
 
 Here’s a comprehensive guide on key CSS concepts, with crisp definitions and code examples to help you prepare for interviews. This will cover core CSS principles, including styling, layout models, positioning, responsive design, and advanced techniques like Flexbox, Grid, and SASS.

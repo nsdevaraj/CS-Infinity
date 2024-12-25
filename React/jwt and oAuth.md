@@ -21,6 +21,16 @@ const token = jwt.sign({ userId: 123 }, 'secret-key', { expiresIn: '1h' });
 - **Pros**: Stateless (no server-side session storage needed), can carry custom data in the payload.
 - **Cons**: Needs to be securely signed and validated to avoid tampering.
 
+
+
+to check {
+
+https://www.linkedin.com/posts/deepasajjanshetty_json-web-token-jwt-activity-7275390402491228160-Temq?utm_source=share&utm_medium=member_desktop
+
+
+}
+
+
 ---
 
 ### OAuth (Open Authorization)

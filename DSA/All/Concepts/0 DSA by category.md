@@ -143,6 +143,7 @@ Backtracking
 
 [[Generate parentheses]]
 [[kth permutation]]
+[[Permutations]]
 
 
 

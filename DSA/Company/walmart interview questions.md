@@ -35,6 +35,10 @@
 
 [[Kth Smallest Element in a BST]]
 
+
+[[Three Sum or 3Sum]]
+
+
 ---
 
 ### **3. Kth Largest Element in an Array**
@@ -163,34 +167,6 @@ Here are some medium-level Data Structures and Algorithms (DSA) questions often 
 
 ---
 
-### 1. **3Sum**
-
-**Problem:** Given an array of integers, find all unique triplets in the array which gives the sum of zero.
-
-```python
-def three_sum(nums):
-    nums.sort()
-    result = []
-    for i in range(len(nums) - 2):
-        if i > 0 and nums[i] == nums[i - 1]:
-            continue  # Skip duplicate values for the first element
-        left, right = i + 1, len(nums) - 1
-        while left < right:
-            total = nums[i] + nums[left] + nums[right]
-            if total == 0:
-                result.append([nums[i], nums[left], nums[right]])
-                while left < right and nums[left] == nums[left + 1]:
-                    left += 1  # Skip duplicates
-                while left < right and nums[right] == nums[right - 1]:
-                    right -= 1  # Skip duplicates
-                left += 1
-                right -= 1
-            elif total < 0:
-                left += 1
-            else:
-                right -= 1
-    return result
-```
 
 ---
 
@@ -259,26 +235,6 @@ def longest_palindromic_substring(s):
 ```
 
 ---
-
-### 7. **Permutations**
-
-**Problem:** Given a collection of distinct integers, return all possible permutations.
-
-```python
-def permute(nums):
-    def backtrack(start):
-        if start == len(nums):
-            result.append(nums[:])
-            return
-        for i in range(start, len(nums)):
-            nums[start], nums[i] = nums[i], nums[start]
-            backtrack(start + 1)
-            nums[start], nums[i] = nums[i], nums[start]
-
-    result = []
-    backtrack(0)
-    return result
-```
 
 
 ---
