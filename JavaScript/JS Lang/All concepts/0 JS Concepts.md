@@ -213,7 +213,7 @@ heap and stack memory in depth
 js engine deep - what are components ..  
 
 
-[[to check]]
+[[CS/to check]]
 [[JS Lang/To check|To check]]
 
 [[0 To continue]]

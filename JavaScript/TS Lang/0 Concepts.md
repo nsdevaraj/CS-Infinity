@@ -1,5 +1,12 @@
 
 
+referred to jot {
+
+https://www.youtube.com/watch?v=nFwmB1_iQ7A
+
+
+}
+
 
 [[TS vs JS]]
 [[Type vs Interface]]
