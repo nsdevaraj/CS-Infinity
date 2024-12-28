@@ -236,29 +236,6 @@ def longest_palindromic_substring(s):
 
 ---
 
-
----
-
----
-
-### 10. **Subsets**
-
-**Problem:** Given a set of distinct integers, return all possible subsets (the power set).
-
-```python
-def subsets(nums):
-    result = []
-    def backtrack(start, current):
-        result.append(current[:])
-        for i in range(start, len(nums)):
-            current.append(nums[i])
-            backtrack(i + 1, current)
-            current.pop()
-    
-    backtrack(0, [])
-    return result
-```
-
 ---
 
 These are medium-level problems that are commonly asked in Walmart interviews. They test your understanding of algorithms and problem-solving skills, as well as your ability to write clean, efficient code. Practice these problems to improve your chances in technical interviews!

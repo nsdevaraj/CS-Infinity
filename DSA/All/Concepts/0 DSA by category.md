@@ -144,6 +144,8 @@ Backtracking
 [[Generate parentheses]]
 [[kth permutation]]
 [[Permutations]]
+[[All Subsets or PowerSet]]
+[[DSA by resources/Random resources/Backtracking/Subset|Subset]]
 
 
 
