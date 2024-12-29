@@ -67,3 +67,26 @@ https://doc.rust-lang.org/std/convert/trait.AsRef.html#tymethod.as_ref
 
 
 
+https://www.codecademy.com/courses/rust-for-programmers/articles/lifetimes-rust
+
+
+https://doc.rust-lang.org/std/cell/index.html
+
+
+
+https://github.com/rust-lang/rust/issues/76560
+
+https://doc.rust-lang.org/stable/reference/items/associated-items.html#associated-constants
+
+
+https://www.codecademy.com/courses/rust-for-programmers/articles/attributes-rust
+
+
+https://doc.rust-lang.org/std/fmt/
+
+https://devopedia.org/rust-languag
+
+
+https://doc.rust-lang.org/reference/attributes.html
+
+

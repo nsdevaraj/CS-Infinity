@@ -4,6 +4,13 @@
 - A **powerset** is the set of all subsets of a given set.
 
 
+referred {
+
+https://www.youtube.com/watch?v=Y85dfkCSlP8
+
+
+}
+
 # [LeetCode #78 - Subsets](https://leetcode.com/problems/subsets/)
 
 ## Problem Statement
