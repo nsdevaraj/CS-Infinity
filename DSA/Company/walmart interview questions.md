@@ -1,7 +1,7 @@
 
 
 [[Missing Number ( missing natural num )]]
-[[Largest or Maximum Sub Array]]
+[[Largest or Maximum Sub Array sum]]
 [[LinkedList Cycle]]
 [[Merge two sorted list or array]]
 
@@ -38,6 +38,17 @@
 
 [[Three Sum or 3Sum]]
 
+[[Largest rectangle in histogram]]
+
+[[Maximum Product subArray]]
+
+[[Subarray Sum Equals K]]
+
+[[Largest or Maximum Sub Array sum]]
+
+[[N-Queen]]
+
+
 
 ---
 
@@ -59,80 +70,7 @@ k = 2
 print(kth_largest(nums, k))  # Output: 5
 ```
 
----
 
-### **4. Maximum Product Subarray**
-
-**Problem**: Find the maximum product of a contiguous subarray.
-
-**Code**:
-
-```python
-def max_product(nums):
-    max_prod = min_prod = result = nums[0]
-    for num in nums[1:]:
-        if num < 0:
-            max_prod, min_prod = min_prod, max_prod
-        max_prod = max(num, max_prod * num)
-        min_prod = min(num, min_prod * num)
-        result = max(result, max_prod)
-    return result
-
-# Example
-nums = [2, 3, -2, 4]
-print(max_product(nums))  # Output: 6
-```
-
----
-
----
-
-### **6. Subarray Sum Equals K**
-
-**Problem**: Count the number of subarrays that sum to `k`.
-
-**Code**:
-
-```python
-def subarray_sum(nums, k):
-    count = prefix_sum = 0
-    prefix_sums = {0: 1}
-    for num in nums:
-        prefix_sum += num
-        count += prefix_sums.get(prefix_sum - k, 0)
-        prefix_sums[prefix_sum] = prefix_sums.get(prefix_sum, 0) + 1
-    return count
-
-# Example
-nums = [1, 1, 1]
-k = 2
-print(subarray_sum(nums, k))  # Output: 2
-```
-
----
-
-Here are some popular Data Structures and Algorithms (DSA) interview questions often asked at Walmart, along with concise Python solutions:
-
----
-
-
----
-
-
----
-
-### 8. **Maximum Subarray (Kadane’s Algorithm)**
-
-**Problem:** Find the contiguous subarray (containing at least one number) which has the largest sum.
-
-```python
-def max_subarray(nums):
-    max_sum = current_sum = nums[0]
-    for num in nums[1:]:
-        current_sum = max(num, current_sum + num)
-        max_sum = max(max_sum, current_sum)
-    return max_sum
-```
 
 ---
 
@@ -167,8 +105,6 @@ Here are some medium-level Data Structures and Algorithms (DSA) questions often 
 
 ---
 
-
----
 
 ### 2. **Longest Substring Without Repeating Characters**
 
@@ -242,35 +178,6 @@ These are medium-level problems that are commonly asked in Walmart interviews. T
 
 
 Here are some **hard** Data Structures and Algorithms (DSA) interview questions often asked at companies like Walmart, along with their concise Python solutions:
-
----
-
-### 4. **N-Queens Problem**
-
-**Problem:** The N-Queens puzzle is the problem of placing N chess queens on an N×N chessboard so that no two queens attack each other. Write a program to solve the N-Queens problem.
-
-```python
-def solve_n_queens(n):
-    def is_safe(board, row, col):
-        for i in range(row):
-            if board[i] == col or abs(board[i] - col) == row - i:
-                return False
-        return True
-
-    def solve(board, row):
-        if row == n:
-            result.append(["." * i + "Q" + "." * (n - i - 1) for i in board])
-            return
-        for col in range(n):
-            if is_safe(board, row, col):
-                board[row] = col
-                solve(board, row + 1)
-                board[row] = -1
-
-    result = []
-    solve([-1] * n, 0)
-    return result
-```
 
 ---
 
@@ -353,25 +260,6 @@ def merge_k_sorted_lists(lists):
 
 ---
 
-### 7. **Largest Rectangle in Histogram**
-
-**Problem:** Given an array of integers representing the histogram's bar height where the width of each bar is 1, find the area of the largest rectangle in the histogram.
-
-```python
-def largest_rectangle_area(heights):
-    stack = []
-    max_area = 0
-    heights.append(0)  # Add a zero height to pop out remaining bars
-    
-    for i, h in enumerate(heights):
-        while stack and heights[stack[-1]] > h:
-            height = heights[stack.pop()]
-            width = i if not stack else i - stack[-1] - 1
-            max_area = max(max_area, height * width)
-        stack.append(i)
-    
-    return max_area
-```
 
 ---
 

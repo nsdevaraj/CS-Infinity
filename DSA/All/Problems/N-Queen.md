@@ -554,3 +554,36 @@ def test_nqueens(func):
 By running these test cases, we ensure that the N-Queens algorithm works correctly across a variety of board sizes and configurations.
 
 
+---
+
+others:
+
+
+### 4. **N-Queens Problem**
+
+**Problem:** The N-Queens puzzle is the problem of placing N chess queens on an N×N chessboard so that no two queens attack each other. Write a program to solve the N-Queens problem.
+
+```python
+def solve_n_queens(n):
+    def is_safe(board, row, col):
+        for i in range(row):
+            if board[i] == col or abs(board[i] - col) == row - i:
+                return False
+        return True
+
+    def solve(board, row):
+        if row == n:
+            result.append(["." * i + "Q" + "." * (n - i - 1) for i in board])
+            return
+        for col in range(n):
+            if is_safe(board, row, col):
+                board[row] = col
+                solve(board, row + 1)
+                board[row] = -1
+
+    result = []
+    solve([-1] * n, 0)
+    return result
+```
+
+---

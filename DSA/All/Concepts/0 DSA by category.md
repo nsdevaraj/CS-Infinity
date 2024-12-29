@@ -7,9 +7,10 @@ Arrays
 [[Best time to buy and sell stocks]]
 [[Contains duplicate]]
 [[Product of Array Except Self]]
-[[Largest or Maximum Sub Array]]
+[[Largest or Maximum Sub Array sum]]
 [[Three Sum or 3Sum]]
 [[Container with most water problem]]
+[[Subarray Sum Equals K]]
 
 
 Bitwise
@@ -144,7 +145,7 @@ Backtracking
 [[Generate parentheses]]
 [[kth permutation]]
 [[Permutations]]
-[[All Subsets or PowerSet]]
+[[Subsets i.e All Subsets or PowerSet]]
 [[DSA by resources/Random resources/Backtracking/Subset|Subset]]
 
 
@@ -152,7 +153,7 @@ Backtracking
 Kadane's algo ( dynamic + optimal greedy)
 
 [[Gas station problem]]
-[[Largest or Maximum Sub Array]]
+[[Largest or Maximum Sub Array sum]]
 [[Best time to buy and sell stocks]]
 
 

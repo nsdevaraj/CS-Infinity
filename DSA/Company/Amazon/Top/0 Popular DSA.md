@@ -139,7 +139,7 @@ Easy Problems
 [[Reverse LinkedList]]
 [[Valid Parentheses]]
 [[Merge two sorted list or array]]
-[[Largest or Maximum Sub Array]]
+[[Largest or Maximum Sub Array sum]]
 [[Best time to buy and sell stocks]]
 [[Symmetric or Mirror Binary tree]]
 [[Single Number]]

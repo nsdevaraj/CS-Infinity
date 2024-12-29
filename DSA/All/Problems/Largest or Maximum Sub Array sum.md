@@ -650,5 +650,28 @@ def test_max_subarray(func):
 
 looks Similar but really not similar : [[Maximum Product subArray]]
 
+---
+
+
+others:
+
+
+
+
+### 8. **Maximum Subarray (Kadane’s Algorithm)**
+
+**Problem:** Find the contiguous subarray (containing at least one number) which has the largest sum.
+
+```python
+def max_subarray(nums):
+    max_sum = current_sum = nums[0]
+    for num in nums[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    return max_sum
+```
+
+---
+
 
 

@@ -57,7 +57,7 @@
 [[Fractional knapsack problem]]
 [[Unbounded knapsack problem]]
 [[Knapsacks comparision]]
-[[N Queen]]
+[[N-Queen]]
 [[Restore IP addresses problem]]
 [[Longest substring without repeatChars]]
 [[Max points on a line problem]]

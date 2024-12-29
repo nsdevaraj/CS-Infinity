@@ -111,3 +111,10 @@ https://www.linkedin.com/posts/noumann1_activity-7273894548903206912-hPKt?utm_so
 
 https://indiglokal-my.sharepoint.com/:w:/p/j_saravanan/EbrS636rvm1Gn5sIyVNNwAUBiQPnRAFOdP5qr1MTS0OIWw
 
+
+40 questions:
+https://www.linkedin.com/posts/akashsinnghh_dsa-on-sunaday-ready-to-ace-your-next-interview-activity-7279116246212632576-didW?utm_source=share&utm_medium=member_desktop
+
+
+
+

@@ -3,6 +3,7 @@
 
 [max prod subarray @takeUforward](https://www.youtube.com/watch?v=hnswaLJvr6g)
 
+https://leetcode.com/problems/maximum-product-subarray/
 
 
 subArray - contiguous array elements 
@@ -274,5 +275,31 @@ class Solution:
             res=max(res,current_max)
         return res
 ```
+
+
+
+
+### **4. Maximum Product Subarray**
+
+**Problem**: Find the maximum product of a contiguous subarray.
+
+**Code**:
+
+```python
+def max_product(nums):
+    max_prod = min_prod = result = nums[0]
+    for num in nums[1:]:
+        if num < 0:
+            max_prod, min_prod = min_prod, max_prod
+        max_prod = max(num, max_prod * num)
+        min_prod = min(num, min_prod * num)
+        result = max(result, max_prod)
+    return result
+
+# Example
+nums = [2, 3, -2, 4]
+print(max_product(nums))  # Output: 6
+```
+
 
 
