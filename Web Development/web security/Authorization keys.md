@@ -132,6 +132,13 @@ Certainly! Here are a few **related concepts** that revolve around **OAuth** and
 - **Access Control**: If your OAuth server is different from the resource server, CORS headers are needed to allow cross-origin requests from the client-side app.
 - **OAuth and CORS**: When implementing OAuth in web apps, CORS must be handled to allow secure cross-origin communication between the app and OAuth endpoints.
 
+to check {
+ 
+ https://www.linkedin.com/posts/sai-ram-somanaboina_i-asked-this-question-in-30-mock-interviews-activity-7276968789764661248-FRUD?utm_source=share&utm_medium=member_desktop
+ 
+ }
+
+
 ### 10. **API Gateway**
 
 - **OAuth Integration**: API gateways often manage OAuth flow for microservices, handling authorization for multiple backend services through a centralized system.
