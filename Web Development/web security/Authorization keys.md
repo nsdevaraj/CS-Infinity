@@ -164,3 +164,8 @@ to check {
 
 These concepts are commonly interrelated in OAuth/JWT-based systems and often come up in technical interviews for roles involving security, APIs, or web applications.
 
+
+
+
+[[Web Development/web security/JWT|JWT]]
+

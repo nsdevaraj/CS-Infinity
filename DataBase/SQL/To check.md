@@ -57,3 +57,5 @@ https://www.linkedin.com/posts/himanshumalviya1512_sql-cheatsheat-activity-72503
 https://www.linkedin.com/posts/abhisek-sahu-84a404b1_sql-interview-questions-ugcPost-7274280854674128897-r2QR?utm_source=share&utm_medium=member_desktop
 
 
+https://www.linkedin.com/posts/dheeraj-singh-445a30252_sq-ugcPost-7279761233858228224-XSMK?utm_source=share&utm_medium=member_desktop
+
