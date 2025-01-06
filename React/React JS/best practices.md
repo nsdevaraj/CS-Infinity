@@ -175,3 +175,103 @@ This document outlines best practices to ensure consistency, maintainability, an
 - **Intl**: Use JavaScript's `Intl` API for internationalization and localization.
 
 ---
+ESlint rules:
+
+### **General Best Practices**
+
+1. **Code Consistency:**
+    
+    - `"semi": ["error", "always"]` - Enforce semicolons at the end of statements.
+    - `"quotes": ["error", "single"]` - Enforce single quotes for strings.
+    - `"eol-last": ["error", "always"]` - Ensure files end with a newline.
+    - `"indent": ["error", 2, { "SwitchCase": 1 }]` - Enforce consistent indentation with 2 spaces.
+    - `"linebreak-style": ["error", "unix"]` - Enforce Unix linebreak style.
+    - `"no-trailing-spaces": "error"` - Disallow trailing spaces.
+    - `"curly": ["error", "all"]` - Enforce consistent use of curly braces for all control statements.
+2. **Naming and Readability:**
+    
+    - `"camelcase": ["error", { "properties": "always" }]` - Enforce camelCase naming for variables and functions.
+    - `"max-len": ["error", { "code": 80, "ignoreComments": true }]` - Enforce a maximum line length for better readability.
+    - `"consistent-return": "error"` - Require consistent `return` statements.
+3. **Error Prevention:**
+    
+    - `"no-console": ["error", { "allow": ["warn", "error"] }]` - Allow `console.warn` and `console.error` but disallow others.
+    - `"no-unused-vars": ["error", { "args": "none", "ignoreRestSiblings": true }]` - Disallow unused variables while ignoring rest siblings.
+    - `"no-use-before-define": ["error", { "functions": false, "classes": true }]` - Disallow use of variables before they're defined.
+    - `"eqeqeq": ["error", "always"]` - Enforce strict equality (`===`) usage.
+4. **Functional Best Practices:**
+    
+    - `"no-duplicate-imports": "error"` - Disallow duplicate imports in a single file.
+    - `"no-param-reassign": "error"` - Disallow reassigning function parameters.
+    - `"prefer-const": "error"` - Require `const` for variables never reassigned.
+    - `"arrow-body-style": ["error", "as-needed"]` - Enforce concise arrow function bodies where possible.
+
+---
+
+### **React-Specific Rules**
+
+1. **React Standards:**
+    
+    - `"react/react-in-jsx-scope": "off"` - Disable the need for React import in JSX files (default in React 17+).
+    - `"react/jsx-uses-react": "off"` - Prevent unused React variables (now redundant).
+    - `"react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }]` - Enforce JSX syntax only in `.jsx` or `.tsx` files.
+2. **Component Design:**
+    
+    - `"react/prop-types": "off"` - Disable PropTypes enforcement if TypeScript is used.
+    - `"react/jsx-key": "error"` - Require `key` prop for list elements in JSX.
+    - `"react/self-closing-comp": "error"` - Enforce self-closing tags for components without children.
+    - `"react-hooks/rules-of-hooks": "error"` - Enforce React Hook rules (e.g., only call Hooks at the top level).
+    - `"react-hooks/exhaustive-deps": "warn"` - Warn for missing dependencies in useEffect.
+
+---
+
+### **TypeScript-Specific Rules (if using TypeScript)**
+
+1. **Strict Typing:**
+    
+    - `"@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]` - Ignore unused variables starting with `_`.
+    - `"@typescript-eslint/explicit-function-return-type": "off"` - Disable mandatory return types for functions (enable in strict projects).
+    - `"@typescript-eslint/no-explicit-any": "warn"` - Warn against using `any` type.
+2. **TypeScript Enhancements:**
+    
+    - `"@typescript-eslint/no-non-null-assertion": "error"` - Disallow non-null assertions (`!`).
+    - `"@typescript-eslint/prefer-optional-chain": "error"` - Enforce the use of optional chaining.
+    - `"@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }]` - Enforce consistent use of `import type`.
+
+---
+
+### **Performance and Optimization**
+
+1. `"no-shadow": "error"` - Disallow variable declarations from shadowing outer-scope variables.
+2. `"no-return-await": "error"` - Disallow unnecessary `await` inside `return` statements.
+3. `"no-multi-spaces": "error"` - Disallow multiple spaces, except for alignment.
+4. `"prefer-spread": "error"` - Enforce the use of `Function.prototype.apply()` with the spread operator.
+
+---
+
+### **Accessibility**
+
+- `"jsx-a11y/anchor-is-valid": "warn"` - Ensure anchors have valid content.
+- `"jsx-a11y/alt-text": "error"` - Require alt attributes for `<img>` tags.
+
+---
+
+### **Tools and Configurations**
+
+- Use **Prettier** for code formatting and integrate it with ESLint:
+    
+    ```json
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "prettier"]
+    ```
+    
+- Install ESLint plugins for React, TypeScript, and accessibility:
+    
+    ```bash
+    npm install eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y @typescript-eslint/eslint-plugin eslint-plugin-prettier
+    ```
+    
+- Add a `.eslintignore` file to exclude unnecessary directories (e.g., `node_modules`, `dist`, `build`).
+
+---
+
+These rules are widely recognized and strike a balance between strictness and flexibility. Let me know if you'd like help integrating these into your project!
