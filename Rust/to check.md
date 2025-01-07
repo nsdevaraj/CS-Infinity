@@ -19,3 +19,8 @@ https://app.codecrafters.io/catalog
 https://youtu.be/qP7LzZqGh30?si=6zpPEQ6J-GMHisZF
 
 
+projects
+
+https://www.youtube.com/shorts/25nqXjc7qiM
+
+

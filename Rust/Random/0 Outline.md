@@ -1,6 +1,7 @@
 
 [[closure]]
 [[hashSet]]
+[[Traits]]
 
 
 [[handson]]

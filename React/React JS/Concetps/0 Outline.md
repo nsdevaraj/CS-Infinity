@@ -103,3 +103,9 @@ portals, notification sockets etc..
 different stages of a component’s lifecycle: mounting, updating, and unmounting.
 
 
+optimisation {
+
+https://www.linkedin.com/posts/kashif-shoukat_react-optimization-techniqes-activity-7276856202800623616-AnG-?utm_source=share&utm_medium=member_desktop
+
+
+}
