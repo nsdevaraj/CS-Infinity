@@ -189,12 +189,24 @@ Practicing coding problems with these concepts will help ensure you're ready for
 
 
 
+urls 
+
+https://dev.to/logrocket/working-with-urls-in-javascript-1m7f?signin=true
 
 
 
+projects simple playlist
+
+https://youtube.com/playlist?list=PL8ZDj6xPX-1UI3bljaDmJVP_xl79Ha5Jq&si=5aSqqMI6jg3m-UO0
 
 
 
+array apis
+
+https://www.linkedin.com/posts/anees-khan07_javascript-activity-7277718103738757120-xc2D/?utm_source=share&utm_medium=member_android
 
 
+promise
+
+https://www.linkedin.com/posts/activity-7274633491928002560-LzR6/?utm_source=share&utm_medium=member_android
 

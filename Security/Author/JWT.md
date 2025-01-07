@@ -112,3 +112,12 @@ Here are the key reasons to use JWT:
 ### **Conclusion**
 
 JWT provides a scalable, stateless, and flexible way to handle authorization, making it a popular choice for modern applications. Whether you’re working with single-page apps, microservices, or distributed systems, JWT can simplify authentication and authorization.
+
+
+
+to check {
+
+https://www.linkedin.com/posts/deepasajjanshetty_json-web-token-jwt-activity-7275390402491228160-Temq?utm_source=share&utm_medium=member_desktop
+
+
+}

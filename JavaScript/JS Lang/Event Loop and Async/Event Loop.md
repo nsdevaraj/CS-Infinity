@@ -187,6 +187,13 @@ https://www.explainthis.io/en/swe/js-event-loop-questions
 
 }
 
+to check {
+
+https://www.linkedin.com/posts/alina-kulish_event-loop-ugcPost-7281074451302019074-de1s?utm_source=share&utm_medium=member_desktop
+
+
+}
+
 
 
 ---
