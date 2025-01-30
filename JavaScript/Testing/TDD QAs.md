@@ -184,12 +184,11 @@ https://youtube.com/shorts/y22LVqJRjzw?si=ExDAaPEbcJm_giia
 
 
 
-* rector constantly
+* refactor constantly
 * easy maintanance
-* design is divited into phases.. 
+* design is divided into phases.. 
 * documentation
 * promote continuous change
 
 ---
 
-to che
