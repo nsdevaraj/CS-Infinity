@@ -2,7 +2,7 @@
 Noted:
 @[sytem_design_concepts](https://youtu.be/tIgNvmRO3e0?si=ZfkCAEQ7BRwiL6jE)
 
-[[Intro]]
+[[System Design/Free Code Camp/Intro]]
 [[Computer Architecture]]
 [[Production App Architecture]]
 [[Design Requirements]]
