@@ -1,14 +1,5 @@
 
 
-reffered {
-
-https://youtu.be/IdsBwplQAMw
-
-https://youtu.be/2gtiffE3__U
-
-}
-
-
 ### Nest JS
 
 NestJS makes building robust applications straightforward by enforcing a structured, scalable  architecture with easy to test & decoupled code.
@@ -1204,3 +1195,4 @@ In conclusion, exception filters provide a robust way to handle and log errors w
 This structured approach to testing ensures that each part of your NestJS application can be tested in isolation, with mock dependencies, and also allows you to handle both positive and negative test cases effectively.
 
 ---
+
