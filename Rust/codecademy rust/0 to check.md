@@ -90,3 +90,13 @@ https://devopedia.org/rust-languag
 https://doc.rust-lang.org/reference/attributes.html
 
 
+https://doc.rust-lang.org/std/cmp/trait.Eq.html
+
+https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
+
+https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
+
+https://www.codecademy.com/courses/rust-for-programmers/articles/tuples-rust
+
+https://www.codecademy.com/courses/rust-for-programmers/articles/monads-and-option
+
