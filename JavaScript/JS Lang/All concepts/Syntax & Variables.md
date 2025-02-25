@@ -43,4 +43,9 @@
 
 
 
+Intialization done:
 
+```ts
+
+const ary1 :number = [], ary2:number[];
+```
