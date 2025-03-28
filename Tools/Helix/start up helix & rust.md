@@ -212,7 +212,7 @@ cd ~/.config
 
 
 
-https://youtu.be/PERvTNiupe8?si=GvuGSGtWlEfdYdjU
+https://youtu.be/PERvTNiupe8
 
 
 ### **Understanding the Nano Keybindings**

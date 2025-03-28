@@ -6,3 +6,4 @@
 
 [[handson]]
 
+[[rust dsa]]
