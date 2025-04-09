@@ -14,5 +14,5 @@ https://www.youtube.com/watch?v=nBjEzQlJLHE
 
 [[Vim modes]]
 [[Vim motions]]
-[[Basic]]
+[[Vim Basics]]
 

@@ -39,3 +39,32 @@ A **word** is:
 - A sequence of **letters, digits, and underscores** (`foo_bar`, `variable123`).
 - A sequence of **non-blank characters** separated by spaces (`!@# $%^ &*`).
 
+
+### **Vim: Insert Mode & Caps Lock Mapping**
+
+#### **Entering Insert Mode:**
+
+To edit text in Vim, you must enter **Insert Mode** from **Normal Mode** using:
+
+- **`i`** → Insert before the cursor
+- **`a`** → Insert after the cursor
+- **`Esc`** → Return to Normal Mode
+
+#### **Undo Changes:**
+
+- Press **`Esc`** then **`u`** to undo.
+
+#### **Mapping Caps Lock to Escape:**
+
+Many Vim users remap **Caps Lock** to **Escape** for easier access.
+
+- **MacOS**:
+    - Go to **System Preferences > Keyboard > Modifier Keys**
+    - Change **Caps Lock** to **Escape**
+- **Windows**:
+    - Use tools like **Uncap** to remap **Caps Lock** to **Escape**
+
+
+
+
+

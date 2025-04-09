@@ -1,5 +1,7 @@
 
-### **3. Basic Vim Modes**
+Vim is about **efficiency**
+
+### **1 Basic Vim Modes**
 
 - **Normal Mode** (default) → Navigate & execute commands
 - **Insert Mode** (`i`) → Type text
