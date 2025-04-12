@@ -1,29 +1,28 @@
 
 Here’s a **crisp table** of Vim motions:
 
-
-
-
+klllll
 ### **1. Basic Motions**
 
-|Motion|Action|
-|---|---|
-|`h`|Left|
-|`l`|Right|
-|`j`|Down|
-|`k`|Up|
-|`w`|Next word|
-|`b`|Previous word|
-|`e`|End of word|
-|`ge`|End of previous word|
+| Motion | Action               |
+| ------ | -------------------- |
+| `h`    | Left                 |
+| `l`    | Right                |
+| `j`    | Down                 |
+| `k`    | Up                   |
+| `w`    | Next word            |
+| `b`    | Previous word        |
+| `e`    | End of word          |
+| `ge`   | End of previous word |
+hjkl => left, down, up, right
 
 ### **2. Line Motions**
 
-|Motion|Action|
-|---|---|
-|`0`|Beginning of line|
-|`^`|First non-blank char|
-|`$`|End of line|
+| Motion  | Action               |
+| ------- | -------------------- |
+| `0`     | Beginning of line    |
+| llll`^` | First non-blank char |
+| `$`     | End of line          |
 
 ### **3. Paragraph & Sentence**
 
