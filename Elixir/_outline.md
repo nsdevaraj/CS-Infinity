@@ -21,6 +21,7 @@
 to continue {
 
 [[quick tutorial]]
+[[Data types]]
 
 }
 
