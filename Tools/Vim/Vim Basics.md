@@ -8,15 +8,7 @@ In **normal mode**, use the **hjkl** keys to navigate efficiently without leavin
 - **j** – Down (pointer/pointer finger)
 - **k** – Up (middle finger)
 
-#### Why Not Arrow Keys?
-
-Arrow keys require moving your hand away from the home row, reducing efficiency. Vim keeps your fingers where they belong for faster navigation.
-
-#### Proper Finger Placement
-
-- Right hand: **jkl;**
-- Left hand: **asdf**
-
+![[_imgs/Pasted image 20250409100131.png]]
 
 
 ### Moving with Words

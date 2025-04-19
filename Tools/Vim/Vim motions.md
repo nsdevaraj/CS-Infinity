@@ -1,7 +1,18 @@
 
-Here’s a **crisp table** of Vim motions:
 
-klllll
+keyboard finger placement
+
+f - left index finger
+j - right index finger
+
+
+You should rest with your fingers on the home row keys, even though this makes your right index finger responsible for hitting both h and j keys.
+
+- Your right hand fingers should rest on jkl;
+- Your left  hand fingers should rest on asdf
+
+![[_imgs/Pasted image 20250409101404.png]]
+
 ### **1. Basic Motions**
 
 | Motion | Action               |

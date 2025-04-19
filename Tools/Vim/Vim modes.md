@@ -9,6 +9,7 @@ Vim is about **efficiency**
 - **Command Mode** (`:`) → Run commands
 
 
+
 ## Normal Mode
 
 Used for:
