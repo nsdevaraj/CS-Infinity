@@ -5,6 +5,110 @@
 
 
 
+## App router vs Page router
+
+ Understanding the difference between **App Router** and **Pages Router** in **Next.js** (especially from version 13 onward) is key to choosing the right architecture for your project.
+
+Here’s a simple breakdown:
+
+---
+
+## 🔀 **Pages Router (Classic Router)**
+
+> Used in `pages/` directory — the default before Next.js 13.
+
+### ✅ Key Characteristics:
+
+- Uses the `pages/` directory
+    
+- Each file = a route (e.g. `pages/about.tsx` → `/about`)
+    
+- Supports traditional routing with `getServerSideProps`, `getStaticProps`, `getInitialProps`
+    
+- Client-side navigation with `next/link` and `next/router`
+    
+- Components are **not server components by default**
+    
+- Stable and widely supported
+    
+
+### 🧩 Folder Example:
+
+```
+pages/
+├── index.tsx         → '/'
+├── about.tsx         → '/about'
+├── blog/[slug].tsx   → '/blog/my-post'
+```
+
+---
+
+## ⚡️ **App Router (New Router)**
+
+> Introduced in **Next.js 13+** using the `app/` directory.
+
+### ✅ Key Features:
+
+- Uses the **`app/` directory** instead of `pages/`
+    
+- Based on **React Server Components** (RSC) by default
+    
+- Supports **layouts**, **nested routing**, **loading**, **error** handling, **server actions**, and more
+    
+- Finer control over what renders where: server vs client
+    
+- Much more **modular** and scalable
+    
+
+### 🧩 Folder Example:
+
+```
+app/
+├── layout.tsx         → Global layout
+├── page.tsx           → '/'
+├── about/
+│   └── page.tsx       → '/about'
+├── blog/
+│   ├── [slug]/
+│   │   └── page.tsx   → '/blog/my-post'
+```
+
+---
+
+## 🔍 Feature Comparison
+
+|Feature|Pages Router|App Router|
+|---|---|---|
+|Folder location|`pages/`|`app/`|
+|Routing system|File-based|File-based + nested|
+|Server Components|❌ Not supported|✅ Default|
+|`getServerSideProps`, etc.|✅ Yes|❌ Replaced by RSC|
+|Built-in layouts|❌ Manual|✅ Native with `layout.tsx`|
+|Streaming / partial rendering|❌ Limited|✅ Built-in|
+|Loading / error UI|❌ Manual|✅ With `loading.tsx`, `error.tsx`|
+|Stability|✅ Stable|⚠️ Still maturing (as of 2025)|
+
+---
+
+## 🧠 Which one should _you_ use?
+
+|If you are...|Use|
+|---|---|
+|Building a new project in 2025|**App Router** (modern, future-proof)|
+|Migrating or maintaining existing Next.js apps|**Pages Router** (less friction)|
+|Need full control over server vs client behavior|**App Router**|
+|Want stability and mature ecosystem|**Pages Router**|
+
+---
+
+## 🛠 TL;DR:
+
+- `pages/` = classic, stable, easier to learn
+- `app/` = modern, powerful, granular control, better long-term choice
+
+
+
+
 ---
 
 ## **1. File-Based Routing with the App Router**
