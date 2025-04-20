@@ -40,6 +40,8 @@ To edit text in Vim, you must enter **Insert Mode** from **Normal Mode** using:
 
 - **`i`** → Insert before the cursor
 - **`a`** → Insert after the cursor
+-  **`I`** → Insert at the beginning of the line 
+- **`A`** → Insert at the end of the line
 - **`Esc`** → Return to Normal Mode
 
 #### **Undo Changes:**

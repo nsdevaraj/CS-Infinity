@@ -13,6 +13,9 @@ You should rest with your fingers on the home row keys, even though this makes y
 
 ![[_imgs/Pasted image 20250409101404.png]]
 
+
+![[_imgs/Pasted image 20250420074545.png]]
+
 ### **1. Basic Motions**
 
 | Motion | Action               |
