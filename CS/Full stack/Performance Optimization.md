@@ -297,3 +297,52 @@ Render-blocking resources are CSS and JavaScript files that must be fully loaded
 ### Summary
 
 Reducing render-blocking resources is essential for optimizing web performance and enhancing user experience. By utilizing techniques such as deferring JavaScript loading, inlining critical CSS, and optimizing the critical rendering path, developers can ensure that users see content more quickly, leading to improved engagement and satisfaction. These practices not only enhance user experience but also contribute positively to SEO and overall site performance.
+
+
+
+---
+
+
+
+Suspense made react19 performance issues:
+
+
+
+Yes, the changes to the **Suspense** feature in React 19 have contributed to the delay in its release. These modifications, aimed at improving performance, inadvertently introduced significant issues that impacted client-side applications.
+
+---
+
+### ⚠️ Overview of the Suspense Changes
+
+In React 18, components within a `<Suspense>` boundary could initiate data fetching in parallel. However, in React 19, a change was introduced where data fetching occurs sequentially—each component waits for the previous one to resolve before initiating its own fetch. This alteration was intended to streamline the rendering process but led to unintended performance regressions.
+
+---
+
+### 🛠️ Performance Issues and Community Feedback
+
+The sequential fetching approach resulted in increased loading times and reduced responsiveness in applicationsFor instance, developers observed that components wrapped in `<Suspense>` were displaying fallback content for extended periods, even after data had been fetched, leading to a suboptimal user experience citeturn0search0 Additionally, the modification caused issues with testing librariesTests that previously passed in React 18 began failing in React 19, as components would remain in their loading state indefinitely, preventing assertions from being made citeturn0search7 The developer community expressed strong disapproval of these changes, with many highlighting that they contradicted best practices and degraded performanceIn response to this feedback, the React team acknowledged the issues and decided to delay the official release of React 19 until a more effective solution could be implemented citeturn0search5
+
+---
+
+### 🔄 Current Status
+
+As of now, React 19 is still in the release candidate phase, with the React team working on addressing the performance concerns related to Suspens. Developers are advised to exercise caution when upgrading to React 19 and to stay informed about updates from the React team regarding these issue.
+
+---
+
+more about react19
+
+https://ceydaulubas.medium.com/exploring-react-19-new-features-and-the-reasons-behind-the-delayed-release-f1c2228151cf
+
+https://www.reddit.com/r/reactjs/comments/1dhz2ns/how_react_19_almost_made_the_internet_slower/
+
+
+
+
+
+
+
+
+
+
+
