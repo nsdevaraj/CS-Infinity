@@ -5,6 +5,7 @@
 
 [[Testing/Cypress/Overview]]
 
+[[cypress setup in nextjs]]
 
 
 [[To chck]]
