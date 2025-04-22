@@ -47,39 +47,6 @@ match plant {
 }
 ```
 
-#### ✅ **Ranges** (`..` and `..=`)
-
-- `..=` includes the upper bound.
-- `..` excludes the upper bound.
-    
-
-```rust
-let chipmunks = 5;
-
-match chipmunks {
-    0 => println!("no chipmunks"),
-    1..=20 => println!("some chipmunks"),
-    n @ 21..=40 => println!("warning: {n} chipmunks!"),
-    _ => println!("too many chipmunks."),
-}
-```
-
----
-
-### 🔸 Binding with `@`
-
-Use `@` to **bind a matched value to a variable**:
-
-```rust
-let chipmunks = 5;
-
-match chipmunks {
-    n @ 0..=40 => println!("warning: {n-1} chipmunks!"),
-    _ => println!("too many chipmunks."),
-}
-```
-
----
 
 ### 🔸 Match Guards
 
@@ -97,6 +64,109 @@ match answer {
     None => println!("no input"),
 }
 ```
+
+
+```rust
+fn find_pwd(pwd: Option<&str>) {
+    match pwd {
+        Some(p) if p.is_empty() => {
+            println!("password found empty");
+        }
+        Some(_) => println!("password is good"),
+        None => println!("pwd not applicable"),
+    }
+}
+
+fn main() {
+    let pwd1 = Some("");
+    let pwd2 = Some("secret");
+    let pwd3: Option<&str> = None;
+
+    let pwds = [pwd1, pwd2, pwd3];
+
+    pwds.iter().for_each(|pwd| find_pwd(*pwd));
+    /*=>
+    password found empty
+    password is good
+    pwd not applicable
+    */
+}
+
+```
+
+
+```rust
+
+fn main() {
+    let greeting = Some("Good Morning");
+    
+    match greeting {
+        Some(word) if word.starts_with("Good") => {
+            println!("this greeting is {word}");
+        }
+        Some(word) => println!("Some word: {word}"),
+        _ => println!("no word")
+    } //=> this greeting is Good Morning
+    
+    // match greeting {
+    //     Some(word) & word.starts_with("Good") => {
+    //         println!("this greeting is {word}");
+    //     }
+    //     Some(word) => println!("Some word: {word}"),
+    //     _ => println!("no word")
+    // }
+    /*
+    error: expected one of `=>`, `if`, or `|`, found `&`
+  --> src/main.rs:15:20
+   |
+15 |         Some(word) & word.starts_with("Good") => {
+   |                    ^ expected one of `=>`, `if`, or `|`
+
+*/
+    
+    
+}
+
+```
+
+
+✅ **Quick meaning:**
+
+- **`|`** → directly in patterns (example: `1 | 2`)
+    
+- **`if`** → add extra condition (example: `if word.starts_with("Good")`)
+    
+- **`&&`, `||`** → _inside_ an `if` condition — allowed.
+    
+- **`&&`, `||`** _outside_ (between patterns directly) — **not** allowed.
+
+
+
+
+---
+
+#### ✅ **Ranges** (`..` and `..=`)
+
+- `..=` includes the upper bound.
+- `..` excludes the upper bound.
+    
+### 🔸 Binding with `@`
+
+Use `@` to **bind a matched value to a variable**:
+
+
+```rust
+let chipmunks = 5;
+
+match chipmunks {
+    0 => println!("no chipmunks"),
+    1..=20 => println!("some chipmunks"),
+    n @ 21..=40 => println!("warning: {n} chipmunks!"),
+    _ => println!("too many chipmunks."),
+}
+```
+
+
 
 ---
 
