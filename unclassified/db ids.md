@@ -1,4 +1,15 @@
 
+
+UUID - Universally Unique Identifier
+
+
+UUID secureness :
+Someone played around with UUIDs secureness.. Theo roasted 
+https://www.youtube.com/watch?v=K1qvTYJccP8
+
+
+
+
 **Hi** **@channel****, starting a thread on uuid inclusion in mapping tables.**  
 We'll be performing DB migrations on mloc mapping table to introduce a new auto-generating UUID column.Even though it's highly unlikely for the uuid collision to happen (1 in 2^122), should we encounter it, postgres will halt the operation (during record insertion or migration). Do you have any thoughts on the proactive error-handling approach for this case? Or should we be approaching it reactively, by observing the DB logs?
 
