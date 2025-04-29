@@ -356,3 +356,187 @@ def create_user(user: User) -> dict:
 ---
 
 These best practices enhance code readability, maintainability, and overall quality, making your code more reliable and easier to understand for both yourself and others. By focusing on self-documenting code, avoiding magic numbers, and limiting function parameters, you adhere to principles that not only improve readability but also support long-term code health.
+
+
+Here’s a well-defined, structured version of the article **“Clean Code: 7 Tips to Write Clean Functions” by Daniel Moka**—optimized for clarity, readability, and quick reference:
+
+---
+
+# 🧼 Clean Code: 7 Tips to Write Clean Functions
+
+**Author:** Daniel Moka  
+**Published:** July 8, 2024  
+**Audience:** Software Engineers  
+**Main Idea:** Functions should be simple, readable, and predictable—making code easier to maintain and understand.
+
+---
+
+## ✨ Motivation
+
+> _"If it takes more than 3 seconds to understand what a function does, it’s time to refactor it."_
+
+Functions that are hard to read increase the chance of bugs, hinder onboarding, and slow development. Clean functions are easier to test, understand, and maintain—making them a long-term investment in code quality.
+
+---
+
+## ✅ 7 Practical Tips for Clean Functions
+
+### 1. **Keep Functions Small**
+
+> “Functions should be small. The smaller, the better.” – Uncle Bob
+
+- Focus on _one responsibility per function_
+    
+- Use your judgment based on context—not rigid line limits
+    
+- Avoid splitting into too many micro-functions that clutter the code
+    
+
+---
+
+### 2. **Use Intention-Revealing Names**
+
+> Naming isn’t hard—it just takes effort and iteration.
+
+- Use domain-specific, descriptive names
+    
+- Prefer verbs/verb phrases (e.g., `calculateTotal()`)
+    
+- Stick to consistent terminology across your codebase
+    
+- Avoid synonyms for the same concept
+    
+
+---
+
+### 3. **Limit Function Parameters**
+
+> Ideal number of parameters = 0.  
+> Max recommended = 3.
+
+- Too many parameters increase complexity and reduce testability
+    
+- Group related parameters into objects when needed
+    
+
+---
+
+### 4. **Use Early Returns (Guard Clauses)**
+
+> Avoid deeply nested `if` statements
+
+- Invert conditions to return early
+    
+- Improves readability and removes the need for `else`
+    
+
+**Before:**
+
+```js
+if (user) {
+  if (user.isActive) {
+    // do something
+  }
+}
+```
+
+**After:**
+
+```js
+if (!user || !user.isActive) return;
+// do something
+```
+
+---
+
+### 5. **Write Pure Functions**
+
+> Pure = same output for same input, no side effects
+
+**Benefits:**
+
+- Predictable behavior
+    
+- Easy to test
+    
+- Safe for parallel execution
+    
+
+---
+
+### 6. **Avoid Boolean Flag Parameters**
+
+> Boolean flags (`true`/`false`) reduce clarity.
+
+**Instead:**
+
+- Use enums or clearly named constants
+    
+- Makes the function call self-explanatory and extensible
+    
+
+**Bad:**
+
+```js
+sendEmail(user, true); // What does 'true' mean?
+```
+
+**Better:**
+
+```js
+sendEmail(user, EmailType.WELCOME);
+```
+
+---
+
+### 7. **Use Comments Sparingly**
+
+> Comments can become outdated and redundant.
+
+- Use comments to explain _why_, not _what_
+    
+- Prefer expressive function names over verbose comments
+    
+
+**Instead of:**
+
+```js
+// Check if user is admin
+if (user.role === 'admin') { ... }
+```
+
+**Do this:**
+
+```js
+if (isAdmin(user)) { ... }
+```
+
+---
+
+## 🧠 Summary
+
+> “Code is not just for the computer. It’s for the next developer who reads it.”
+
+Writing clean functions is a cornerstone of professional software development. Focus on simplicity, clarity, and intention. Small improvements in function quality lead to big gains in maintainability.
+
+
+
+---
+
+## 💬 Reader Reactions
+
+- _“Clean functions are the foundation of clean code!”_ – Raul Junco
+    
+- _“These tips are a great reminder, especially after years of habit.”_ – Uriel Bitton
+    
+
+---
+
+
+
+referred {
+
+https://craftbettersoftware.com/p/clean-code-7-tips-to-write-clean
+
+}
+
