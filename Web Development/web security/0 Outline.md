@@ -6,4 +6,5 @@
 [[CORs]]
 [[JWT]]
 
+[[too many requests]]
 
