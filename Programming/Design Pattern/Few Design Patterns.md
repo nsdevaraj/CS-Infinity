@@ -314,10 +314,10 @@ Each tree = 50 KB → 1 million trees = 50 GB RAM (not scalable!)
 ```
 
 
-![[_imgs/Pasted image 20250429053855.png]]
+![[Pasted image 20250429053855.png]]
 
 
-![[_imgs/Pasted image 20250429055150.png]]
+![[Pasted image 20250429055150.png]]
 
 
 
@@ -376,16 +376,16 @@ Handling dynamic and complex filtering conditions without messy `if-else` blocks
 Turn rules into **reusable and combinable objects**.
 
 
-![[_imgs/Pasted image 20250429054422.png]]
+![[Pasted image 20250429054422.png]]
 
 
-![[_imgs/Pasted image 20250429054707.png]]
+![[Pasted image 20250429054707.png]]
 
 
-![[_imgs/Pasted image 20250429054720.png]]
+![[Pasted image 20250429054720.png]]
 
 
-![[_imgs/Pasted image 20250429055103.png]]
+![[Pasted image 20250429055103.png]]
 
 
 
@@ -455,12 +455,12 @@ Capture and store the object’s state without violating encapsulation.
 
 
 
-![[_imgs/Pasted image 20250429054452.png]]
+![[Pasted image 20250429054452.png]]
 
-![[_imgs/Pasted image 20250429054800.png]]
+![[Pasted image 20250429054800.png]]
 
 
-![[_imgs/Pasted image 20250429055112.png]]
+![[Pasted image 20250429055112.png]]
 
 
 ### Structure:
@@ -522,14 +522,14 @@ Changing behavior based on object's internal state without messy `if-else`.
 Encapsulate state-specific behaviors into separate classes.
 
 
-![[_imgs/Pasted image 20250429054916.png]]
+![[Pasted image 20250429054916.png]]
 
 
-![[_imgs/Pasted image 20250429054946.png]]
+![[Pasted image 20250429054946.png]]
 
 
 
-![[_imgs/Pasted image 20250429055125.png]]
+![[Pasted image 20250429055125.png]]
 
 
 ### Structure:
@@ -602,10 +602,10 @@ How do banks track every single transaction **without losing any data**?
 Store **immutable events**, not the current state. Rebuild the state by replaying events.
 
 
-![[_imgs/Pasted image 20250429054151.png]]
+![[Pasted image 20250429054151.png]]
 
 
-![[_imgs/Pasted image 20250429054626.png]]
+![[Pasted image 20250429054626.png]]
 
 ### Structure:
 
