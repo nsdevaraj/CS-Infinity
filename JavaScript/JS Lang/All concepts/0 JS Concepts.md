@@ -85,6 +85,7 @@
 [[Js knowledge]]
 
 
+[[module type]]
 
 
 [[external js]]
