@@ -405,3 +405,91 @@ This implementation pattern matches real-world examples from functional TypeScri
 
 
 ---
+
+
+Excellent observation — here's a clear explanation of **why `Just` has a constructor** and **`Nothing` typically does not**:
+
+---
+
+### ✅ 1. `Just<T>` Needs a Value
+
+```ts
+class Just<T> {
+  constructor(private value: T) { ... }
+}
+```
+
+- `Just<T>` **wraps a real value**.
+    
+- It must accept and store `value` so you can call `.map()`, `.flatMap()`, `.getOrElse()`, etc.
+    
+- Every method in `Just` works **on this internal value**.
+    
+
+---
+
+### 🚫 2. `Nothing` Has No Value to Store
+
+```ts
+class Nothing { ... }
+```
+
+- `Nothing` represents the **absence of a value** (like `null` or `undefined`, but safer).
+    
+- It doesn't need a constructor because:
+    
+    - It has no data to store.
+        
+    - All its methods return itself or default fallbacks.
+        
+
+You can even **make it a singleton**, which is common in some implementations:
+
+```ts
+const nothingInstance = new Nothing();
+function nothing<T>(): Maybe<T> {
+  return nothingInstance;
+}
+```
+
+This avoids unnecessary allocation and makes `Nothing` truly immutable and referentially transparent.
+
+---
+
+### 🔍 Summary Table
+
+|Class|Has Constructor?|Why?|
+|---|---|---|
+|`Just<T>`|✅ Yes|Needs to store and operate on `value`|
+|`Nothing`|❌ No (optional)|No internal state; always the same|
+
+---
+
+### 💡 Optional: Singleton Pattern
+
+If you're feeling fancy or want to optimize:
+
+```ts
+class Nothing {
+  static instance = new Nothing();
+  private constructor() {}
+
+  static get<T>(): Maybe<T> {
+    return Nothing.instance;
+  }
+}
+```
+
+Usage:
+
+```ts
+return Nothing.get();
+```
+
+Let me know if you want help converting to a singleton or extending your `Maybe` to be monad-compatible with `Promise` chaining!
+
+
+
+
+[[maybe monad can complex]]
+
