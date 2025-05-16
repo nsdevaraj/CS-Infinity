@@ -28,6 +28,8 @@
 
 [[why FP]]
 
+[[func as param]]
+
 
 
 [[FP presentation 1]]
