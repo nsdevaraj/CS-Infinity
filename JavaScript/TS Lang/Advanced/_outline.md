@@ -10,11 +10,14 @@
 [[Pick vs Omit]]
 [[Partial vs Required]]
 [[Extract and Exclude]]
+[[More utilities]]
+
+
+[[Mapped Types]]
+
 
 [[Prettify]]
-
-
-[[More utilities]]
+[[Loose autocomplete]]
 
 
 

@@ -5,3 +5,10 @@ https://www.linkedin.com/posts/expert-fullstack-webdeveloper_typescript-activity
 https://www.linkedin.com/feed/update/urn:li:activity:7279123832655790080?utm_source=share&utm_medium=member_desktop
 
 
+
+
+ts playground examples
+https://www.typescriptlang.org/play/?q=295#example
+
+
+

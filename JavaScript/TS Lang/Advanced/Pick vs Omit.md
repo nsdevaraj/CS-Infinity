@@ -2,6 +2,8 @@
 # 🎯 TypeScript `Pick` vs `Omit`: The What, Why, and When
 
 TypeScript’s utility types like `Pick` and `Omit` are essential tools for creating flexible, type-safe code. They help you **derive new types from existing ones** without rewriting or duplicating logic.
+works on object state.
+
 
 ---
 
@@ -135,4 +137,87 @@ In real-world apps—especially **backend APIs**, **frontend forms**, or **admin
 
 ---
 
-### Want me to add diagrams, cheat sheets, or deep dive into nested `Pick`/`Omit` use cases?
+
+
+### Note:
+
+
+#### Renaming keys auto rename in utilities ?
+
+
+Ah, I see! You're asking:
+
+> If I **rename a key** (e.g., `id → idd`) in the type `obj`, is there a way to **automatically reflect that** in the `Pick` without manually updating the key strings?
+
+### Short Answer: ❌ **TypeScript cannot do automatic key reflection like that.**
+
+There is **no way in TypeScript** to:
+
+- Dynamically reflect key **names** in `Pick` using variables or expressions like `obj.id`, or
+- Automatically adapt to renamed properties at the type level.
+
+### Why?
+
+TypeScript types are **structural** and **not reflective** — they don’t track original key names as metadata. When you do `obj.id`, you're accessing the **runtime value**, which doesn’t help in a **type context** like `Pick`.
+
+---
+
+### Alternative: Use Symbolic Constant for Keys
+
+If you **must** have this reflection-like behavior, the closest practical workaround is to **tie keys to variables** and **infer them in both runtime and type contexts**:
+
+#### 1. Use `as const` for keys:
+
+```ts
+const objKeys = {
+  id: 'id',
+  name: 'name'
+} as const;
+
+type Obj = {
+  [K in keyof typeof objKeys]: string;
+};
+
+// Automatically pick using key constants
+type ObjId = Pick<Obj, keyof typeof objKeys>;
+```
+
+Now, **renaming** a key means:
+- You rename the key in `objKeys`
+- The type `Obj` and `Pick<Obj, ...>` follow it
+
+
+#### 2. Example: Rename `id` → `idd`
+
+```ts
+const objKeys = {
+  idd: 'idd',
+  name: 'name'
+} as const;
+
+type Obj = {
+  [K in keyof typeof objKeys]: string;
+};
+
+type ObjId = Pick<Obj, keyof typeof objKeys>; // Picks "idd" | "name"
+```
+
+> ✅ This way, the structure of `Obj` and what `Pick` uses are **tied to one source of truth** — the `objKeys`.
+
+---
+
+### TL;DR
+
+- You cannot reflect keys automatically from `obj` in `Pick<obj, ...>`
+- But you can simulate it with a shared `const` object (`objKeys`) and derive both the type and keys from it
+- This is the most refactor-safe pattern currently available in TypeScript
+
+
+---
+
+
+
+
+
+
+

@@ -6,7 +6,7 @@
 
 TypeScript's `Extract` and `Exclude` utility types allow you to **filter union types** with surgical precision. Whether you're building type-safe APIs, form logic, or narrowing input types, these tools are essential.
 
-Let’s explore them with **clear definitions**, **real-world use cases**, and **interview-ready explanations**.
+These works on Union types only!
 
 ---
 
@@ -182,4 +182,91 @@ type A = OnlyStrings<string | number | boolean>; // string
     
 
 ---
+
+
+
+Try extract and exclude on non-union object types 
+
+
+```typescript
+type Obj = {
+	id: string;
+	name: string;
+};
+
+type temp1 = Extract<Obj, 'id'> // type temp1 = never
+type temp2 = Exclude<Obj, 'id'> // type temp2 = { id: string; name: string; }
+```
+
+
+----
+
+
+### Better examples
+
+```ts
+type AlbumState =
+| {
+	type: "released";
+	releaseDate: string;
+}
+| {
+	type: "recording";
+	studio: string;
+}
+| {
+	type: "mixing";
+	engineer: string;
+};
+
+type NotReleased1 = Exclude<AlbumState, { type: "released" }>;
+/*=>
+type NotReleased1 = {
+	type: "recording";
+	studio: string;
+} | {
+type: "mixing";
+engineer: string;
+}
+*/
+
+type NotReleased2 = Exclude<AlbumState, { releaseDate: string }>;
+/*=>
+type NotReleased2 = {
+	type: "recording";
+	studio: string;
+} | {
+	type: "mixing";
+	engineer: string;
+}
+*/
+```
+
+
+
+```ts
+type Example = "a" | "b" | 1 | 2 | 3 | "c" | boolean
+
+type ExampleNumbers = Extract<Example, number>
+//=> type ExampleNumbers = 1 | 2 | 3
+
+type ExampleStrings = Extract<Example, string>
+// => type ExampleStrings = "a" | "b" | "c"
+
+type ExampleNonNumbers = Exclude<Example, number>
+//=> type ExampleNonNumbers = boolean | "a" | "b" | "c"
+
+type ExampleNonStrings = Exclude<Example, string>
+//=> type ExampleNonStrings = boolean | 1 | 2 | 3
+
+
+// object utilities to union type does work
+
+// type ExampleStrings2 = Pick<Example, string>
+//=: Type 'string' does not satisfy the constraint '"valueOf"'.(2344
+
+type ExampleStrings3 = Omit<Example, string>
+//=> type ExampleStrings3 = {}
+```
+
 

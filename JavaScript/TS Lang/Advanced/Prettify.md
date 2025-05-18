@@ -190,3 +190,33 @@ Use it to make `User & Extra` look like:
 Instead of showing cryptic `User & Extra` type unions.
 
 ---
+
+
+
+```ts
+type ComplexType = {
+  a: string;
+  b: number;
+} & Omit<
+  {
+    c: boolean;
+  } & Record<"d", string[]>,
+  "c"
+>;
+
+type Prettify<T> = {
+  [K in keyof T]: T[K];
+} & {};
+
+type ShowMe = Prettify<ComplexType>;
+/*=>
+type ShowMe = {
+    a: string;
+    b: number;
+    d: string[];
+}
+*/
+
+```
+
+
