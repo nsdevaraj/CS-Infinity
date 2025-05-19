@@ -189,10 +189,13 @@ https://medium.com/@shaileshkumarmishra/random-uuids-are-killing-your-postgresql
 
 
 uuid v4, v7 , ulid
-
 https://medium.com/@ciro-gomes-dev/uuidv4-vs-uuidv7-vs-ulid-choosing-the-right-identifier-for-database-performance-1f7d1a0fe0ba
 
+uuidv4, ulid, sequential keys
+https://medium.com/@taycode/why-you-should-use-ulids-549aa8ca9454
 
+Primary id - uuidv1, uuidv4, uuidv7, ulid, random number, sequential id
+https://supabase.com/blog/choosing-a-postgres-primary-key
 
 to check {
 
