@@ -10,4 +10,4 @@
 
 [[turbo repo and vitest - workspace sync]]
 
-
+[[pnpm , ts, turborepo]]
