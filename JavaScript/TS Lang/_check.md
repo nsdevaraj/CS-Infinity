@@ -12,3 +12,24 @@ https://www.typescriptlang.org/play/?q=295#example
 
 
 
+
+
+this param
+
+https://www.youtube.com/watch?v=wueQKy86aSY
+
+
+types vs interfaces
+
+https://www.youtube.com/watch?v=e0AIkYrXAYE
+
+https://www.youtube.com/watch?v=Idf0zh9f3qQ
+
+
+
+typescript wrong usage
+https://www.youtube.com/watch?v=RmGHnYUqQ4k
+
+
+
+
