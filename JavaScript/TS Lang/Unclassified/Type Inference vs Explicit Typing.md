@@ -167,12 +167,18 @@ login2({
 ---
 
 
+Duck typing: check structure is present or not, extra properties can exist, not considered
+
+
+
 ```ts
-
-
 type User = {
  name: string,
  id: number,
+}
+
+type Temp = {
+
 }
 
 
@@ -227,6 +233,62 @@ console.log(user2)
 //=: Property 'gender' does not exist on type 'User'.
 
 
+const getUser3 = ():User => {
+  return {
+     name: "Baba",
+     id: 2,
+  }
+  
+  // return {
+  //   name: "Baba",
+  //   id: 2,
+  //   gender: 'male'
+  // };
+  //: Type '{ name: string; id: number; gender: string; }' is not assignable to type 'User'.
+}
 
+const user3 = getUser3();
+console.log(user3)
+
+
+// don't go with return type, declare type for return object before!
+const getUser4 = () => {
+  
+  // const user1:User = {
+  //   name: "Baba",
+  //   id: 2,
+  //   gender: 'male'
+  // }
+  //: Object literal may only specify known properties, and 'gender' does not exist in type 'User'
+
+  const user1:User = {
+    name: "Baba",
+    id: 2
+  }
+
+  return user1;
+}
+
+// why explict seems to be scary 
+
+const user5:Temp = getUser1()
+
+// console.log(user5.name)
+// Property 'name' does not exist on type 'Temp'.(
 ```
 
+
+
+
+TypeScript assumes you **know what you’re doing** with a named variable — but plays it safe with inline objects. - its by design
+
+
+Zod not only validates your object at runtime, it also gives you **full type safety**, closing the gap between what’s actually in the data and what TypeScript _assumes_.
+
+powerful inference vs wrong guidance
+
+---
+
+### Inference >> Explicit Typing
+
+ts may give vague type, but not wrong type.. but developer do

@@ -18,6 +18,7 @@
 [[type narrowing]]
 [[type predicate]]
 
+[[runtime validator]]
 
 
 [[any vs unknown]]
@@ -26,3 +27,7 @@
 
 [[infer type]]
 [[return type]]
+
+
+[[Duck typing]]
+[[type check explicit]]
