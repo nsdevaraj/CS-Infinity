@@ -13,7 +13,6 @@ https://www.typescriptlang.org/play/?q=295#example
 
 
 
-
 this param
 
 https://www.youtube.com/watch?v=wueQKy86aSY
@@ -32,4 +31,17 @@ https://www.youtube.com/watch?v=RmGHnYUqQ4k
 
 
 
+satisfies
+
+https://youtube.com/shorts/d9dgzEA5Zw4?si=e5ib7KnXYjIFSrgB
+
+
+
+ts types
+https://www.youtube.com/watch?v=q5DFpyIN5Xs
+
+
+
+don't just object type
+https://www.youtube.com/shorts/_e4m4DjnBCE
 

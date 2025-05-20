@@ -166,3 +166,11 @@ const output = identity<string>("Hello"); // "Hello"
 ```
 
 
+
+
+to check {
+
+https://www.youtube.com/watch?v=EcCTIExsqmI&list=PLZlA0Gpn_vH_z2fqIg50_POJrUkJgBu7g&index=21
+
+
+}

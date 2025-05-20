@@ -65,3 +65,12 @@ interface ColoredShape extends Shape {
 
 
 
+to check {
+
+https://youtu.be/oiFo2z8ILNo?si=0vOjrH-0UXcLzzDB
+
+
+https://youtube.com/shorts/jJGzYdS4ZfY?si=yMRggMZygT8Fh5Ar
+
+
+}
