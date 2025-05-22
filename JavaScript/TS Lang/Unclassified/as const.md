@@ -500,3 +500,297 @@ referred {
 https://www.youtube.com/watch?v=6M9aZzm-kEc
 
 }
+
+
+---
+
+const vs as const
+
+
+## 🔍 `const` vs `as const` 
+
+TypeScript offers two distinct ways to handle constant values:
+
+- `const` — limits reassignment -> constant pointer to a variable 
+- `as const` — locks down **value**, **type**, and **mutability** -> constant pointer to a constant 
+
+
+Though they look similar, their behavior in TypeScript is **very different** when it comes to **type inference**.
+
+---
+
+### ✅ `const`: Constant Variable Binding
+
+```ts
+const role = "admin";
+```
+
+- **Behavior**: Prevents `role` from being reassigned.
+    
+- **TypeScript type**: Inferred as `string`, not `"admin"`.
+    
+
+```ts
+typeof role // string
+```
+
+➡️ `const` tells TypeScript: **"This variable won't change, but its value is still of type `string`."**
+
+---
+
+### ✅ `as const`: Literal & Readonly Inference
+
+```ts
+const role = "admin" as const;
+```
+
+- **Behavior**: Locks the value to `"admin"` — not just a string, but **exactly** that string.
+    
+- **TypeScript type**: Inferred as `"admin"` (a **literal type**).
+    
+
+```ts
+typeof role // "admin"
+```
+
+➡️ `as const` tells TypeScript: **"Treat this value as immutable, exact, and literal."**
+
+---
+
+### 🧵 Arrays & Objects: Huge Difference!
+
+```ts
+const roles = ["admin", "user"];
+```
+
+- Inferred type: `string[]`
+    
+
+```ts
+const roles = ["admin", "user"] as const;
+```
+
+- Inferred type: `readonly ["admin", "user"]`
+    
+- Each value is **literal** (`"admin"` and `"user"`)
+    
+- The array is **readonly** — cannot be mutated
+    
+
+Same with objects:
+
+```ts
+const user = {
+  role: "admin"
+};
+// type: { role: string }
+
+const user = {
+  role: "admin"
+} as const;
+// type: { readonly role: "admin" }
+```
+
+---
+
+### ⚠️ Why It Matters
+
+Without `as const`, you lose specificity in types:
+
+```ts
+function setRole(role: "admin" | "user") {}
+
+const myRole = "admin";        // type: string
+setRole(myRole);               // ❌ Error: string not assignable
+
+const myRole2 = "admin" as const;
+setRole(myRole2);              // ✅ Works!
+```
+
+---
+
+### 📌 Summary: `const` vs `as const`
+
+|Feature|`const`|`as const`|
+|---|---|---|
+|Reassignment|❌ Not allowed|❌ Not allowed|
+|Type Inference|✅ General (`string`)|✅ Literal (`"admin"`)|
+|Object Mutability|✅ Mutable|❌ `readonly` enforced|
+|Array Mutability|✅ Mutable (`string[]`)|❌ Readonly tuple (`readonly ["a", "b"]`)|
+|Use Case|Default consts|When exact value & immutability is needed|
+
+---
+
+### ✅ When to Use `as const`
+
+- For **discriminated unions**
+    
+- For **fixed config objects**
+    
+- When using with `switch` or pattern matching
+    
+- When passing **exact values** to function params
+    
+
+---
+
+🔐 **Think of `as const` as freezing the value and telling TypeScript: "Don't touch it or widen the type."**
+
+---
+
+**`as const` is a TypeScript-only feature** — it does **not exist** in plain JavaScript.
+
+
+### 📌 Why?
+
+- **JavaScript** has no concept of types at all — it's a dynamic language.
+    
+- `as const` is purely **a type-level instruction** in **TypeScript**.
+    
+- It's used at **compile time** to tell the TypeScript compiler:
+    
+    > “Please treat this value as fully readonly and with the narrowest (literal) type possible.”
+    
+
+---
+
+### 🛠️ What does `as const` do in TypeScript?
+
+- Converts **widened types** to **literal types**
+    
+- Applies **`readonly`** to object properties and array elements
+    
+
+```ts
+const theme = {
+  mode: "dark"
+} as const;
+// type: { readonly mode: "dark" }
+```
+
+- Without `as const`: `mode` is inferred as `string`
+    
+- With `as const`: `mode` is inferred as the **literal** `"dark"` and is **readonly**
+    
+
+---
+
+### 🚫 Not in JavaScript
+
+If you try to use `as const` in JavaScript:
+
+```js
+// ❌ SyntaxError in JavaScript
+const theme = {
+  mode: "dark"
+} as const;
+```
+
+- You'll get a **SyntaxError**
+    
+- JavaScript doesn't understand `as const` because it's not part of its syntax
+    
+
+---
+
+### ✅ Compiled Output from TypeScript
+
+```ts
+// TypeScript input
+const config = {
+  env: "prod"
+} as const;
+```
+
+```js
+// JavaScript output after tsc
+const config = {
+  env: "prod"
+};
+```
+
+> 🔍 `as const` is **removed** in the output — it's only for the TypeScript compiler.
+
+---
+
+### ✅ Summary
+
+|Feature|TypeScript|JavaScript|Runtime Effect|
+|---|---|---|---|
+|`as const`|✅ Yes|❌ No|❌ None — compile-time only|
+
+- Use `as const` in **TypeScript** for **immutability + literal inference**
+    
+- Don’t use it in **JavaScript** — it’s not valid syntax
+
+
+
+
+---
+
+## 🔐 `const` in C — Quick Reference
+
+|Syntax|What’s Constant?|Can Change Data?|Can Reassign Pointer?|
+|---|---|---|---|
+|`const int a = 10;`|`a` (value)|❌|—|
+|`const int *p = &a;`|`*p` (pointed value)|❌|✅|
+|`int *const p = &a;`|`p` (the pointer itself)|✅|❌|
+|`const int *const p = &a;`|`*p` and `p` (both)|❌|❌|
+
+---
+
+### ✅ 1. **Constant Value**
+
+```c
+const int a = 10;
+a = 20;     // ❌ Error: can't modify
+```
+
+---
+
+### ✅ 2. **Pointer to Constant**
+
+```c
+const int *p = &a;   // OR: int const *p = &a;
+*p = 20;     // ❌ Error
+p = &b;      // ✅ OK
+```
+
+📌 Read: “Pointer to const int”
+
+---
+
+### ✅ 3. **Constant Pointer**
+
+```c
+int *const p = &a;
+*p = 20;     // ✅ OK
+p = &b;      // ❌ Error
+```
+
+📌 Read: “Const pointer to int”
+
+---
+
+### ✅ 4. **Constant Pointer to Constant**
+
+```c
+const int *const p = &a;
+*p = 20;     // ❌ Error
+p = &b;      // ❌ Error
+```
+
+📌 Read: “Const pointer to const int”
+
+---
+
+### 🔁 Tip to Remember
+
+- `const int *p`: **Data is const**
+    
+- `int *const p`: **Pointer is const**
+    
+- `const int *const p`: **Both are const**
+    
+
+---
