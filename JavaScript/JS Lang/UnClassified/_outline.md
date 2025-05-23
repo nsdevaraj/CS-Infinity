@@ -10,3 +10,4 @@
 [[deep object equality issue]]
 
 [[mjs vs cjs]]
+[[object vs map]]
