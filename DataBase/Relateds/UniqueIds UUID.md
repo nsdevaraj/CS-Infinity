@@ -171,6 +171,16 @@ UUID 7 proposal - https://uuid7.com/
 
 
 
+**Why UUIDv7?**
+
+- **Time-Ordered Identifiers:** UUIDv7 incorporates a timestamp component, making the identifiers time-ordered.
+    
+- **Improved Database Performance:** This sequential nature enhances database indexing by reducing fragmentation and improving write efficiency, especially in systems with high insert rates.
+    
+- **Better for B-tree Indexing:** Unlike UUIDv4, which generates completely random identifiers, UUIDv7's structure aligns better with B-tree indexing, leading to more efficient storage and retrieval operations.
+
+
+
 no sequential integers, UUID 7 is better
 https://buildkite.com/resources/blog/goodbye-integers-hello-uuids/
 
