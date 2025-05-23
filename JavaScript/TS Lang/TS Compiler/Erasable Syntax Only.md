@@ -46,8 +46,12 @@ When this flag is enabled, the following TypeScript features are disallowed:
     **Error:**
     
     `Error: Enum declarations are not allowed when 'erasableSyntaxOnly' is enabled.`
-    
-2. **Namespaces**
+
+-> js proposal of having enum - [ TC39 - enum proposal](https://github.com/tc39/proposal-enum)
+-> more about enum types - [Total Typescript - Matt Pocock](https://www.totaltypescript.com/why-i-dont-like-typescript-enums)
+
+
+1. **Namespaces**
     
     Namespaces introduce additional JavaScript code and are not part of the ECMAScript specification.
     
@@ -73,8 +77,11 @@ When this flag is enabled, the following TypeScript features are disallowed:
     **Error:**
     
     `Error: Namespaces are not allowed when 'erasableSyntaxOnly' is enabled.`
-    
-3. **Parameter Properties in Classes**
+
+
+_to_check : type namespaces and other namespace -> only one type is disabled 
+
+2. **Parameter Properties in Classes**
     
     Using parameter properties in class constructors introduces additional JavaScript code.
     
@@ -101,7 +108,7 @@ When this flag is enabled, the following TypeScript features are disallowed:
     
     `Error: Parameter properties are not allowed when 'erasableSyntaxOnly' is enabled.`
     
-4. **Non-ECMAScript `import =` and `export =` Assignments**
+3. **Non-ECMAScript `import =` and `export =` Assignments**
     
     These import/export syntaxes are not part of the ECMAScript specification.
     
@@ -209,6 +216,58 @@ To ensure compatibility with the `--erasableSyntaxOnly` flag, consider the follo
     import { foo } from "foo";
     ```
     
+
+---
+
+
+```ts
+// Enums
+enum Direction {
+  Up,
+  Down,
+  Left,
+  Right,
+}
+
+// Namespaces
+namespace Geometry {
+  export const PI = 3.14159;
+}
+
+// Parameter Properties
+class Person {
+  constructor(public name: string) {}
+}
+
+```
+
+
+
+```js
+"use strict";
+// Enums
+var Direction;
+(function (Direction) {
+    Direction[Direction["Up"] = 0] = "Up";
+    Direction[Direction["Down"] = 1] = "Down";
+    Direction[Direction["Left"] = 2] = "Left";
+    Direction[Direction["Right"] = 3] = "Right";
+})(Direction || (Direction = {}));
+// Namespaces
+var Geometry;
+(function (Geometry) {
+    Geometry.PI = 3.14159;
+})(Geometry || (Geometry = {}));
+// Parameter Properties
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+```
+
+
 
 ---
 
