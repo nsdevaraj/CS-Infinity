@@ -65,3 +65,10 @@ object key-value deletion takes more time than map key-value deletion..
 Perfect comparisons :
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#objects_vs._maps
 
+
+
+
+to check :
+
+https://www.builder.io/blog/maps
+
