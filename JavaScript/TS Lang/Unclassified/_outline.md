@@ -31,3 +31,6 @@
 
 [[Duck typing]]
 [[type check explicit]]
+
+
+[[Readonly]]
