@@ -18,3 +18,7 @@
 
 
 [[Formating traits]]
+
+
+[[rust dummies]]
+
