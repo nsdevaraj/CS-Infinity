@@ -137,6 +137,25 @@ logPoint(point3D); // ✅ Allowed — but z is silently ignored
 
 **Problem?** TypeScript doesn’t warn you that `z` is never used — this could hide bugs in larger codebases.
 
+```typescript
+type Person = {
+	name: string;
+	age: number;
+};
+
+  
+
+const takePerson = ():Person => {
+	const john = {
+		name: "John",
+		age: 30,
+		extra:'extra', // extra key
+	};
+	
+	return john
+}
+```
+
 ---
 
 ## 🧱 Best Practices with Duck Typing
