@@ -34,3 +34,7 @@
 
 
 [[Readonly]]
+
+
+[[Object.keys loss type]]
+
