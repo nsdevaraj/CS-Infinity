@@ -8,6 +8,7 @@
 
 
 [[Performance API]]
+[[Throttling]]
 
 
 [[Temp]]
