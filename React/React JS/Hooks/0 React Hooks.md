@@ -24,6 +24,9 @@
 
 [[Hooks better usecases]]
 
+[[async useEffect]]
+
+
 {
 
 to check:
