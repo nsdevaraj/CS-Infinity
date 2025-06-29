@@ -5,3 +5,5 @@
 [[vite , ts - build strategies]]
 
 [[robots.txt]]
+
+[[manifest]]
