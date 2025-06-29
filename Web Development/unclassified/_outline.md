@@ -4,3 +4,4 @@
 
 [[vite , ts - build strategies]]
 
+[[robots.txt]]
