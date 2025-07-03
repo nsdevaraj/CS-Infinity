@@ -130,6 +130,177 @@ This hierarchy ensures you can override variables per environment and keep secre
 
 Environment variables and `.env` files are simple but powerful tools that enable flexible, secure, and environment-specific configuration. By understanding their usage and lifecycle, you can build apps that seamlessly adapt across development, testing, and production — while keeping secrets safe and code clean.
 
+
 ---
 
-If you want, I can help you set up `.env` files step-by-step for your specific stack or build a checklist to avoid common mistakes!
+# Managing Environment Variables in Vite: Modes, Files, and Priority
+
+When working with Vite, handling different configurations for development, production, staging, or any other custom environment is straightforward using environment variable files (`.env` files). Vite offers a powerful and flexible system that automatically loads these files based on the mode you run your project in.
+
+Understanding how Vite loads `.env` files and in which order is crucial to properly manage environment variables without conflicts.
+
+---
+
+## What Are `.env` Files in Vite?
+
+`.env` files store environment variables in `KEY=VALUE` pairs. Vite uses them to configure your app differently depending on the environment.
+
+> **Important:** Only variables prefixed with `VITE_` are exposed to your client-side code.
+
+---
+
+## Supported `.env` Files and Their Modes
+
+|File Name|Mode(s) Loaded|Description|
+|---|---|---|
+|`.env`|**All modes**|Base environment variables, always loaded.|
+|`.env.local`|**All modes**|Local overrides, always loaded, ignored by git.|
+|`.env.development`|`development` mode|Loaded only in `development` mode.|
+|`.env.development.local`|`development` mode|Local overrides for development, ignored by git.|
+|`.env.production`|`production` mode|Loaded only in `production` mode.|
+|`.env.production.local`|`production` mode|Local overrides for production, ignored by git.|
+|`.env.staging`|`staging` mode (custom mode)|Loaded only when running with `--mode staging`.|
+|`.env.staging.local`|`staging` mode|Local overrides for staging, ignored by git.|
+
+---
+
+## How to Run Vite with Different Modes
+
+Use the `--mode` flag when running or building your project to specify which environment mode Vite should load:
+
+```bash
+vite --mode development          # Loads development env files
+vite build --mode production     # Loads production env files
+vite build --mode staging        # Loads staging env files (custom mode)
+```
+
+---
+
+## Priority of `.env` Files When Loaded Together
+
+Vite merges the environment variables from all applicable `.env` files for the mode you specify. When the same variable exists in multiple files, the value from the file with **higher priority overrides** the others.
+
+Here’s the priority order (lowest to highest):
+
+```
+.env < .env.<mode> < .env.local < .env.<mode>.local
+```
+
+### Explanation:
+
+- `.env`  
+    Base environment variables, always loaded.
+    
+- `.env.<mode>`  
+    Mode-specific variables (e.g., `.env.production` or `.env.development`).
+    
+- `.env.local`  
+    Local overrides applicable to all modes. This file is usually in `.gitignore` to avoid committing secrets or machine-specific settings.
+    
+- `.env.<mode>.local`  
+    Local overrides for a specific mode, highest priority, also usually ignored by git.
+    
+
+---
+
+## Example: Running `vite --mode development`
+
+Files loaded in this order with priority top to bottom:
+
+```text
+.env                  # Lowest priority
+.env.development      # Overrides .env
+.env.local            # Overrides both above
+.env.development.local  # Highest priority overrides
+```
+
+If a variable `VITE_API_URL` is defined in all these files, the value from `.env.development.local` will be the one your app sees.
+
+---
+
+## Why Use `.local` Files?
+
+`.local` files are meant for **local overrides** such as:
+
+- Secrets or API keys you don’t want to commit to your repository.
+    
+- Machine-specific configurations.
+    
+- Temporary overrides for testing.
+    
+
+These files should be added to `.gitignore` to keep your secrets safe and to avoid affecting other developers.
+
+---
+
+## Example `.env` Files Content
+
+**`.env`**
+
+```env
+VITE_API_URL=https://api.example.com
+VITE_FEATURE_FLAG=false
+```
+
+**`.env.production`**
+
+```env
+VITE_API_URL=https://api.production.com
+```
+
+**`.env.development`**
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+**`.env.local`** (ignored by git)
+
+```env
+VITE_FEATURE_FLAG=true
+```
+
+**`.env.production.local`** (ignored by git)
+
+```env
+VITE_API_URL=https://api.production.local-override.com
+```
+
+---
+
+## Accessing Environment Variables in Code
+
+Only variables prefixed with `VITE_` are exposed to your client code and can be accessed using:
+
+```js
+console.log(import.meta.env.VITE_API_URL);
+console.log(import.meta.env.VITE_FEATURE_FLAG);
+```
+
+---
+
+## Summary
+
+|Feature|Details|
+|---|---|
+|`.env` files|Configure your environment variables for different modes.|
+|Modes|Use `--mode` flag to switch environments.|
+|Priority Order|`.env` < `.env.<mode>` < `.env.local` < `.env.<mode>.local`|
+|Local overrides|Use `.local` files for secrets and machine-specific configs.|
+|Access in code|Use `import.meta.env.VITE_*` variables.|
+
+---
+
+## Final Tips
+
+- Always prefix environment variables with `VITE_` to expose them client-side.
+    
+- Use `.env.local` and `.env.<mode>.local` for secrets and overrides.
+    
+- Explicitly set the mode during development and builds for clarity.
+    
+- Keep `.env` files small and only put necessary variables there.
+    
+
+---
+
