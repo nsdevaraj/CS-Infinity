@@ -11,3 +11,6 @@
 
 [[mjs vs cjs]]
 [[object vs map]]
+
+
+[[error catching]]
