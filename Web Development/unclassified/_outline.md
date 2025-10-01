@@ -7,3 +7,5 @@
 [[robots.txt]]
 
 [[manifest]]
+
+[[Timezone Handling Best Practices]]
