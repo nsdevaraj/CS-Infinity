@@ -48,7 +48,8 @@ for (index, ch) in text.chars().enumerate() {
         Index: 3, Char: l
         Index: 4, Char: o
         ```
-        
+
+
 
 ---
 
@@ -181,3 +182,76 @@ pub fn first_uniq_char(s: String) -> i32 {
     -1
 }
 ```
+
+
+```rust
+
+fn first_non_rep_char_index(text:&str)-> Option<usize> {
+    use std::collections::HashMap;
+    
+    let mut freq_map: HashMap<char, usize> = HashMap::new();
+    
+    for ch in text.chars(){
+        *freq_map.entry(ch).or_insert(0) += 1
+    }
+    
+    for (index,ch) in text.chars().enumerate(){
+        if let Some(&count) = freq_map.get(&ch) {
+            if count == 1 {
+                return Some(index);
+            }
+        }
+    }
+    
+    return None
+    
+}
+
+fn main(){
+    let text = "hello".to_string();
+    if let Some(index) = first_non_rep_char_index(&text) {
+          println!(
+            "First non-repeating character of {:?}: '{}' at index {}",
+            text,
+            text.chars().nth(index).unwrap(),
+            index
+        );
+    }else {
+         println!("No non-repeating character found for {:?}", text);
+    }
+}
+```
+
+---
+
+Hashmap
+
+```rust
+use std::collections::HashMap;
+
+fn main() {
+
+    let text = "hello";
+    
+    let mut freq_map: HashMap<char, usize> = HashMap::new();
+    
+    for ch in text.chars(){
+        let dummy1 = freq_map.entry(ch);
+        println!("{:?}", dummy1); //=> Entry(VacantEntry('h'))
+       
+        freq_map.entry(ch).or_insert(0);
+        let dummy2 = freq_map.entry(ch);
+        println!("{:?}", dummy2); //=> Entry(OccupiedEntry { key: 'h', value: 0, .. })
+        println!("{:?}", freq_map.get(&ch)); //=> Some(0)
+        
+        
+        println!("{:?}", freq_map.entry(ch).or_insert(10)); //=> 0
+        
+    }
+    
+    println!("{:?}", freq_map);
+    
+}
+```
+
+

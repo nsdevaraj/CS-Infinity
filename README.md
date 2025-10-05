@@ -59,3 +59,19 @@ The file organization follows a simple, trackable structure:
 
 **Thank you for your collaboration!** Together, we can make these learning notes more organized and insightful for everyone.
 
+
+
+
+----
+
+
+Summarization of branches :
+
+Ongoing branches:
+
+
+Completed branches:
+
+
+
+
