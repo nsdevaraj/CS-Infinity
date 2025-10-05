@@ -1,0 +1,3 @@
+
+
+[[Perfect code is bad]]
