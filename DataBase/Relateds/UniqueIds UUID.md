@@ -9,7 +9,6 @@ https://www.youtube.com/watch?v=K1qvTYJccP8
 
 
 
-
 **Hi** **@channel****, starting a thread on uuid inclusion in mapping tables.**  
 We'll be performing DB migrations on mloc mapping table to introduce a new auto-generating UUID column.Even though it's highly unlikely for the uuid collision to happen (1 in 2^122), should we encounter it, postgres will halt the operation (during record insertion or migration). Do you have any thoughts on the proactive error-handling approach for this case? Or should we be approaching it reactively, by observing the DB logs?
 
@@ -148,3 +147,73 @@ When comparing **UUID** and **ULID**, the performance differences come down to a
 For most applications, **ULID** will outperform UUID in terms of generation speed and sorting, but UUIDs are still the more widely accepted standard. If you're looking for high performance and lexicographical sorting, **ULID** is the better choice.
 
 
+UUID lib :
+https://www.npmjs.com/package/uuid
+
+
+
+UUID 7 proposal - https://uuid7.com/
+
+
+## Benefits of UUIDv7:
+
+- **Time-Sortability**: As mentioned, UUIDv7 values are time-sortable, which means you can sort them in increasing order based on when they were generated. This makes time-based queries more efficient and intuitive.
+- **Precise Timestamping**: With a granularity of up to 50 nanoseconds as of previous drafts (but a default of 1 millisecond as of writing, see [draft RFC4122](https://www.ietf.org/archive/id/draft-peabody-dispatch-new-uuid-format-04.html#name-uuid-version-7)), UUIDv7 offers excellent precision. This, when combined with the randomness, essentially guarantees that collisions (even among globally distributed systems!) are impossible.
+- **Global Uniqueness**: Like other UUIDs, UUIDv7 ensures global uniqueness. This means you can generate IDs independently across different systems or nodes, and they won't collide.
+
+## Why UUIDv7 is Better for Databases:
+
+- **Natural Sorting**: Traditional databases often require additional timestamp columns to sort records based on creation time. With UUIDv7, you can achieve this sorting using the UUID itself, eliminating the need for extra columns.
+- **Optimized Indexing**: Since UUIDv7 is time-sortable, database indexing mechanisms can better optimize the storage and retrieval processes, leading to faster query times especially for time-based queries.
+- **Concurrency and Distribution**: In distributed systems, generating unique, sequential IDs can be a challenge. UUIDv7 can be generated concurrently across multiple nodes without the risk of collisions, making it suitable for distributed architectures.
+- **Reduced Overhead**: Unlike UUIDv1, which can expose the MAC address of the machine where the UUID was generated (raising privacy concerns), UUIDv7 doesn't have this drawback, reducing the overhead of obscuring or anonymizing this data.
+- **Flexibility**: Databases that support binary storage can store UUIDv7 efficiently, and they can be easily encoded into other formats like strings if required.
+
+
+
+**Why UUIDv7?**
+
+- **Time-Ordered Identifiers:** UUIDv7 incorporates a timestamp component, making the identifiers time-ordered.
+    
+- **Improved Database Performance:** This sequential nature enhances database indexing by reducing fragmentation and improving write efficiency, especially in systems with high insert rates.
+    
+- **Better for B-tree Indexing:** Unlike UUIDv4, which generates completely random identifiers, UUIDv7's structure aligns better with B-tree indexing, leading to more efficient storage and retrieval operations.
+
+
+
+no sequential integers, UUID 7 is better
+https://buildkite.com/resources/blog/goodbye-integers-hello-uuids/
+
+
+uuid7 vs uuid4
+
+https://www.reddit.com/r/programming/comments/1b24z57/why_uuid7_is_better_than_uuid4_as_clustered_index/
+
+
+uuid vs sequential keys
+
+https://www.reddit.com/r/PostgreSQL/comments/1ckzc8f/uuid_versus_sequence_why_is_a_uuid_bad_for/
+
+uuids bad postgres
+https://medium.com/@shaileshkumarmishra/random-uuids-are-killing-your-postgresql-performance-how-to-fix-it-d8f7aaa0b2c5
+
+
+uuid v4, v7 , ulid
+https://medium.com/@ciro-gomes-dev/uuidv4-vs-uuidv7-vs-ulid-choosing-the-right-identifier-for-database-performance-1f7d1a0fe0ba
+
+uuidv4, ulid, sequential keys
+https://medium.com/@taycode/why-you-should-use-ulids-549aa8ca9454
+
+Primary id - uuidv1, uuidv4, uuidv7, ulid, random number, sequential id
+https://supabase.com/blog/choosing-a-postgres-primary-key
+
+
+to check {
+
+uuids bad
+https://www.youtube.com/watch?v=-f03gnTreCU
+
+uniqueids
+https://blog.scaledcode.com/blog/wild-world-unique-id/
+
+}
