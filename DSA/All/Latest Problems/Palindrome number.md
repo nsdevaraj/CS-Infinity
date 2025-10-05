@@ -1,4 +1,193 @@
 
+9. Palindrome Number
+https://leetcode.com/problems/palindrome-number/
+
+Easy problem
+
+## 🔁 Problem: Palindrome Number
+
+Given an integer `x`, return `true` if `x` is a **palindrome**, and `false` otherwise.
+
+---
+
+## ✅ Approach 1: Convert Integer to String
+
+This is the most straightforward solution.
+
+### 💡 Idea:
+
+- Convert the number to a string.
+    
+- Check if the string is equal to its reverse.
+    
+
+### 🔧 Code:
+
+```rust
+pub fn is_palindrome(x: i32) -> bool {
+    let s = x.to_string();
+    s.chars().rev().collect::<String>() == s
+}
+```
+
+### ⏱️ Complexity:
+
+- **Time:** O(n) – where n is the number of digits
+    
+- **Space:** O(n) – for the string and its reverse
+    
+
+---
+
+## ✅ Approach 2: Reverse Half of the Number (No String Conversion)
+
+This is the optimal solution as per the follow-up constraint.
+
+### 💡 Idea:
+
+- Negative numbers are not palindromes.
+    
+- Reverse only **half** of the number and compare with the other half.
+    
+
+### 🔧 Code:
+
+```rust
+pub fn is_palindrome(x: i32) -> bool {
+    if x < 0 || (x % 10 == 0 && x != 0) {
+        return false;
+    }
+
+    let mut x = x;
+    let mut reversed_half = 0;
+
+    while x > reversed_half {
+        reversed_half = reversed_half * 10 + x % 10;
+        x /= 10;
+    }
+
+    x == reversed_half || x == reversed_half / 10
+}
+```
+
+### ⏱️ Complexity:
+
+- **Time:** O(log₁₀(n)) – Only half the digits are processed
+    
+- **Space:** O(1) – Constant space
+    
+
+---
+
+## ✅ Approach 3: Full Integer Reversal and Compare (Still No Strings)
+
+This is simpler than half-reversal, but with a small risk of overflow (if not handled).
+
+### 💡 Idea:
+
+- Reverse the full number (check for overflow).
+    
+- Compare original with reversed.
+    
+
+### 🔧 Code:
+
+```rust
+pub fn is_palindrome(x: i32) -> bool {
+    if x < 0 {
+        return false;
+    }
+
+    let mut x = x;
+    let mut rev = 0;
+
+    while x != 0 {
+        match rev.checked_mul(10).and_then(|r| r.checked_add(x % 10)) {
+            Some(new_rev) => rev = new_rev,
+            None => return false, // Overflow
+        }
+        x /= 10;
+    }
+
+    x == rev
+}
+```
+
+### ⏱️ Complexity:
+
+- **Time:** O(log₁₀(n))
+    
+- **Space:** O(1)
+    
+
+---
+
+## ✍️ Summary Table
+
+|Approach|Time Complexity|Space Complexity|Notes|
+|---|---|---|---|
+|String Conversion|O(n)|O(n)|Easiest to implement|
+|Half Reversal (No String)|O(log₁₀(n))|O(1)|Most optimal, follows constraints|
+|Full Reversal (Safe Overflow)|O(log₁₀(n))|O(1)|Needs overflow safety|
+
+---
+
+
+Runtime: 0ms
+
+rust
+
+```rust
+impl Solution {
+    fn revert_n(n: i32, num_size: u32) -> i32 {
+        if n == 0 {
+            return 0;
+        }
+        return (n % 10) * 10i32.pow(num_size - 1) + Self::revert_n(n / 10, num_size - 1);
+    }
+
+    pub fn is_palindrome(x: i32) -> bool {
+        let num_size = (x as f32).log10().floor() + 1f32;
+        return Self::revert_n(x, num_size as u32) == x;
+    }
+}
+```
+
+
+
+rust
+
+```rust
+impl Solution {
+
+pub fn is_palindrome(x: i32) -> bool {
+    
+    if x < 0 {
+        return false;
+    }
+
+    let x_str = x.to_string();
+    let len = x_str.len();
+    
+    let front = &x_str[..len/2];
+    let back = &x_str[(len/2 + len % 2)..];
+
+    for tuple in front.chars().zip(back.chars().rev()){
+        if tuple.0 != tuple.1 {
+            return false;
+        }
+    }
+    
+    return true;    
+}
+}
+```
+
+---
+
+to check extra:
+
+
 Palindrome: Same sequence forwards and backwards.
 Anagram: Rearranged letters to form a different word or phrase.
 
@@ -376,3 +565,185 @@ Anagram: Rearranged letters to form a different word or phrase.
   5. **Mathematical Digit Comparison**: Avoids string conversion, uses no extra space.
 
   For large numbers and performance-sensitive tasks, the mathematical or "reversing half" approach is recommended due to its space efficiency.
+
+
+
+```python
+
+palindrome_number_test_cases = [
+    # Case 1: Positive palindrome
+    {
+        "name": "Positive Palindrome",
+        "input": 121,
+        "expected": True,
+    },
+    # Case 2: Negative number (not a palindrome)
+    {
+        "name": "Negative Number",
+        "input": -121,
+        "expected": False,
+    },
+    # Case 3: Positive non-palindrome
+    {
+        "name": "Positive Non-Palindrome",
+        "input": 123,
+        "expected": False,
+    },
+    # Case 4: Single digit (always a palindrome)
+    {
+        "name": "Single Digit",
+        "input": 7,
+        "expected": True,
+    },
+    # Case 5: Zero (is a palindrome)
+    {
+        "name": "Zero",
+        "input": 0,
+        "expected": True,
+    },
+    # Case 6: Large palindrome
+    {
+        "name": "Large Palindrome",
+        "input": 123456789987654321,
+        "expected": True,
+    },
+    # Case 7: Large non-palindrome
+    {
+        "name": "Large Non-Palindrome",
+        "input": 123456789987654320,
+        "expected": False,
+    },
+    # Case 8: Palindrome with trailing zeros (not a palindrome)
+    {
+        "name": "Number with Trailing Zeros",
+        "input": 1000,
+        "expected": False,
+    },
+    # Case 9: Long palindrome
+    {
+        "name": "Long Palindrome",
+        "input": 1234567890987654321,
+        "expected": True,
+    },
+    # Case 10: Long non-palindrome
+    {
+        "name": "Long Non-Palindrome",
+        "input": 1234567890987654320,
+        "expected": False,
+    },  # Non-palindrome
+    # Case 11: Large even-length palindrome
+    {
+        "name": "Large Even-Length Palindrome",
+        "input": 12344321,
+        "expected": True,
+    },
+    # Case 12: Large even-length non-palindrome
+    {
+        "name": "Large Even-Length Non-Palindrome",
+        "input": 12344320,
+        "expected": False,
+    },
+    # Case 13: Very large palindrome (with many digits)
+    # {
+    #     "name": "Very Large Palindrome",
+    #     "input": int("1" + "0" * 1000000 + "1"),
+    #     "expected": True,
+    # },
+    # Case 14: Very large non-palindrome
+    # {
+    #     "name": "Very Large Non-Palindrome",
+    #     "input": int("1" + "0" * 1000000 + "2"),
+    #     "expected": False,
+    # },
+    # Case 15: Edge case of maximum integer value in Python
+    {
+        "name": "Max Integer",
+        "input": 2147483647,
+        "expected": False,
+    },  # Not a palindrome
+]
+
+
+def test_palindrome_number(func):
+    print(f"Testing function: {func.__name__}")
+
+    for i, test_case in enumerate(
+        palindrome_number_test_cases, 1
+    ):
+        input_data = test_case["input"]
+        expected_result = test_case["expected"]
+        case_name = test_case["name"]
+
+        result = func(input_data)
+
+        # Check if the returned result matches the expected result
+        assert (
+            result == expected_result
+        ), f"Test case ({case_name}) failed: expected {expected_result}, got {result}"
+
+    print("All test cases passed!")
+
+
+
+def is_palindrome1(x:int)->bool:
+    return str(x) == str(x)[::-1]
+
+
+def is_palindrome2(x:int)->bool:
+    reversed_x= 0
+    temp_x = x
+
+    while temp_x > 0:
+        reversed_x = reversed_x * 10 + temp_x % 10
+        temp_x //= 10
+
+    return x == reversed_x
+
+
+def is_palindrome3(x:int)->bool:
+    if x < 0:
+        return False
+
+    digits: list[int] = []
+    while x > 0:
+        digits.append(x % 10)
+        x //= 10
+
+    left, right = 0, len(digits) - 1
+
+    while(left < right):
+        if digits[left] != digits[right]:
+            return False
+        left += 1
+        right -= 1
+
+    return True
+
+def is_palindrome4(x:int)->bool:
+    if x < 0:
+        return False
+
+    num_of_digits = 0
+
+    temp = x
+    while temp > 0:
+        num_of_digits += 1
+        temp //= 10
+
+    right_ptr = num_of_digits - 1
+
+    for left_ptr in range(num_of_digits // 2):
+        left_digit = (x // 10 ** right_ptr) % 10
+        right_digit = (x // 10 ** left_ptr) % 10
+
+        if left_digit != right_digit:
+            return False
+
+        right_ptr -= 1
+    return True
+
+
+
+test_palindrome_number(is_palindrome1)
+
+```
