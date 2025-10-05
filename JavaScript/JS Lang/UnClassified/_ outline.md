@@ -9,3 +9,4 @@
 
 [[deep object equality issue]]
 
+[[object vs map]]

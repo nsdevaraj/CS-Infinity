@@ -28,9 +28,9 @@ https://www.youtube.com/watch?v=nFwmB1_iQ7A
 
 
 
-[[0 Temp|0 Temp]]
+[[_temp|_temp]]
 
 
-[[0 To check|0 To check]]
+[[_check|_check]]
 
 
