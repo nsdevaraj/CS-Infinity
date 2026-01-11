@@ -1,8 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Dependencies (ignore everywhere)
+/node_modules/
+**/node_modules/
 
-# dependencies
-/node_modules
-/.pnp
+.pnp
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -10,42 +10,51 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
+# Testing
 /coverage
+**/coverage/
 
-# next.js
+# Next.js
 /.next/
 /out/
+**/.next/
+**/out/
 
-# production
+# Production
 /build
+**/build/
 
-# misc
+# Misc
 .DS_Store
+**/.DS_Store
 *.pem
 
-# debug
+# Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+**/*.log
 
-# env files (can opt-in for committing if needed)
+# Env files
 .env*
+**/.env*
 
-# vercel
+# Vercel
 .vercel
+**/.vercel/
 
-# typescript
+# TypeScript
 *.tsbuildinfo
 next-env.d.ts
-# Ignore Obsidian's local configuration files
+**/*.tsbuildinfo
+
+# Obsidian
 **/.obsidian/
 
-# Ignore cache and workspace files
-*.log
+# Cache / temp files
 *.bak
 *.swp
 *.tmp
-
-# macOS stuff
-.DS_Store
+**/*.bak
+**/*.swp
+**/*.tmp
